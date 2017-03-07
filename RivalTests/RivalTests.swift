@@ -1,15 +1,15 @@
 //
-//  Rival_iosTests.swift
-//  Rival_iosTests
+//  RivalTests.swift
+//  RivalTests
 //
 //  Created by Sung Kyungmo on 2017. 3. 7..
 //  Copyright © 2017년 Sung Kyungmo. All rights reserved.
 //
 
 import XCTest
-@testable import Rival_ios
+@testable import Rival
 
-class Rival_iosTests: XCTestCase {
+class RivalTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

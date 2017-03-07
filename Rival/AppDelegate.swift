@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  Rival_ios
+//  Rival
 //
 //  Created by Sung Kyungmo on 2017. 3. 7..
 //  Copyright © 2017년 Sung Kyungmo. All rights reserved.

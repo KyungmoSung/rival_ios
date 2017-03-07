@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A7920CD41E6E6D9600B37B81"
-               BuildableName = "Rival_ios.app"
-               BlueprintName = "Rival_ios"
-               ReferencedContainer = "container:Rival_ios.xcodeproj">
+               BlueprintIdentifier = "A7920DA51E6E7EBF00B37B81"
+               BuildableName = "Rival.app"
+               BlueprintName = "Rival"
+               ReferencedContainer = "container:Rival.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,30 +32,30 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A7920CEC1E6E6D9700B37B81"
-               BuildableName = "Rival_iosTests.xctest"
-               BlueprintName = "Rival_iosTests"
-               ReferencedContainer = "container:Rival_ios.xcodeproj">
+               BlueprintIdentifier = "A7920DBB1E6E7EBF00B37B81"
+               BuildableName = "RivalTests.xctest"
+               BlueprintName = "RivalTests"
+               ReferencedContainer = "container:Rival.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A7920CF71E6E6D9700B37B81"
-               BuildableName = "Rival_iosUITests.xctest"
-               BlueprintName = "Rival_iosUITests"
-               ReferencedContainer = "container:Rival_ios.xcodeproj">
+               BlueprintIdentifier = "A7920DC61E6E7EBF00B37B81"
+               BuildableName = "RivalUITests.xctest"
+               BlueprintName = "RivalUITests"
+               ReferencedContainer = "container:Rival.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A7920CD41E6E6D9600B37B81"
-            BuildableName = "Rival_ios.app"
-            BlueprintName = "Rival_ios"
-            ReferencedContainer = "container:Rival_ios.xcodeproj">
+            BlueprintIdentifier = "A7920DA51E6E7EBF00B37B81"
+            BuildableName = "Rival.app"
+            BlueprintName = "Rival"
+            ReferencedContainer = "container:Rival.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -75,10 +75,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A7920CD41E6E6D9600B37B81"
-            BuildableName = "Rival_ios.app"
-            BlueprintName = "Rival_ios"
-            ReferencedContainer = "container:Rival_ios.xcodeproj">
+            BlueprintIdentifier = "A7920DA51E6E7EBF00B37B81"
+            BuildableName = "Rival.app"
+            BlueprintName = "Rival"
+            ReferencedContainer = "container:Rival.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -94,10 +94,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A7920CD41E6E6D9600B37B81"
-            BuildableName = "Rival_ios.app"
-            BlueprintName = "Rival_ios"
-            ReferencedContainer = "container:Rival_ios.xcodeproj">
+            BlueprintIdentifier = "A7920DA51E6E7EBF00B37B81"
+            BuildableName = "Rival.app"
+            BlueprintName = "Rival"
+            ReferencedContainer = "container:Rival.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

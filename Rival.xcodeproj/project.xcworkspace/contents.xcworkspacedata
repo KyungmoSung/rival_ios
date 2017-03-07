@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Rival_ios.xcodeproj">
+      location = "self:Rival.xcodeproj">
    </FileRef>
 </Workspace>

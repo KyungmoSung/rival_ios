@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Rival_ios.xcscheme</key>
+		<key>Rival.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,17 +12,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>A7920CD41E6E6D9600B37B81</key>
+		<key>A7920DA51E6E7EBF00B37B81</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A7920CEC1E6E6D9700B37B81</key>
+		<key>A7920DBB1E6E7EBF00B37B81</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A7920CF71E6E6D9700B37B81</key>
+		<key>A7920DC61E6E7EBF00B37B81</key>
 		<dict>
 			<key>primary</key>
 			<true/>
