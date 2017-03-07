@@ -7,62 +7,37 @@
 //
 
 import UIKit
+import DropDown
 
-class FirstViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class FirstViewController: UIViewController {
+    let dropDown = DropDown()
     
-    @IBOutlet weak var textBox: UITextField!
-    @IBOutlet weak var dropDown: UIPickerView!
-    
-    
-    var list = ["1", "2", "3"]
-    
+    @IBOutlet weak var selectLocation: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
     
+    @IBAction func dropDownFunc(_ sender: Any) {
+        // The view to which the drop down will appear on
+        DropDown.appearance().backgroundColor = UIColor.white
+        dropDown.anchorView = self.selectLocation
+        // The list of items to display. Can be changed dynamically
+        dropDown.dataSource = ["서울","경기","인천"]
+        dropDown.bottomOffset = CGPoint(x: 0, y:self.selectLocation.frame.size.height)
+        dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
+            self.selectLocation.setTitle("\(item)", for: .normal)
+            print("Selected item: \(item) at index: \(index)")
+        }
+        dropDown.show()
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    
-    public func numberOfComponents(in pickerView: UIPickerView) -> Int{
-        return 1
-        
-    }
-    
-    public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
-        
-        return list.count
-        
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        
-        self.view.endEditing(true)
-        return list[row]
-        
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
-        self.textBox.text = self.list[row]
-        self.dropDown.isHidden = true
-        
-    }
-    
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        
-        if textField == self.textBox {
-            self.dropDown.isHidden = false
-            //if you dont want the users to se the keyboard type:
-            
-            textField.endEditing(true)
-        }
-        
-    }
 }
 
 
