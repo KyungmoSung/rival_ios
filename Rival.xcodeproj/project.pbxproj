@@ -15,6 +15,8 @@
 		A7920DB61E6E7EBF00B37B81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7920DB41E6E7EBF00B37B81 /* LaunchScreen.storyboard */; };
 		A7920DC11E6E7EBF00B37B81 /* RivalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7920DC01E6E7EBF00B37B81 /* RivalTests.swift */; };
 		A7920DCC1E6E7EBF00B37B81 /* RivalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7920DCB1E6E7EBF00B37B81 /* RivalUITests.swift */; };
+		CE43BDC91E76786B0079D7A9 /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE43BDC81E76786B0079D7A9 /* KakaoOpenSDK.framework */; };
+		CE43BDCC1E767A290079D7A9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43BDCB1E767A290079D7A9 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,9 @@
 		A7920DC71E6E7EBF00B37B81 /* RivalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RivalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7920DCB1E6E7EBF00B37B81 /* RivalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RivalUITests.swift; sourceTree = "<group>"; };
 		A7920DCD1E6E7EBF00B37B81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE43BDC81E76786B0079D7A9 /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoOpenSDK.framework; sourceTree = "<group>"; };
+		CE43BDCA1E76790E0079D7A9 /* KakaoOpenSDK-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KakaoOpenSDK-Bridging-Header.h"; sourceTree = "<group>"; };
+		CE43BDCB1E767A290079D7A9 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE43BDC91E76786B0079D7A9 /* KakaoOpenSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +85,8 @@
 		A7920D9D1E6E7EBF00B37B81 = {
 			isa = PBXGroup;
 			children = (
+				CE43BDCA1E76790E0079D7A9 /* KakaoOpenSDK-Bridging-Header.h */,
+				CE43BDC81E76786B0079D7A9 /* KakaoOpenSDK.framework */,
 				A7920DA81E6E7EBF00B37B81 /* Rival */,
 				A7920DBF1E6E7EBF00B37B81 /* RivalTests */,
 				A7920DCA1E6E7EBF00B37B81 /* RivalUITests */,
@@ -106,6 +114,7 @@
 				A7920DB21E6E7EBF00B37B81 /* Assets.xcassets */,
 				A7920DB41E6E7EBF00B37B81 /* LaunchScreen.storyboard */,
 				A7920DB71E6E7EBF00B37B81 /* Info.plist */,
+				CE43BDCB1E767A290079D7A9 /* LoginViewController.swift */,
 			);
 			path = Rival;
 			sourceTree = "<group>";
@@ -196,18 +205,18 @@
 				TargetAttributes = {
 					A7920DA51E6E7EBF00B37B81 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = YV47R3P48P;
+						DevelopmentTeam = 5LSLQSP87C;
 						ProvisioningStyle = Automatic;
 					};
 					A7920DBB1E6E7EBF00B37B81 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = YV47R3P48P;
+						DevelopmentTeam = 5LSLQSP87C;
 						ProvisioningStyle = Automatic;
 						TestTargetID = A7920DA51E6E7EBF00B37B81;
 					};
 					A7920DC61E6E7EBF00B37B81 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = YV47R3P48P;
+						DevelopmentTeam = 5LSLQSP87C;
 						ProvisioningStyle = Automatic;
 						TestTargetID = A7920DA51E6E7EBF00B37B81;
 					};
@@ -265,6 +274,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE43BDCC1E767A290079D7A9 /* LoginViewController.swift in Sources */,
 				A7920DAE1E6E7EBF00B37B81 /* SecondViewController.swift in Sources */,
 				A7920DAA1E6E7EBF00B37B81 /* AppDelegate.swift in Sources */,
 				A7920DAC1E6E7EBF00B37B81 /* FirstViewController.swift in Sources */,
@@ -419,11 +429,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = YV47R3P48P;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 5LSLQSP87C;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Rival/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = hs.Rival;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = hs.rival123123;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/KakaoOpenSDK-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -432,11 +449,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = YV47R3P48P;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 5LSLQSP87C;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Rival/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = hs.Rival;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = hs.rival123123;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/KakaoOpenSDK-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -446,7 +470,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = YV47R3P48P;
+				DEVELOPMENT_TEAM = 5LSLQSP87C;
 				INFOPLIST_FILE = RivalTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hs.RivalTests;
@@ -461,7 +485,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = YV47R3P48P;
+				DEVELOPMENT_TEAM = 5LSLQSP87C;
 				INFOPLIST_FILE = RivalTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hs.RivalTests;
@@ -475,7 +499,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = YV47R3P48P;
+				DEVELOPMENT_TEAM = 5LSLQSP87C;
 				INFOPLIST_FILE = RivalUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hs.RivalUITests;
@@ -489,7 +513,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = YV47R3P48P;
+				DEVELOPMENT_TEAM = 5LSLQSP87C;
 				INFOPLIST_FILE = RivalUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hs.RivalUITests;
@@ -518,6 +542,7 @@
 				A7920DD21E6E7EBF00B37B81 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A7920DD31E6E7EBF00B37B81 /* Build configuration list for PBXNativeTarget "RivalTests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +551,7 @@
 				A7920DD51E6E7EBF00B37B81 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A7920DD61E6E7EBF00B37B81 /* Build configuration list for PBXNativeTarget "RivalUITests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +560,7 @@
 				A7920DD81E6E7EBF00B37B81 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
