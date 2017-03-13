@@ -11,18 +11,18 @@ import DropDown
 
 class FirstViewController: UITableViewController {
     
-    var soccer:[String:[String:Int]]=["서울":["2:2ㄱㄱ":2,"3:3ㄱ":3],"인천":["4:4":4]]
+    var soccer:[String:[String:Int]]=["서울":["아무나댐벼":11,"축구축구축구":3,"아무나댐벼~":2,"축구축구축구축구":5,"아무나댐비삼":3,"축구축구축구축":5],"인천":["희붕이댐벼":4,"아무나댐벼":6,"축구축구축구":5,"희붕이댐벼어":11,"아무나댐벼!":8,"축구축구축구축구":3],"경기":["4:4할사라아아암":4,"아무나댐벼":6,"축구축구축구":11,"아무나한판고고":8,"축구축구축구축구":8]]
     var selectedCity:String = "서울"
     
     
     let dropDown = DropDown()
     
-    @IBOutlet var dataTableView: UITableView!
     @IBOutlet weak var selectLocation: UIBarButtonItem!
     @IBOutlet weak var matchingNav: UINavigationItem!
     
     override func viewDidLoad() {
-        matchingNav.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(dropDownFunc(_:)))
+        matchingNav.rightBarButtonItem = UIBarButtonItem(title: "지역선택", style: .plain, target: self, action: #selector(dropDownFunc(_:)))
+        
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -31,10 +31,10 @@ class FirstViewController: UITableViewController {
     func dropDownFunc(_ sender: UIBarButtonItem) {
         // The view to which the drop down will appear on
         DropDown.appearance().backgroundColor = UIColor.white
-        dropDown.anchorView = self.selectLocation
+        dropDown.anchorView = self.tableView
         // The list of items to display. Can be changed dynamically
         dropDown.dataSource = ["서울","경기","인천"]
-        dropDown.bottomOffset = CGPoint(x: 0, y:0)
+        dropDown.bottomOffset = CGPoint(x: 0, y:self.navigationController!.navigationBar.frame.size.height+UIApplication.shared.statusBarFrame.height)
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
             self.matchingNav.title=item
             self.selectedCity=item
@@ -69,7 +69,7 @@ class FirstViewController: UITableViewController {
         let title = titles[indexPath.row]
         let peopleNum = peopleNums[indexPath.row]
         cell.textLabel?.text=title
-        cell.detailTextLabel?.text="\(peopleNum)"
+        cell.detailTextLabel?.text="\(peopleNum)명"
         
      // Configure the cell...
      
