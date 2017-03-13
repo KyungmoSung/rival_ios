@@ -7,62 +7,120 @@
 //
 
 import UIKit
+import DropDown
 
-class FirstViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class FirstViewController: UITableViewController {
     
-    @IBOutlet weak var textBox: UITextField!
-    @IBOutlet weak var dropDown: UIPickerView!
+    var soccer:[String:[String:Int]]=["서울":["2:2ㄱㄱ":2,"3:3ㄱ":3],"인천":["4:4":4]]
+    var selectedCity:String = "서울"
     
     
-    var list = ["1", "2", "3"]
+    let dropDown = DropDown()
     
+    @IBOutlet var dataTableView: UITableView!
+    @IBOutlet weak var selectLocation: UIBarButtonItem!
+    @IBOutlet weak var matchingNav: UINavigationItem!
     
     override func viewDidLoad() {
+        matchingNav.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(dropDownFunc(_:)))
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
+
     
+    func dropDownFunc(_ sender: UIBarButtonItem) {
+        // The view to which the drop down will appear on
+        DropDown.appearance().backgroundColor = UIColor.white
+        dropDown.anchorView = self.selectLocation
+        // The list of items to display. Can be changed dynamically
+        dropDown.dataSource = ["서울","경기","인천"]
+        dropDown.bottomOffset = CGPoint(x: 0, y:0)
+        dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
+            self.matchingNav.title=item
+            self.selectedCity=item
+            self.tableView.reloadData()
+            print("Selected item: \(item) at index: \(index)")
+        }
+        dropDown.show()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
-    public func numberOfComponents(in pickerView: UIPickerView) -> Int{
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
         return 1
-        
     }
     
-    public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
-        
-        return list.count
-        
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        let gameCategory = Array(soccer[selectedCity]!)
+        return gameCategory.count
     }
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        
-        self.view.endEditing(true)
-        return list[row]
-        
-    }
     
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+     let cell = tableView.dequeueReusableCell(withIdentifier: "gameCell", for: indexPath)
+     
+        let gameCategory = soccer[selectedCity]!
+        let titles = Array(gameCategory.keys)
+        let peopleNums = Array(gameCategory.values)
+        let title = titles[indexPath.row]
+        let peopleNum = peopleNums[indexPath.row]
+        cell.textLabel?.text=title
+        cell.detailTextLabel?.text="\(peopleNum)"
         
-        self.textBox.text = self.list[row]
-        self.dropDown.isHidden = true
-        
-    }
+     // Configure the cell...
+     
+     return cell
+     }
     
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        
-        if textField == self.textBox {
-            self.dropDown.isHidden = false
-            //if you dont want the users to se the keyboard type:
-            
-            textField.endEditing(true)
-        }
-        
-    }
+    /*
+     // Override to support conditional editing of the table view.
+     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+     // Return false if you do not want the specified item to be editable.
+     return true
+     }
+     */
+    
+    /*
+     // Override to support editing the table view.
+     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+     if editingStyle == .delete {
+     // Delete the row from the data source
+     tableView.deleteRows(at: [indexPath], with: .fade)
+     } else if editingStyle == .insert {
+     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+     }
+     }
+     */
+    
+    /*
+     // Override to support rearranging the table view.
+     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
+     
+     }
+     */
+    
+    /*
+     // Override to support conditional rearranging of the table view.
+     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+     // Return false if you do not want the item to be re-orderable.
+     return true
+     }
+     */
+    
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+
 }
 
 
