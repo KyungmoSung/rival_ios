@@ -10,6 +10,8 @@
 		260482C979962F1DC687A713 /* Pods_RivalTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65F75C55FD3E2DF276058479 /* Pods_RivalTests.framework */; };
 		50676D43EED69E3B1D5BD101 /* Pods_Rival.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E3E0BC85745DA5DF7D26B20 /* Pods_Rival.framework */; };
 		52152CD7D437C9B9B88532CB /* Pods_RivalUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD60E0FE0CA6EAC8B3DA73EA /* Pods_RivalUITests.framework */; };
+		A7445D481E77B4FA00CEDED3 /* MatchingRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7445D471E77B4FA00CEDED3 /* MatchingRoom.swift */; };
+		A7445D4A1E77D9B100CEDED3 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7445D491E77D9B100CEDED3 /* TableViewCell.swift */; };
 		A7920DAA1E6E7EBF00B37B81 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7920DA91E6E7EBF00B37B81 /* AppDelegate.swift */; };
 		A7920DAC1E6E7EBF00B37B81 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7920DAB1E6E7EBF00B37B81 /* FirstViewController.swift */; };
 		A7920DAE1E6E7EBF00B37B81 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7920DAD1E6E7EBF00B37B81 /* SecondViewController.swift */; };
@@ -45,6 +47,8 @@
 		65F75C55FD3E2DF276058479 /* Pods_RivalTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RivalTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BFD5FF3F8AC4BE6EB80DA5C /* Pods-RivalUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RivalUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RivalUITests/Pods-RivalUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		9FC6FEDDE84BEBB8CA1510E3 /* Pods-RivalTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RivalTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RivalTests/Pods-RivalTests.release.xcconfig"; sourceTree = "<group>"; };
+		A7445D471E77B4FA00CEDED3 /* MatchingRoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchingRoom.swift; sourceTree = "<group>"; };
+		A7445D491E77D9B100CEDED3 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		A7920DA61E6E7EBF00B37B81 /* Rival.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rival.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7920DA91E6E7EBF00B37B81 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7920DAB1E6E7EBF00B37B81 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -131,11 +135,13 @@
 			children = (
 				A7920DA91E6E7EBF00B37B81 /* AppDelegate.swift */,
 				A7920DAB1E6E7EBF00B37B81 /* FirstViewController.swift */,
+				A7445D491E77D9B100CEDED3 /* TableViewCell.swift */,
 				A7920DAD1E6E7EBF00B37B81 /* SecondViewController.swift */,
 				A7920DAF1E6E7EBF00B37B81 /* Main.storyboard */,
 				A7920DB21E6E7EBF00B37B81 /* Assets.xcassets */,
 				A7920DB41E6E7EBF00B37B81 /* LaunchScreen.storyboard */,
 				A7920DB71E6E7EBF00B37B81 /* Info.plist */,
+				A7445D471E77B4FA00CEDED3 /* MatchingRoom.swift */,
 			);
 			path = Rival;
 			sourceTree = "<group>";
@@ -452,7 +458,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7445D4A1E77D9B100CEDED3 /* TableViewCell.swift in Sources */,
 				A7920DAE1E6E7EBF00B37B81 /* SecondViewController.swift in Sources */,
+				A7445D481E77B4FA00CEDED3 /* MatchingRoom.swift in Sources */,
 				A7920DAA1E6E7EBF00B37B81 /* AppDelegate.swift in Sources */,
 				A7920DAC1E6E7EBF00B37B81 /* FirstViewController.swift in Sources */,
 			);
