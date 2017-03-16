@@ -17,12 +17,12 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var labelTime: UILabel!
     @IBOutlet weak var labelStadium: UILabel!
     @IBOutlet weak var labelTeamName: UILabel!
-    var sTitle: String
-    var sNum: Int
-    var sTime: String
-    var sStadium: String
-    var sTeamName: String
-    var sTeamIMG: String
+    var sTitle: String = ""
+    var sNum: Int = 0
+    var sTime: String = ""
+    var sStadium: String = ""
+    var sTeamName: String = ""
+    var sTeamIMG: String = ""
     
     override func viewDidLoad() {
         labelTitle.text = sTitle
@@ -30,7 +30,6 @@ class DetailViewController: UIViewController {
         labelTime.text = sTime
         labelStadium.text = sStadium
         labelTeamName.text = sTeamName
-        TeamIMG.text = sTeamIMG
         super.viewDidLoad()
     }
 }
