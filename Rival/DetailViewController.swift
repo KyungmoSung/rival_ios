@@ -26,10 +26,11 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         labelTitle.text = sTitle
-        labelPeopleNum.text = "\(sNum)명"
-        labelTime.text = sTime
-        labelStadium.text = sStadium
+        labelPeopleNum.text = "인원 : \(sNum)명"
+        labelTime.text = "경기 시간 : \(sTime)"
+        labelStadium.text = "경기장 : \(sStadium)"
         labelTeamName.text = sTeamName
+        
         super.viewDidLoad()
     }
 }

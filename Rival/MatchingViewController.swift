@@ -9,7 +9,7 @@
 import UIKit
 import DropDown
 
-class FirstViewController: UITableViewController {
+class MatchingViewController: UITableViewController {
     var matchingRooms = [MatchingRoom](arrayLiteral:
         MatchingRoom("soccer","서울","FC병점","축구할사람1","올림픽경기장","2017.3.13 17:00",11),
                                        MatchingRoom("축구","서울","FC병점","축구할사람2","올림픽올림픽경기장","2017.3.13 17:00",10),
@@ -36,6 +36,7 @@ class FirstViewController: UITableViewController {
     let dropDownCity = DropDown()
     let dropDownGame = DropDown()
     let button =  UIButton(type: .custom)
+    let cellSpacingHeight: CGFloat = 8
     
     
     override func viewDidLoad() {
@@ -116,18 +117,17 @@ class FirstViewController: UITableViewController {
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        self.filterRooms = matchingRooms.filter { $0.city == selectedCity && $0.game==selectedGame}
+        
+        return filterRooms.count
+       
     }
     
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        
-        self.filterRooms = matchingRooms.filter { $0.city == selectedCity && $0.game==selectedGame}
-        
-        return filterRooms.count
+        return 1
     }
-    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "gameCell", for: indexPath) as! TableViewCell
@@ -137,6 +137,7 @@ class FirstViewController: UITableViewController {
         let peopleNum = self.filterRooms[indexPath.row].peopleNum
         let teamName = self.filterRooms[indexPath.row].teamName
         
+        tableView.backgroundColor = UIColor.groupTableViewBackground
         cell.labelTitle.text=title
         cell.labelStadium.text=stadium
         cell.labelTime.text=matchTime
