@@ -12,41 +12,46 @@ import DropDown
 class FirstViewController: UITableViewController {
     
     var matchingRooms = [MatchingRoom](arrayLiteral:
-        MatchingRoom("soccer","서울","축구할사람1","경기장","2017.3.13 17:00",11),
-                                       MatchingRoom("축구","서울","축구할사람2","경기장","2017.3.13 17:00",10),
-                                       MatchingRoom("축구","서울","축구할사람3","경기장","2017.3.13 17:00",9),
-                                       MatchingRoom("축구","서울","축구할사람4","경기장","2017.3.13 17:00",8),
-                                       MatchingRoom("축구","서울","축구할사람5","경기장","2017.3.13 17:00",7),
-                                       MatchingRoom("축구","서울","축구할사람6","경기장","2017.3.13 17:00",6),
-                                       MatchingRoom("축구","인천","축구할사람1","경기장","2017.3.13 17:00",10),
-                                       MatchingRoom("축구","인천","축구할사람2","경기장","2017.3.13 17:00",9),
-                                       MatchingRoom("축구","경기","축구할사람1","경기장","2017.3.13 17:00",8),
-                                       MatchingRoom("농구","서울","농구할사람서울","경기장","2017.3.13 17:00",3),
-                                       MatchingRoom("농구","인천","농구할사람인천","경기장","2017.3.13 17:00",4),
-                                       MatchingRoom("농구","경기","농구할사람경기","경기장","2017.3.13 17:00",5),
-                                       MatchingRoom("야구","서울","야구할사람서울","경기장","2017.3.13 17:00",6),
-                                       MatchingRoom("야구","인천","야구할사람인천","경기장","2017.3.13 17:00",7),
-                                       MatchingRoom("야구","경기","야구할사람경기","경기장","2017.3.13 17:00",8))
+        MatchingRoom("soccer","서울","축구할사람1","올림픽경기장","2017.3.13 17:00",11),
+                                       MatchingRoom("축구","서울","축구할사람2","올림픽올림픽경기장","2017.3.13 17:00",10),
+                                       MatchingRoom("축구","서울","축구할사람3","올림픽경기장","2017.3.13 17:00",9),
+                                       MatchingRoom("축구","서울","축구할사람4","올림픽경기장","2017.3.13 17:00",8),
+                                       MatchingRoom("축구","서울","축구할사람5","올림픽경기장","2017.3.13 17:00",7),
+                                       MatchingRoom("축구","서울","축구할사람6","올림픽경기장","2017.3.13 17:00",6),
+                                       MatchingRoom("축구","인천","축구할사람1","올림픽경기장","2017.3.13 17:00",10),
+                                       MatchingRoom("축구","인천","축구할사람2","올림픽경기장","2017.3.13 17:00",9),
+                                       MatchingRoom("축구","경기","축구할사람1","올림픽경기장","2017.3.13 17:00",8),
+                                       MatchingRoom("농구","서울","농구할사람서울","올림픽경기장","2017.3.13 17:00",3),
+                                       MatchingRoom("농구","인천","농구할사람인천","올림픽경기장","2017.3.13 17:00",4),
+                                       MatchingRoom("농구","경기","농구할사람경기","올림픽경기장","2017.3.13 17:00",5),
+                                       MatchingRoom("야구","서울","야구할사람서울","올림픽경기장","2017.3.13 17:00",6),
+                                       MatchingRoom("야구","인천","야구할사람인천","올림픽경기장","2017.3.13 17:00",7),
+                                       MatchingRoom("야구","경기","야구할사람경기","올림픽경기장","2017.3.13 17:00",8))
     
     var filterRooms = [MatchingRoom]()
     
     var selectedCity:String = "서울"
     var selectedGame:String = "축구"
-    
+    var selectedGamePrompt:String = "Soccer"
+    var img_name="soccer_img.png"
     let dropDownCity = DropDown()
     let dropDownGame = DropDown()
     let button =  UIButton(type: .custom)
     
     
     override func viewDidLoad() {
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "\(selectedCity) ⌄", style: .plain, target: self, action: #selector(dropDownCityFunc(_:)))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "  \(selectedCity) ⌄", style: .plain, target: self, action: #selector(dropDownCityFunc(_:)))
+        self.navigationItem.rightBarButtonItem?.setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.white], for: .normal)
+        
         button.frame = CGRect(x: 0, y: 0, width: 100, height: 40)
         button.setTitle("\(selectedGame) ⌄", for: .normal)
-        button.setTitleColor(.black, for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 25)
         button.addTarget(self, action: #selector(dropDownGameFunc(_:)), for: .touchUpInside)
+        
         self.navigationItem.titleView = button
         
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: img_name),
+                                                                    for: .default)
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
@@ -83,6 +88,19 @@ class FirstViewController: UITableViewController {
         dropDownGame.bottomOffset = CGPoint(x: 0, y:self.navigationController!.navigationBar.frame.size.height+UIApplication.shared.statusBarFrame.height)
         dropDownGame.shadowOffset=CGSize(width: 0.0, height: 10.0)
         dropDownGame.selectionAction = { [unowned self] (index: Int, item: String) in
+            if item == "축구" {
+                self.img_name = "soccer_img.png"
+                self.selectedGamePrompt = "Soccer"
+                
+            }else if item == "농구"{
+                self.img_name = "basketball_img.png"
+                self.selectedGamePrompt = "BasketBall"
+            }else{
+                self.img_name = "baseball_img.png"
+                self.selectedGamePrompt = "BaseBall"
+            }
+            self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: self.img_name),
+                                                                        for: .default)
             self.button.setTitle("  \(item) ⌄", for: .normal)
             self.navigationItem.titleView = self.button
             self.selectedGame=item
