@@ -46,6 +46,13 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TeamName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CrZ-Eh-FGq">
+                                            <rect key="frame" x="8" y="68" width="74" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qwc-QJ-MFZ">
                                             <rect key="frame" x="96" y="15" width="160" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -54,7 +61,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="team_img" translatesAutoresizingMaskIntoConstraints="NO" id="jhb-3o-gYK">
-                                            <rect key="frame" x="12" y="15" width="70" height="70"/>
+                                            <rect key="frame" x="20" y="15" width="50" height="50"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                     </subviews>
@@ -62,9 +69,11 @@
                                 <connections>
                                     <outlet property="labelPeopleNum" destination="jqK-x2-k8H" id="WFN-EX-N4K"/>
                                     <outlet property="labelStadium" destination="D6P-dW-xj5" id="98j-Dy-cUo"/>
+                                    <outlet property="labelTeamName" destination="CrZ-Eh-FGq" id="FZX-vu-YZI"/>
                                     <outlet property="labelTime" destination="r0F-AK-t4t" id="ND8-g3-8Xp"/>
                                     <outlet property="labelTitle" destination="Qwc-QJ-MFZ" id="P4c-oM-evf"/>
                                     <outlet property="teamIMG" destination="jhb-3o-gYK" id="oy5-40-esn"/>
+                                    <segue destination="jW7-UW-07h" kind="push" id="wOd-SL-INI"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -86,6 +95,91 @@
                 <searchDisplayController id="SeC-EM-hqq"/>
             </objects>
             <point key="canvasLocation" x="1968.8" y="-236.13193403298354"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="wGx-cn-LFw">
+            <objects>
+                <viewController id="jW7-UW-07h" customClass="DetailViewController" customModule="Rival" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1dj-84-f1V"/>
+                        <viewControllerLayoutGuide type="bottom" id="yEA-aB-I1E"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZG8-6Y-zBg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="team_img" translatesAutoresizingMaskIntoConstraints="NO" id="ieX-rE-X3w">
+                                <rect key="frame" x="62" y="101" width="250" height="250"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Stadium" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vWV-1T-Zj7">
+                                <rect key="frame" x="16" y="503" width="249" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Matching Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ics-yg-hDJ">
+                                <rect key="frame" x="16" y="455" width="343" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TeamName" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ybn-rL-pLq">
+                                <rect key="frame" x="87" y="176" width="200" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="shadowOffset" width="3" height="3"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tIM-C3-xmD">
+                                <rect key="frame" x="16" y="359" width="343" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Num" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mq4-aJ-awb">
+                                <rect key="frame" x="16" y="407" width="343" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eSH-8K-Wdj">
+                                <rect key="frame" x="273" y="503" width="86" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="위치보기"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Apc-Uo-6Vr">
+                                <rect key="frame" x="195" y="569" width="171.5" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="신청"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o5k-wY-RtB">
+                                <rect key="frame" x="16" y="569" width="171.5" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="팀정보"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="WeC-TV-cLa"/>
+                    <connections>
+                        <outlet property="TeamIMG" destination="ieX-rE-X3w" id="6Me-Kq-NT3"/>
+                        <outlet property="labelPeopleNum" destination="mq4-aJ-awb" id="TNj-9x-wQL"/>
+                        <outlet property="labelStadium" destination="vWV-1T-Zj7" id="29J-7C-xLR"/>
+                        <outlet property="labelTeamName" destination="Ybn-rL-pLq" id="Azk-6x-UsL"/>
+                        <outlet property="labelTime" destination="ics-yg-hDJ" id="ilW-i4-k9O"/>
+                        <outlet property="labelTitle" destination="tIM-C3-xmD" id="ryr-5q-x3P"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Zf-Az-Ibs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2928.8000000000002" y="-236.13193403298354"/>
         </scene>
         <!--Matching Controller Scene-->
         <scene sceneID="K9z-Ac-N9b">
@@ -153,8 +247,8 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="49e-Tb-3d3" kind="show" id="3Ls-Mc-fd6"/>
-                        <segue destination="tqG-9R-JY1" kind="show" id="609-H2-m5Z"/>
+                        <segue destination="49e-Tb-3d3" kind="show" identifier="tabBar" id="3Ls-Mc-fd6"/>
+                        <segue destination="tqG-9R-JY1" kind="show" identifier="login" id="609-H2-m5Z"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oQu-gc-RCR" userLabel="First Responder" sceneMemberID="firstResponder"/>

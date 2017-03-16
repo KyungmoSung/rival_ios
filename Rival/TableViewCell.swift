@@ -16,4 +16,8 @@ class TableViewCell: UITableViewCell {
     @IBOutlet weak var labelStadium: UILabel!
     @IBOutlet weak var labelPeopleNum: UILabel!
     @IBOutlet weak var labelTime: UILabel!
+    @IBOutlet weak var labelTeamName: UILabel!
+
+    
+    
 }

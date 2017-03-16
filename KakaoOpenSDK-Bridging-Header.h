@@ -23,7 +23,6 @@
 #import <KakaoOpenSDK/KakaoTalkLinkAction.h>
 #import <KakaoOpenSDK/KakaoTalkLinkObject.h>
 
-
 #import <KakaoOpenSDK/KOError.h>
 #import <KakaoOpenSDK/KOImages.h>
 

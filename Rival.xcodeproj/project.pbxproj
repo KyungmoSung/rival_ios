@@ -10,10 +10,13 @@
 		260482C979962F1DC687A713 /* Pods_RivalTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65F75C55FD3E2DF276058479 /* Pods_RivalTests.framework */; };
 		50676D43EED69E3B1D5BD101 /* Pods_Rival.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E3E0BC85745DA5DF7D26B20 /* Pods_Rival.framework */; };
 		52152CD7D437C9B9B88532CB /* Pods_RivalUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD60E0FE0CA6EAC8B3DA73EA /* Pods_RivalUITests.framework */; };
+		A722BC061E7A345C00F8A960 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A722BC051E7A345C00F8A960 /* LoginViewController.swift */; };
+		A722BC0D1E7A35CA00F8A960 /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A722BC0A1E7A35B600F8A960 /* KakaoOpenSDK.framework */; };
+		A722BC1C1E7A53C200F8A960 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A722BC1B1E7A53C200F8A960 /* DetailViewController.swift */; };
 		A7445D481E77B4FA00CEDED3 /* MatchingRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7445D471E77B4FA00CEDED3 /* MatchingRoom.swift */; };
 		A7445D4A1E77D9B100CEDED3 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7445D491E77D9B100CEDED3 /* TableViewCell.swift */; };
 		A7920DAA1E6E7EBF00B37B81 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7920DA91E6E7EBF00B37B81 /* AppDelegate.swift */; };
-		A7920DAC1E6E7EBF00B37B81 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7920DAB1E6E7EBF00B37B81 /* FirstViewController.swift */; };
+		A7920DAC1E6E7EBF00B37B81 /* MatchingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7920DAB1E6E7EBF00B37B81 /* MatchingViewController.swift */; };
 		A7920DAE1E6E7EBF00B37B81 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7920DAD1E6E7EBF00B37B81 /* SecondViewController.swift */; };
 		A7920DB11E6E7EBF00B37B81 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7920DAF1E6E7EBF00B37B81 /* Main.storyboard */; };
 		A7920DB31E6E7EBF00B37B81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7920DB21E6E7EBF00B37B81 /* Assets.xcassets */; };
@@ -47,11 +50,15 @@
 		65F75C55FD3E2DF276058479 /* Pods_RivalTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RivalTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BFD5FF3F8AC4BE6EB80DA5C /* Pods-RivalUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RivalUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RivalUITests/Pods-RivalUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		9FC6FEDDE84BEBB8CA1510E3 /* Pods-RivalTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RivalTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RivalTests/Pods-RivalTests.release.xcconfig"; sourceTree = "<group>"; };
+		A722BC051E7A345C00F8A960 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A722BC0A1E7A35B600F8A960 /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoOpenSDK.framework; sourceTree = "<group>"; };
+		A722BC151E7A3AAC00F8A960 /* KakaoOpenSDK-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KakaoOpenSDK-Bridging-Header.h"; sourceTree = "<group>"; };
+		A722BC1B1E7A53C200F8A960 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		A7445D471E77B4FA00CEDED3 /* MatchingRoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchingRoom.swift; sourceTree = "<group>"; };
 		A7445D491E77D9B100CEDED3 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		A7920DA61E6E7EBF00B37B81 /* Rival.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rival.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7920DA91E6E7EBF00B37B81 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A7920DAB1E6E7EBF00B37B81 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		A7920DAB1E6E7EBF00B37B81 /* MatchingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingViewController.swift; sourceTree = "<group>"; };
 		A7920DAD1E6E7EBF00B37B81 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		A7920DB01E6E7EBF00B37B81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A7920DB21E6E7EBF00B37B81 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -73,6 +80,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50676D43EED69E3B1D5BD101 /* Pods_Rival.framework in Frameworks */,
+				A722BC0D1E7A35CA00F8A960 /* KakaoOpenSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +119,7 @@
 		A7920D9D1E6E7EBF00B37B81 = {
 			isa = PBXGroup;
 			children = (
+				A722BC151E7A3AAC00F8A960 /* KakaoOpenSDK-Bridging-Header.h */,
 				A7920DA81E6E7EBF00B37B81 /* Rival */,
 				A7920DBF1E6E7EBF00B37B81 /* RivalTests */,
 				A7920DCA1E6E7EBF00B37B81 /* RivalUITests */,
@@ -133,15 +142,17 @@
 		A7920DA81E6E7EBF00B37B81 /* Rival */ = {
 			isa = PBXGroup;
 			children = (
+				A722BC051E7A345C00F8A960 /* LoginViewController.swift */,
 				A7920DA91E6E7EBF00B37B81 /* AppDelegate.swift */,
-				A7920DAB1E6E7EBF00B37B81 /* FirstViewController.swift */,
+				A7920DAB1E6E7EBF00B37B81 /* MatchingViewController.swift */,
 				A7445D491E77D9B100CEDED3 /* TableViewCell.swift */,
+				A722BC1B1E7A53C200F8A960 /* DetailViewController.swift */,
+				A7445D471E77B4FA00CEDED3 /* MatchingRoom.swift */,
 				A7920DAD1E6E7EBF00B37B81 /* SecondViewController.swift */,
 				A7920DAF1E6E7EBF00B37B81 /* Main.storyboard */,
 				A7920DB21E6E7EBF00B37B81 /* Assets.xcassets */,
 				A7920DB41E6E7EBF00B37B81 /* LaunchScreen.storyboard */,
 				A7920DB71E6E7EBF00B37B81 /* Info.plist */,
-				A7445D471E77B4FA00CEDED3 /* MatchingRoom.swift */,
 			);
 			path = Rival;
 			sourceTree = "<group>";
@@ -167,6 +178,7 @@
 		D665001D92D925F0E083D5E1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A722BC0A1E7A35B600F8A960 /* KakaoOpenSDK.framework */,
 				2E3E0BC85745DA5DF7D26B20 /* Pods_Rival.framework */,
 				65F75C55FD3E2DF276058479 /* Pods_RivalTests.framework */,
 				CD60E0FE0CA6EAC8B3DA73EA /* Pods_RivalUITests.framework */,
@@ -253,6 +265,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = YV47R3P48P;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 0;
+							};
+						};
 					};
 					A7920DBB1E6E7EBF00B37B81 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -458,11 +475,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A722BC061E7A345C00F8A960 /* LoginViewController.swift in Sources */,
 				A7445D4A1E77D9B100CEDED3 /* TableViewCell.swift in Sources */,
 				A7920DAE1E6E7EBF00B37B81 /* SecondViewController.swift in Sources */,
 				A7445D481E77B4FA00CEDED3 /* MatchingRoom.swift in Sources */,
 				A7920DAA1E6E7EBF00B37B81 /* AppDelegate.swift in Sources */,
-				A7920DAC1E6E7EBF00B37B81 /* FirstViewController.swift in Sources */,
+				A7920DAC1E6E7EBF00B37B81 /* MatchingViewController.swift in Sources */,
+				A722BC1C1E7A53C200F8A960 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -615,12 +634,23 @@
 			baseConfigurationReference = FBFD2B19224EDDE5A2E37F0E /* Pods-Rival.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_HEADERS_RUN_UNIFDEF = NO;
 				DEVELOPMENT_TEAM = YV47R3P48P;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = Rival/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = hs.Rival;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Sung/Desktop/Rival/rival_ios/KakaoOpenSDK-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
@@ -629,12 +659,23 @@
 			baseConfigurationReference = 1C5DB5FED5F45D2883CB46AF /* Pods-Rival.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_HEADERS_RUN_UNIFDEF = NO;
 				DEVELOPMENT_TEAM = YV47R3P48P;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = Rival/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = hs.Rival;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Sung/Desktop/Rival/rival_ios/KakaoOpenSDK-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
 		};
