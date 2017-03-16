@@ -36,7 +36,6 @@ class MatchingViewController: UITableViewController {
     let dropDownCity = DropDown()
     let dropDownGame = DropDown()
     let button =  UIButton(type: .custom)
-    let cellSpacingHeight: CGFloat = 8
     
     
     override func viewDidLoad() {
@@ -44,7 +43,7 @@ class MatchingViewController: UITableViewController {
         self.navigationItem.rightBarButtonItem?.setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.white], for: .normal)
         
         button.frame = CGRect(x: 0, y: 0, width: 100, height: 40)
-        button.setTitle("\(selectedGame) ⌄", for: .normal)
+        button.setTitle("  \(selectedGame) ⌄", for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 25)
         button.addTarget(self, action: #selector(dropDownGameFunc(_:)), for: .touchUpInside)
         
@@ -117,16 +116,16 @@ class MatchingViewController: UITableViewController {
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        self.filterRooms = matchingRooms.filter { $0.city == selectedCity && $0.game==selectedGame}
-        
-        return filterRooms.count
-       
+
+       return 1
     }
     
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        self.filterRooms = matchingRooms.filter { $0.city == selectedCity && $0.game==selectedGame}
+        
+        return filterRooms.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

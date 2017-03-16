@@ -8,9 +8,8 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class DetailViewController: UITableViewController {
     
-   
     @IBOutlet weak var TeamIMG: UIImageView!
     @IBOutlet weak var labelTitle: UILabel!
     @IBOutlet weak var labelPeopleNum: UILabel!
@@ -27,8 +26,8 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         labelTitle.text = sTitle
         labelPeopleNum.text = "인원 : \(sNum)명"
-        labelTime.text = "경기 시간 : \(sTime)"
-        labelStadium.text = "경기장 : \(sStadium)"
+        labelTime.text = "시간 : \(sTime)"
+        labelStadium.text = "장소 : \(sStadium)"
         labelTeamName.text = sTeamName
         
         super.viewDidLoad()
