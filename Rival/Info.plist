@@ -18,6 +18,30 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+    <key>CFBundleURLTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleTypeRole</key>
+            <string>Editor</string>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>kakaodf356003a230d8eef23f43edad4b9648</string>
+            </array>
+        </dict>
+    </array>
+    
+    <key>KAKAO_APP_KEY</key>
+    <string>df356003a230d8eef23f43edad4b9648</string>
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+        <string>kakaodf356003a230d8eef23f43edad4b9648</string>
+        <string>kakaokompassauth</string>
+        <string>storykompassauth</string>
+        <string>kakaolink</string>
+        <string>kakaotalk-4.5.0</string>
+        <string>kakaostory-2.9.0</string>
+        <string>storylink</string>
+    </array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>
