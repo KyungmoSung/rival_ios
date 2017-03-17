@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SideMenu
 
 class CategoryViewController: UIViewController{
     
@@ -20,8 +20,12 @@ class CategoryViewController: UIViewController{
     
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
+        SideMenuManager.menuPresentMode = .menuSlideIn
+        SideMenuManager.menuAnimationBackgroundColor = UIColor.clear
+        SideMenuManager.menuWidth = CGFloat(max(round(min((UIScreen.main.bounds.width), (UIScreen.main.bounds.height)) * 0.5), 240))
         let button =  UIButton(type: .custom)
         
         button.frame = CGRect(x: 0, y: 0, width: 100, height: 70)
@@ -30,8 +34,9 @@ class CategoryViewController: UIViewController{
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 30)
         
         self.navigationItem.titleView = button
-        // Do any additional setup after loading the view.
+        btn_soccer.setTitleColor(.white, for:.normal)
     }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -41,6 +46,7 @@ class CategoryViewController: UIViewController{
     @IBAction func clickedSoccer(_ sender: Any) {
         MatchingViewController.selectedGame = "축구"
         MatchingViewController.img_name = "soccer_bg"
+        
     }
     @IBAction func clickedBaseball(_ sender: Any) {
         MatchingViewController.selectedGame = "야구"

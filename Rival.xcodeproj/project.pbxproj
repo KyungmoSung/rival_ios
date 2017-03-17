@@ -24,6 +24,7 @@
 		A7920DC11E6E7EBF00B37B81 /* RivalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7920DC01E6E7EBF00B37B81 /* RivalTests.swift */; };
 		A7920DCC1E6E7EBF00B37B81 /* RivalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7920DCB1E6E7EBF00B37B81 /* RivalUITests.swift */; };
 		A7CE49CF1E7BCCC60002AD05 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE49CE1E7BCCC60002AD05 /* CategoryViewController.swift */; };
+		A7CE49D11E7BED4C0002AD05 /* SideMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7CE49D01E7BED4C0002AD05 /* SideMenu.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		A7920DCB1E6E7EBF00B37B81 /* RivalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RivalUITests.swift; sourceTree = "<group>"; };
 		A7920DCD1E6E7EBF00B37B81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7CE49CE1E7BCCC60002AD05 /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		A7CE49D01E7BED4C0002AD05 /* SideMenu.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SideMenu.framework; path = "../../../Library/Developer/Xcode/DerivedData/Rival-ahzynhushjqcpsgbovvsqhebcqnq/Build/Products/Debug-iphoneos/SideMenu/SideMenu.framework"; sourceTree = "<group>"; };
 		CD60E0FE0CA6EAC8B3DA73EA /* Pods_RivalUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RivalUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBFD2B19224EDDE5A2E37F0E /* Pods-Rival.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rival.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Rival/Pods-Rival.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -81,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7CE49D11E7BED4C0002AD05 /* SideMenu.framework in Frameworks */,
 				50676D43EED69E3B1D5BD101 /* Pods_Rival.framework in Frameworks */,
 				A722BC0D1E7A35CA00F8A960 /* KakaoOpenSDK.framework in Frameworks */,
 			);
@@ -181,6 +184,7 @@
 		D665001D92D925F0E083D5E1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A7CE49D01E7BED4C0002AD05 /* SideMenu.framework */,
 				A722BC0A1E7A35B600F8A960 /* KakaoOpenSDK.framework */,
 				2E3E0BC85745DA5DF7D26B20 /* Pods_Rival.framework */,
 				65F75C55FD3E2DF276058479 /* Pods_RivalTests.framework */,
