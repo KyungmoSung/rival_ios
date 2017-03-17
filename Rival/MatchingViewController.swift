@@ -30,9 +30,9 @@ class MatchingViewController: UITableViewController {
     var filterRooms = [MatchingRoom]()
     
     var selectedCity:String = "서울"
-    var selectedGame:String = "축구"
+    static var selectedGame:String = ""
     var selectedGamePrompt:String = "Soccer"
-    var img_name="soccer_img.png"
+    static var img_name="soccer_img.png"
     let dropDownCity = DropDown()
     let dropDownGame = DropDown()
     let button =  UIButton(type: .custom)
@@ -43,21 +43,30 @@ class MatchingViewController: UITableViewController {
         self.navigationItem.rightBarButtonItem?.setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.white], for: .normal)
         
         button.frame = CGRect(x: 0, y: 0, width: 100, height: 40)
-        button.setTitle("  \(selectedGame) ⌄", for: .normal)
+        button.setTitle("  \(MatchingViewController.selectedGame) ⌄", for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 25)
         button.addTarget(self, action: #selector(dropDownGameFunc(_:)), for: .touchUpInside)
         
         self.navigationItem.titleView = button
         
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: img_name),
-                                                                    for: .default)
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: MatchingViewController.img_name),for: .default)
+        
+        self.navigationItem.hidesBackButton = true
+        let newBackButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(YourViewController.back(sender:)))
+        self.navigationItem.leftBarButtonItem = newBackButton
+        
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
         
         // Do any additional setup after loading the view, typically from a nib.
     }
-    
+    func back(sender: UIBarButtonItem) {
+        // Perform your custom actions
+        // ...
+        // Go back to the previous ViewController
+        _ = navigationController?.popViewController(animated: true)
+    }
     
     func dropDownCityFunc(_ sender: UIBarButtonItem) {
         // The view to which the drop down will appear on
@@ -83,26 +92,22 @@ class MatchingViewController: UITableViewController {
         DropDown.appearance().cellHeight = 60
         dropDownGame.anchorView = self.tableView
         // The list of items to display. Can be changed dynamically
-        dropDownGame.dataSource = ["축구","농구","야구"]
+        dropDownGame.dataSource = ["축구","야구","농구","족구","당구","볼링"]
         dropDownGame.bottomOffset = CGPoint(x: 0, y:self.navigationController!.navigationBar.frame.size.height+UIApplication.shared.statusBarFrame.height)
         dropDownGame.shadowOffset=CGSize(width: 0.0, height: 10.0)
         dropDownGame.selectionAction = { [unowned self] (index: Int, item: String) in
             if item == "축구" {
-                self.img_name = "soccer_img.png"
-                self.selectedGamePrompt = "Soccer"
-                
+                MatchingViewController.img_name = "soccer_bg"
             }else if item == "농구"{
-                self.img_name = "basketball_img.png"
-                self.selectedGamePrompt = "BasketBall"
+                MatchingViewController.img_name = "basketball_bg"
             }else{
-                self.img_name = "baseball_img.png"
-                self.selectedGamePrompt = "BaseBall"
+                MatchingViewController.img_name = "baseball_bg"
             }
-            self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: self.img_name),
+            self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: MatchingViewController.img_name),
                                                                         for: .default)
             self.button.setTitle("  \(item) ⌄", for: .normal)
             self.navigationItem.titleView = self.button
-            self.selectedGame=item
+            MatchingViewController.selectedGame=item
             self.tableView.reloadData()
             print("Selected item: \(item) at index: \(index)")
         }
@@ -123,7 +128,7 @@ class MatchingViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        self.filterRooms = matchingRooms.filter { $0.city == selectedCity && $0.game==selectedGame}
+        self.filterRooms = matchingRooms.filter { $0.city == selectedCity && $0.game==MatchingViewController.selectedGame}
         
         return filterRooms.count
     }

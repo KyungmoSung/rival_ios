@@ -23,6 +23,7 @@
 		A7920DB61E6E7EBF00B37B81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7920DB41E6E7EBF00B37B81 /* LaunchScreen.storyboard */; };
 		A7920DC11E6E7EBF00B37B81 /* RivalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7920DC01E6E7EBF00B37B81 /* RivalTests.swift */; };
 		A7920DCC1E6E7EBF00B37B81 /* RivalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7920DCB1E6E7EBF00B37B81 /* RivalUITests.swift */; };
+		A7CE49CF1E7BCCC60002AD05 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE49CE1E7BCCC60002AD05 /* CategoryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		A7920DC71E6E7EBF00B37B81 /* RivalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RivalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7920DCB1E6E7EBF00B37B81 /* RivalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RivalUITests.swift; sourceTree = "<group>"; };
 		A7920DCD1E6E7EBF00B37B81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A7CE49CE1E7BCCC60002AD05 /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		CD60E0FE0CA6EAC8B3DA73EA /* Pods_RivalUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RivalUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBFD2B19224EDDE5A2E37F0E /* Pods-Rival.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rival.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Rival/Pods-Rival.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -142,6 +144,7 @@
 		A7920DA81E6E7EBF00B37B81 /* Rival */ = {
 			isa = PBXGroup;
 			children = (
+				A7CE49CE1E7BCCC60002AD05 /* CategoryViewController.swift */,
 				A722BC051E7A345C00F8A960 /* LoginViewController.swift */,
 				A7920DA91E6E7EBF00B37B81 /* AppDelegate.swift */,
 				A7920DAB1E6E7EBF00B37B81 /* MatchingViewController.swift */,
@@ -479,6 +482,7 @@
 				A7445D4A1E77D9B100CEDED3 /* TableViewCell.swift in Sources */,
 				A7920DAE1E6E7EBF00B37B81 /* SecondViewController.swift in Sources */,
 				A7445D481E77B4FA00CEDED3 /* MatchingRoom.swift in Sources */,
+				A7CE49CF1E7BCCC60002AD05 /* CategoryViewController.swift in Sources */,
 				A7920DAA1E6E7EBF00B37B81 /* AppDelegate.swift in Sources */,
 				A7920DAC1E6E7EBF00B37B81 /* MatchingViewController.swift in Sources */,
 				A722BC1C1E7A53C200F8A960 /* DetailViewController.swift in Sources */,

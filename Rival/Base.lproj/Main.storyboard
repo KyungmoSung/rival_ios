@@ -10,6 +10,116 @@
     </dependencies>
     <scenes>
         <!--Matching-->
+        <scene sceneID="e4H-Ww-GEj">
+            <objects>
+                <viewController id="L33-1U-Vrc" customClass="CategoryViewController" customModule="Rival" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hpZ-78-SQQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="TeW-N2-DNw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nUy-Ke-8MQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="fs3-gV-QoE">
+                                <rect key="frame" x="0.0" y="94" width="375" height="524"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Yhp-5e-W7L">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="175"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uEM-Ut-7kJ">
+                                                <rect key="frame" x="0.0" y="0.0" width="188" height="175"/>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                                                <state key="normal" title="축구" backgroundImage="soccer_bg"/>
+                                                <connections>
+                                                    <action selector="clickedSoccer:" destination="L33-1U-Vrc" eventType="touchUpInside" id="i4j-G1-zKE"/>
+                                                    <segue destination="FpO-oX-0Nf" kind="push" id="g22-Oj-sQu"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WJc-xw-BZi">
+                                                <rect key="frame" x="188" y="0.0" width="187" height="175"/>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                                                <state key="normal" title="야구" backgroundImage="baseball_bg"/>
+                                                <connections>
+                                                    <action selector="clickedBaseball:" destination="L33-1U-Vrc" eventType="touchUpInside" id="4NK-kP-woF"/>
+                                                    <segue destination="FpO-oX-0Nf" kind="push" id="QWe-rX-jwN"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="h0x-v3-hBb">
+                                        <rect key="frame" x="0.0" y="175" width="375" height="174"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oqY-a5-Jga">
+                                                <rect key="frame" x="0.0" y="0.0" width="188" height="174"/>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                                                <state key="normal" title="농구" backgroundImage="basketball_bg"/>
+                                                <connections>
+                                                    <action selector="clickedBasketball:" destination="L33-1U-Vrc" eventType="touchUpInside" id="3lV-e9-JJD"/>
+                                                    <segue destination="FpO-oX-0Nf" kind="push" id="m3C-Jm-NgP"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OtI-zL-hnf">
+                                                <rect key="frame" x="188" y="0.0" width="187" height="174"/>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                                                <state key="normal" title="족구" backgroundImage="volleyball_bg"/>
+                                                <connections>
+                                                    <action selector="clickedVolleyball:" destination="L33-1U-Vrc" eventType="touchUpInside" id="jIH-3y-Vcq"/>
+                                                    <segue destination="FpO-oX-0Nf" kind="push" id="rwW-bV-Z2S"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="1iT-Xo-FVz">
+                                        <rect key="frame" x="0.0" y="349" width="375" height="175"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2fr-Zo-q16">
+                                                <rect key="frame" x="0.0" y="0.0" width="188" height="175"/>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                                                <state key="normal" title="당구" backgroundImage="billiards_bg"/>
+                                                <connections>
+                                                    <action selector="clickedBilliards:" destination="L33-1U-Vrc" eventType="touchUpInside" id="Qqj-mZ-FMr"/>
+                                                    <segue destination="FpO-oX-0Nf" kind="push" id="ntP-hZ-7nE"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U3Q-up-Ln8">
+                                                <rect key="frame" x="188" y="0.0" width="187" height="175"/>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                                                <state key="normal" title="볼링" backgroundImage="bowling_bg"/>
+                                                <connections>
+                                                    <action selector="clickedBowling:" destination="L33-1U-Vrc" eventType="touchUpInside" id="kOh-ML-7Zq"/>
+                                                    <segue destination="FpO-oX-0Nf" kind="push" id="ypu-gn-TI8"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="TeW-N2-DNw" firstAttribute="top" secondItem="fs3-gV-QoE" secondAttribute="bottom" id="0fY-lz-1ca"/>
+                            <constraint firstItem="fs3-gV-QoE" firstAttribute="leading" secondItem="nUy-Ke-8MQ" secondAttribute="leading" id="SJ5-NR-59v"/>
+                            <constraint firstItem="fs3-gV-QoE" firstAttribute="top" secondItem="hpZ-78-SQQ" secondAttribute="bottom" id="cNY-Fb-Mbf"/>
+                            <constraint firstAttribute="trailing" secondItem="fs3-gV-QoE" secondAttribute="trailing" id="oOP-3Q-Xgp"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Matching" image="Maching" id="CmB-Oe-5zm"/>
+                    <navigationItem key="navigationItem" prompt=" " id="j8v-Vp-Lps"/>
+                    <connections>
+                        <outlet property="btn_baseball" destination="WJc-xw-BZi" id="hc3-zq-aeh"/>
+                        <outlet property="btn_basketball" destination="oqY-a5-Jga" id="eg2-iF-A2P"/>
+                        <outlet property="btn_billiards" destination="2fr-Zo-q16" id="vVz-0W-Gf3"/>
+                        <outlet property="btn_bowling" destination="U3Q-up-Ln8" id="x3t-E0-iW1"/>
+                        <outlet property="btn_soccer" destination="uEM-Ut-7kJ" id="an6-kA-Zre"/>
+                        <outlet property="btn_volleyball" destination="OtI-zL-hnf" id="nBl-MT-dmb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yt1-xj-9KX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1024.8" y="-312.59370314842579"/>
+        </scene>
+        <!--Matching-->
         <scene sceneID="CEm-i1-of9">
             <objects>
                 <tableViewController title="Matching" id="FpO-oX-0Nf" customClass="MatchingViewController" customModule="Rival" customModuleProvider="target" sceneMemberID="viewController">
@@ -99,7 +209,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C6l-Zd-PBn" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <searchDisplayController id="SeC-EM-hqq"/>
             </objects>
-            <point key="canvasLocation" x="1968.8" y="-236.13193403298354"/>
+            <point key="canvasLocation" x="1924" y="-313"/>
         </scene>
         <!--상세정보-->
         <scene sceneID="ccn-cY-HDs">
@@ -109,7 +219,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                         <imageView key="tableHeaderView" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="team_img" id="hKo-0A-tmI">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="249"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -118,7 +228,7 @@
                             <tableViewSection headerTitle="팀이름" id="sfp-Tt-Rt4">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Epg-Ft-uGa">
-                                        <rect key="frame" x="0.0" y="304.5" width="375" height="50"/>
+                                        <rect key="frame" x="0.0" y="305" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Epg-Ft-uGa" id="LYp-fc-prf">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="49"/>
@@ -146,7 +256,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="NPA-nB-VX6">
-                                        <rect key="frame" x="0.0" y="354.5" width="375" height="50"/>
+                                        <rect key="frame" x="0.0" y="355" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NPA-nB-VX6" id="5XW-dR-dtb">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
@@ -167,7 +277,7 @@
                             <tableViewSection headerTitle="매치내용" id="dX1-zY-XF6">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="t3I-UB-8Kl">
-                                        <rect key="frame" x="0.0" y="460.5" width="375" height="50"/>
+                                        <rect key="frame" x="0.0" y="462" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="t3I-UB-8Kl" id="cHp-x2-QxY">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
@@ -184,7 +294,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="120" id="nmJ-y8-gci">
-                                        <rect key="frame" x="0.0" y="510.5" width="375" height="120"/>
+                                        <rect key="frame" x="0.0" y="512" width="375" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nmJ-y8-gci" id="FZb-1Y-ECx">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="119"/>
@@ -205,7 +315,7 @@
                             <tableViewSection headerTitle="경기일정" id="bUR-8X-sjU">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="RlR-82-xuf">
-                                        <rect key="frame" x="0.0" y="686.5" width="375" height="50"/>
+                                        <rect key="frame" x="0.0" y="689" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RlR-82-xuf" id="FEI-Us-3wS">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="49"/>
@@ -228,7 +338,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="XN0-MW-pbz">
-                                        <rect key="frame" x="0.0" y="736.5" width="375" height="50"/>
+                                        <rect key="frame" x="0.0" y="739" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XN0-MW-pbz" id="P9h-Lq-AoZ">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
@@ -249,7 +359,7 @@
                             <tableViewSection id="LsS-UN-mtT">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KJG-Qw-VIX">
-                                        <rect key="frame" x="0.0" y="822.5" width="375" height="50"/>
+                                        <rect key="frame" x="0.0" y="825" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KJG-Qw-VIX" id="4iU-U3-DGV">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
@@ -283,7 +393,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ndy-ad-qhg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2840.8000000000002" y="-215.44227886056973"/>
+            <point key="canvasLocation" x="2750" y="-317"/>
         </scene>
         <!--Matching Controller Scene-->
         <scene sceneID="K9z-Ac-N9b">
@@ -295,12 +405,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="FpO-oX-0Nf" kind="relationship" relationship="rootViewController" id="Rfp-62-cum"/>
+                        <segue destination="L33-1U-Vrc" kind="relationship" relationship="rootViewController" id="XmB-u0-XT8"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ACW-0b-Z4r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1214" y="-236"/>
+            <point key="canvasLocation" x="135" y="-317"/>
         </scene>
         <!--Team-->
         <scene sceneID="wg7-f3-ORb">
@@ -340,7 +450,46 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1214" y="508"/>
+            <point key="canvasLocation" x="135" y="429"/>
+        </scene>
+        <!--Maching-->
+        <scene sceneID="uaf-is-XUl">
+            <objects>
+                <collectionViewController id="0Sj-2c-0j2" customClass="GameCategoryViewCollectionViewController" customModule="Rival" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="nZF-wg-pkG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="AQU-f1-mJy">
+                            <size key="itemSize" width="176" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="kjn-KQ-dwj">
+                                <rect key="frame" x="0.0" y="0.0" width="187" height="171"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="187" height="171"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="soccer_bg" translatesAutoresizingMaskIntoConstraints="NO" id="Vx8-gt-9LN">
+                                            <rect key="frame" x="0.0" y="0.0" width="187" height="179"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                    </subviews>
+                                </view>
+                                <size key="customSize" width="187" height="171"/>
+                            </collectionViewCell>
+                        </cells>
+                    </collectionView>
+                    <tabBarItem key="tabBarItem" title="Maching" image="Maching" id="GO9-Y0-dOF"/>
+                    <navigationItem key="navigationItem" id="nVx-y5-5lX"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m0N-5R-Ig2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1585" y="523"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="imG-07-Xfy">
@@ -395,7 +544,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r0h-oa-56k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-796" y="834"/>
+            <point key="canvasLocation" x="-1932" y="756"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -414,13 +563,22 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="0.0" y="0.0"/>
+            <point key="canvasLocation" x="-959" y="0.0"/>
         </scene>
     </scenes>
     <resources>
         <image name="Maching" width="30" height="30"/>
         <image name="Team" width="30" height="30"/>
+        <image name="baseball_bg" width="305" height="250"/>
+        <image name="basketball_bg" width="303" height="249"/>
+        <image name="billiards_bg" width="305" height="250"/>
+        <image name="bowling_bg" width="306" height="251"/>
+        <image name="soccer_bg" width="304" height="253"/>
         <image name="team_emblem" width="500" height="507"/>
         <image name="team_img" width="476" height="317"/>
+        <image name="volleyball_bg" width="305" height="249"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="g22-Oj-sQu"/>
+    </inferredMetricsTieBreakers>
 </document>
