@@ -403,6 +403,11 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="l8P-IO-sk4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="L33-1U-Vrc" kind="relationship" relationship="rootViewController" id="XmB-u0-XT8"/>
@@ -495,9 +500,12 @@
         <scene sceneID="imG-07-Xfy">
             <objects>
                 <navigationController storyboardIdentifier="navigator" id="NUS-gk-2mz" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dPh-Os-XSn">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="dPh-Os-XSn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="49e-Tb-3d3" kind="show" identifier="tabBar" id="3Ls-Mc-fd6"/>
@@ -554,7 +562,7 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" red="0.16302156448364258" green="0.19215014576911926" blue="0.28684741258621216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="dAc-JE-RRY" kind="relationship" relationship="viewControllers" id="vne-KH-OW4"/>

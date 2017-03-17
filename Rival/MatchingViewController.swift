@@ -51,8 +51,7 @@ class MatchingViewController: UITableViewController {
         
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: MatchingViewController.img_name),for: .default)
         
-        self.navigationItem.hidesBackButton = true
-        let newBackButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(YourViewController.back(sender:)))
+        let newBackButton = UIBarButtonItem(title: "〈 Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(back(sender:)))
         self.navigationItem.leftBarButtonItem = newBackButton
         
         super.viewDidLoad()
@@ -62,9 +61,7 @@ class MatchingViewController: UITableViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
     func back(sender: UIBarButtonItem) {
-        // Perform your custom actions
-        // ...
-        // Go back to the previous ViewController
+        self.navigationController?.navigationBar.setBackgroundImage(nil,for: .default)
         _ = navigationController?.popViewController(animated: true)
     }
     
@@ -100,8 +97,14 @@ class MatchingViewController: UITableViewController {
                 MatchingViewController.img_name = "soccer_bg"
             }else if item == "농구"{
                 MatchingViewController.img_name = "basketball_bg"
-            }else{
+            }else if item == "야구"{
                 MatchingViewController.img_name = "baseball_bg"
+            }else if item == "족구"{
+                MatchingViewController.img_name = "volleyball_bg"
+            }else if item == "당구"{
+                MatchingViewController.img_name = "billiards_bg"
+            }else{
+                MatchingViewController.img_name = "bowling_bg"
             }
             self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: MatchingViewController.img_name),
                                                                         for: .default)

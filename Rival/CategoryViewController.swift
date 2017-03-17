@@ -24,13 +24,12 @@ class CategoryViewController: UIViewController{
         
         let button =  UIButton(type: .custom)
         
-        button.frame = CGRect(x: 0, y: 0, width: 100, height: 40)
+        button.frame = CGRect(x: 0, y: 0, width: 100, height: 70)
         button.setTitle("RIVAL", for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 25)
+        button.setTitleColor(UIColor(red: 43.0/255.0, green: 47.0/255.0, blue: 74.0/255.0, alpha: 1.0), for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 30)
         
         self.navigationItem.titleView = button
-
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named:"nav_bg"),for: .default)
         // Do any additional setup after loading the view.
     }
     
