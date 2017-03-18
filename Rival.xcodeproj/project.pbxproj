@@ -15,6 +15,8 @@
 		A722BC1C1E7A53C200F8A960 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A722BC1B1E7A53C200F8A960 /* DetailViewController.swift */; };
 		A7445D481E77B4FA00CEDED3 /* MatchingRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7445D471E77B4FA00CEDED3 /* MatchingRoom.swift */; };
 		A7445D4A1E77D9B100CEDED3 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7445D491E77D9B100CEDED3 /* TableViewCell.swift */; };
+		A773F4F11E7CF1F6007BC39E /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A773F4F01E7CF1F6007BC39E /* Alamofire.framework */; };
+		A773F4F31E7D025C007BC39E /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = A773F4F21E7D025C007BC39E /* Team.swift */; };
 		A7920DAA1E6E7EBF00B37B81 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7920DA91E6E7EBF00B37B81 /* AppDelegate.swift */; };
 		A7920DAC1E6E7EBF00B37B81 /* MatchingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7920DAB1E6E7EBF00B37B81 /* MatchingViewController.swift */; };
 		A7920DAE1E6E7EBF00B37B81 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7920DAD1E6E7EBF00B37B81 /* SecondViewController.swift */; };
@@ -58,6 +60,8 @@
 		A722BC1B1E7A53C200F8A960 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		A7445D471E77B4FA00CEDED3 /* MatchingRoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchingRoom.swift; sourceTree = "<group>"; };
 		A7445D491E77D9B100CEDED3 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		A773F4F01E7CF1F6007BC39E /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
+		A773F4F21E7D025C007BC39E /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		A7920DA61E6E7EBF00B37B81 /* Rival.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rival.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7920DA91E6E7EBF00B37B81 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7920DAB1E6E7EBF00B37B81 /* MatchingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A773F4F11E7CF1F6007BC39E /* Alamofire.framework in Frameworks */,
 				A7CE49D11E7BED4C0002AD05 /* SideMenu.framework in Frameworks */,
 				50676D43EED69E3B1D5BD101 /* Pods_Rival.framework in Frameworks */,
 				A722BC0D1E7A35CA00F8A960 /* KakaoOpenSDK.framework in Frameworks */,
@@ -121,6 +126,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A773F4F41E7D0550007BC39E /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				A7445D471E77B4FA00CEDED3 /* MatchingRoom.swift */,
+				A773F4F21E7D025C007BC39E /* Team.swift */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
 		A7920D9D1E6E7EBF00B37B81 = {
 			isa = PBXGroup;
 			children = (
@@ -147,13 +161,13 @@
 		A7920DA81E6E7EBF00B37B81 /* Rival */ = {
 			isa = PBXGroup;
 			children = (
+				A773F4F41E7D0550007BC39E /* Data */,
 				A7CE49CE1E7BCCC60002AD05 /* CategoryViewController.swift */,
 				A722BC051E7A345C00F8A960 /* LoginViewController.swift */,
 				A7920DA91E6E7EBF00B37B81 /* AppDelegate.swift */,
 				A7920DAB1E6E7EBF00B37B81 /* MatchingViewController.swift */,
 				A7445D491E77D9B100CEDED3 /* TableViewCell.swift */,
 				A722BC1B1E7A53C200F8A960 /* DetailViewController.swift */,
-				A7445D471E77B4FA00CEDED3 /* MatchingRoom.swift */,
 				A7920DAD1E6E7EBF00B37B81 /* SecondViewController.swift */,
 				A7920DAF1E6E7EBF00B37B81 /* Main.storyboard */,
 				A7920DB21E6E7EBF00B37B81 /* Assets.xcassets */,
@@ -184,6 +198,7 @@
 		D665001D92D925F0E083D5E1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A773F4F01E7CF1F6007BC39E /* Alamofire.framework */,
 				A7CE49D01E7BED4C0002AD05 /* SideMenu.framework */,
 				A722BC0A1E7A35B600F8A960 /* KakaoOpenSDK.framework */,
 				2E3E0BC85745DA5DF7D26B20 /* Pods_Rival.framework */,
@@ -482,6 +497,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A773F4F31E7D025C007BC39E /* Team.swift in Sources */,
 				A722BC061E7A345C00F8A960 /* LoginViewController.swift in Sources */,
 				A7445D4A1E77D9B100CEDED3 /* TableViewCell.swift in Sources */,
 				A7920DAE1E6E7EBF00B37B81 /* SecondViewController.swift in Sources */,
@@ -649,6 +665,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Alamofire",
 				);
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = Rival/Info.plist;
@@ -674,6 +691,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Alamofire",
 				);
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = Rival/Info.plist;

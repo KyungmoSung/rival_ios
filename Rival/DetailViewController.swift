@@ -10,25 +10,28 @@ import UIKit
 
 class DetailViewController: UITableViewController {
     
-    @IBOutlet weak var TeamIMG: UIImageView!
+    @IBOutlet weak var teamIMG: UIImageView!
     @IBOutlet weak var labelTitle: UILabel!
     @IBOutlet weak var labelPeopleNum: UILabel!
     @IBOutlet weak var labelTime: UILabel!
     @IBOutlet weak var labelStadium: UILabel!
     @IBOutlet weak var labelTeamName: UILabel!
-    var sTitle: String = ""
-    var sNum: Int = 0
-    var sTime: String = ""
-    var sStadium: String = ""
-    var sTeamName: String = ""
-    var sTeamIMG: String = ""
+    @IBOutlet weak var teamEmblem: UIImageView!
+    var sTitle: String? = nil
+    var sNum: Int? = nil
+    var sTime: String? = nil
+    var sStadium: String? = nil
+    var sTeam: Team? = nil
+    var sTeamIMG: String? = nil
     
     override func viewDidLoad() {
-        labelTitle.text = sTitle
-        labelPeopleNum.text = "인원 : \(sNum)명"
-        labelTime.text = "시간 : \(sTime)"
-        labelStadium.text = "장소 : \(sStadium)"
-        labelTeamName.text = sTeamName
+        labelTitle.text = sTitle!
+        labelPeopleNum.text = "인원 : \(sNum!)명"
+        labelTime.text = "시간 : \(sTime!)"
+        labelStadium.text = "장소 : \(sStadium!)"
+        labelTeamName.text = sTeam?.teamName
+        teamIMG.image=UIImage(named: (sTeam?.image)!)
+        teamEmblem.image=UIImage(named: (sTeam?.emblem)!)
         
         super.viewDidLoad()
     }

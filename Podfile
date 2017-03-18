@@ -6,6 +6,7 @@ target 'Rival' do
   use_frameworks!
   pod ‘DropDown’
   pod 'SideMenu'
+  pod 'Alamofire', '~> 4.4'
   # Pods for Rival
 
   target 'RivalTests' do
