@@ -15,6 +15,7 @@
 		A722BC1C1E7A53C200F8A960 /* MatchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A722BC1B1E7A53C200F8A960 /* MatchDetailViewController.swift */; };
 		A7445D481E77B4FA00CEDED3 /* MatchingRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7445D471E77B4FA00CEDED3 /* MatchingRoom.swift */; };
 		A77295DE1E7D308600138F44 /* TeamTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77295DD1E7D308600138F44 /* TeamTableViewController.swift */; };
+		A77295E01E7D397700138F44 /* TeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77295DF1E7D397700138F44 /* TeamTableViewCell.swift */; };
 		A773F4F11E7CF1F6007BC39E /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A773F4F01E7CF1F6007BC39E /* Alamofire.framework */; };
 		A773F4F31E7D025C007BC39E /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = A773F4F21E7D025C007BC39E /* Team.swift */; };
 		A773F4F71E7D1B14007BC39E /* TeamDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A773F4F61E7D1B14007BC39E /* TeamDetailViewController.swift */; };
@@ -61,6 +62,7 @@
 		A722BC1B1E7A53C200F8A960 /* MatchDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchDetailViewController.swift; sourceTree = "<group>"; };
 		A7445D471E77B4FA00CEDED3 /* MatchingRoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchingRoom.swift; sourceTree = "<group>"; };
 		A77295DD1E7D308600138F44 /* TeamTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamTableViewController.swift; sourceTree = "<group>"; };
+		A77295DF1E7D397700138F44 /* TeamTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamTableViewCell.swift; sourceTree = "<group>"; };
 		A773F4F01E7CF1F6007BC39E /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
 		A773F4F21E7D025C007BC39E /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		A773F4F61E7D1B14007BC39E /* TeamDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamDetailViewController.swift; sourceTree = "<group>"; };
@@ -168,14 +170,15 @@
 				A722BC051E7A345C00F8A960 /* LoginViewController.swift */,
 				A7CE49CE1E7BCCC60002AD05 /* CategoryViewController.swift */,
 				A7920DAB1E6E7EBF00B37B81 /* MatchingViewController.swift */,
-				A722BC1B1E7A53C200F8A960 /* MatchDetailViewController.swift */,
 				A773F4F81E7D1EBD007BC39E /* MatchTableViewCell.swift */,
+				A722BC1B1E7A53C200F8A960 /* MatchDetailViewController.swift */,
+				A77295DD1E7D308600138F44 /* TeamTableViewController.swift */,
+				A77295DF1E7D397700138F44 /* TeamTableViewCell.swift */,
 				A773F4F61E7D1B14007BC39E /* TeamDetailViewController.swift */,
 				A7920DAF1E6E7EBF00B37B81 /* Main.storyboard */,
 				A7920DB21E6E7EBF00B37B81 /* Assets.xcassets */,
 				A7920DB41E6E7EBF00B37B81 /* LaunchScreen.storyboard */,
 				A7920DB71E6E7EBF00B37B81 /* Info.plist */,
-				A77295DD1E7D308600138F44 /* TeamTableViewController.swift */,
 			);
 			path = Rival;
 			sourceTree = "<group>";
@@ -510,6 +513,7 @@
 				A773F4F91E7D1EBD007BC39E /* MatchTableViewCell.swift in Sources */,
 				A7920DAC1E6E7EBF00B37B81 /* MatchingViewController.swift in Sources */,
 				A722BC1C1E7A53C200F8A960 /* MatchDetailViewController.swift in Sources */,
+				A77295E01E7D397700138F44 /* TeamTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

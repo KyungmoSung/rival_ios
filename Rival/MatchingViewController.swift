@@ -11,7 +11,7 @@ import DropDown
 import Alamofire
 
 class MatchingViewController: UITableViewController {
-    var teams = [Team](arrayLiteral:
+    static var teams = [Team](arrayLiteral:
         Team("축구","서울","FC병점","안녕병점~","성경모","byungjum_emblem","team_img"),
                        Team("축구","서울","FC당진","안녕당진~","박민우","dangjin_emblem","team_img"),
                        Team("축구","서울","FC철산","안녕철산~","김희중","chulsan_emblem","team_img")
@@ -21,7 +21,6 @@ class MatchingViewController: UITableViewController {
     
     var selectedCity:String = "서울"
     static var selectedGame:String = ""
-    var selectedGamePrompt:String = "Soccer"
     static var img_name="soccer_img.png"
     let dropDownCity = DropDown()
     let dropDownGame = DropDown()
@@ -31,13 +30,13 @@ class MatchingViewController: UITableViewController {
     override func viewDidLoad() {
         
         matchingRooms+=[
-            MatchingRoom("축구","서울",teams[0],"축구할사람2","asdf","올림픽올림픽경기장","2017.3.13 17:00",10),
-            MatchingRoom("축구","서울",teams[1],"축구할사람3","asdf","올림픽경기장","2017.3.13 17:00",9),
-            MatchingRoom("축구","인천",teams[2],"축구할사람1","asdf","올림픽경기장","2017.3.13 17:00",10),
-            MatchingRoom("축구","인천",teams[0],"축구할사람2","asdf","올림픽경기장","2017.3.13 17:00",9),
-            MatchingRoom("축구","경기",teams[1],"축구할사람1","asdf","올림픽경기장","2017.3.13 17:00",8),
-            MatchingRoom("농구","서울",teams[2],"농구할사람서울","asdf","올림픽경기장","2017.3.13 17:00",3),
-            MatchingRoom("야구","서울",teams[0],"야구할사람서울","asdf","올림픽경기장","2017.3.13 17:00",6)]
+            MatchingRoom("축구","서울",MatchingViewController.teams[0],"축구할사람2","asdf","올림픽올림픽경기장","2017.3.13 17:00",10),
+            MatchingRoom("축구","서울",MatchingViewController.teams[1],"축구할사람3","asdf","올림픽경기장","2017.3.13 17:00",9),
+            MatchingRoom("축구","인천",MatchingViewController.teams[2],"축구할사람1","asdf","올림픽경기장","2017.3.13 17:00",10),
+            MatchingRoom("축구","인천",MatchingViewController.teams[0],"축구할사람2","asdf","올림픽경기장","2017.3.13 17:00",9),
+            MatchingRoom("축구","경기",MatchingViewController.teams[1],"축구할사람1","asdf","올림픽경기장","2017.3.13 17:00",8),
+            MatchingRoom("농구","서울",MatchingViewController.teams[2],"농구할사람서울","asdf","올림픽경기장","2017.3.13 17:00",3),
+            MatchingRoom("야구","서울",MatchingViewController.teams[0],"야구할사람서울","asdf","올림픽경기장","2017.3.13 17:00",6)]
         
         
         
