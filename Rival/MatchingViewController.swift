@@ -160,7 +160,7 @@ class MatchingViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "gameCell", for: indexPath) as! TableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "gameCell", for: indexPath) as! MatchTableViewCell
         let title = self.filterRooms[indexPath.row].title
         let stadium = self.filterRooms[indexPath.row].stadium
         let matchTime = self.filterRooms[indexPath.row].time
@@ -191,7 +191,7 @@ class MatchingViewController: UITableViewController {
         let team = self.filterRooms[(indexPath?.row)!].team
         
         
-        let detailViewController = segue.destination as! DetailViewController
+        let detailViewController = segue.destination as! MatchDetailViewController
         detailViewController.sTitle = title
         detailViewController.sStadium = stadium
         detailViewController.sTime = matchTime
