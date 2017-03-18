@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 class LoginViewController: UIViewController, UIAlertViewDelegate {
     @IBOutlet weak var loginButton: UIButton!
     
