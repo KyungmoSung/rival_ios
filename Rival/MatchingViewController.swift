@@ -31,16 +31,7 @@ class MatchingViewController: UITableViewController {
     
     override func viewDidLoad() {
         
-        matchingRooms+=[
-            MatchingRoom("축구","서울","FC병점","축구할사람2","asdf","올림픽올림픽경기장","2017.3.13 17:00",10),
-            MatchingRoom("축구","서울","FC병점","축구할사람3","asdf","올림픽경기장","2017.3.13 17:00",9),
-            MatchingRoom("축구","인천","FC병점","축구할사람1","asdf","올림픽경기장","2017.3.13 17:00",10),
-            MatchingRoom("축구","인천","FC병점","축구할사람2","asdf","올림픽경기장","2017.3.13 17:00",9),
-            MatchingRoom("축구","경기","FC병점","축구할사람1","asdf","올림픽경기장","2017.3.13 17:00",8),
-            MatchingRoom("농구","서울","FC병점","농구할사람서울","asdf","올림픽경기장","2017.3.13 17:00",3),
-            MatchingRoom("야구","서울","FC병점","야구할사람서울","asdf","올림픽경기장","2017.3.13 17:00",6)]
-        
-        
+        self.getMatchingRoomsDB()
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "  \(MatchingViewController.selectedCity) ⌄", style: .plain, target: self, action: #selector(dropDownCityFunc(_:)))
         self.navigationItem.rightBarButtonItem?.setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.white], for: .normal)
@@ -81,27 +72,7 @@ class MatchingViewController: UITableViewController {
             self.navigationItem.rightBarButtonItem?.title=" \(item) ⌄"
             MatchingViewController.selectedCity=item
             
-            
-            
-            // All three of these calls are equivalent
-            Alamofire.request("http://172.30.1.27:8080/game", method: .get, parameters: ["city":MatchingViewController.selectedCity,"type":MatchingViewController.selectedGame]).responseJSON { (responseData) -> Void in
-                if((responseData.result.value) != nil) {
-                    let swiftyJsonVar = JSON(responseData.result.value!)
-                    
-                    if let resData = swiftyJsonVar.arrayObject {
-                        self.jsondata = resData as! [[String:AnyObject]]
-                        if self.jsondata.count != 0{
-                            self.matchingRooms.removeAll()
-                            for i in 0...(self.jsondata.count-1){
-                                let dict = self.jsondata[i]
-                                self.matchingRooms.append(MatchingRoom((dict["type"] as? String)!,(dict["city"] as? String)!,(dict["team"] as? String)!,(dict["title"] as? String)!,(dict["contents"] as? String)!,(dict["stadium"] as? String)!,(dict["time_game"] as? String)!,(dict["people_num"] as? Int)!))
-                            }
-                            self.tableView.reloadData()
-                        }
-                    }
-                    
-                }
-            }
+            self.getMatchingRoomsDB()
             
             self.tableView.reloadData()
             print("Selected item: \(item) at index: \(index)")
@@ -137,6 +108,9 @@ class MatchingViewController: UITableViewController {
             self.button.setTitle("  \(item) ⌄", for: .normal)
             self.navigationItem.titleView = self.button
             MatchingViewController.selectedGame=item
+            
+            self.getMatchingRoomsDB()
+            
             self.tableView.reloadData()
             print("Selected item: \(item) at index: \(index)")
         }
@@ -209,6 +183,25 @@ class MatchingViewController: UITableViewController {
             }
         }
         
+    }
+    func getMatchingRoomsDB(){
+        Alamofire.request("http://172.30.1.27:8080/game", method: .get, parameters: ["city":MatchingViewController.selectedCity,"type":MatchingViewController.selectedGame]).responseJSON { (responseData) -> Void in
+            if((responseData.result.value) != nil) {
+                let swiftyJsonVar = JSON(responseData.result.value!)
+                
+                if let resData = swiftyJsonVar.arrayObject {
+                    self.jsondata = resData as! [[String:AnyObject]]
+                    if self.jsondata.count != 0{
+                        self.matchingRooms.removeAll()
+                        for i in 0...(self.jsondata.count-1){
+                            let dict = self.jsondata[i]
+                            self.matchingRooms.append(MatchingRoom((dict["type"] as? String)!,(dict["city"] as? String)!,(dict["team"] as? String)!,(dict["title"] as? String)!,(dict["contents"] as? String)!,(dict["stadium"] as? String)!,(dict["time_game"] as? String)!,(dict["people_num"] as? Int)!))
+                        }
+                        self.tableView.reloadData()
+                    }
+                }
+            }
+        }
     }
 }
 
