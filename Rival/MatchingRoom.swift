@@ -16,9 +16,9 @@ class MatchingRoom {
     var stadium: String
     var time: String
     var peopleNum: Int
-    var team: Team
+    var team: String
     
-    init(_ game: String, _ city: String,_ team: Team,_ title: String,_ contents: String,_ stadium: String,_ time: String,_ peopleNum:Int) {
+    init(_ game: String, _ city: String,_ team: String,_ title: String,_ contents: String,_ stadium: String,_ time: String,_ peopleNum:Int) {
         self.game = game
         self.city = city
         self.team = team

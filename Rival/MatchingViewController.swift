@@ -9,38 +9,40 @@
 import UIKit
 import DropDown
 import Alamofire
+import SwiftyJSON
 
 class MatchingViewController: UITableViewController {
     static var teams = [Team](arrayLiteral:
         Team("축구","서울","FC병점","안녕병점~","성경모","byungjum_emblem","team_img"),
-                       Team("축구","서울","FC당진","안녕당진~","박민우","dangjin_emblem","team_img"),
-                       Team("축구","서울","FC철산","안녕철산~","김희중","chulsan_emblem","team_img")
+                              Team("축구","서울","FC당진","안녕당진~","박민우","dangjin_emblem","team_img"),
+                              Team("축구","서울","FC철산","안녕철산~","김희중","chulsan_emblem","team_img")
     )
     var matchingRooms = [MatchingRoom]()
     var filterRooms = [MatchingRoom]()
     
-    var selectedCity:String = "서울"
-    static var selectedGame:String = ""
+    static var selectedCity:String = "서울"
+    static var selectedGame:String = "축구"
     static var img_name="soccer_img.png"
     let dropDownCity = DropDown()
     let dropDownGame = DropDown()
     let button =  UIButton(type: .custom)
+    var jsondata = [[String:AnyObject]]()
     
     
     override func viewDidLoad() {
         
         matchingRooms+=[
-            MatchingRoom("축구","서울",MatchingViewController.teams[0],"축구할사람2","asdf","올림픽올림픽경기장","2017.3.13 17:00",10),
-            MatchingRoom("축구","서울",MatchingViewController.teams[1],"축구할사람3","asdf","올림픽경기장","2017.3.13 17:00",9),
-            MatchingRoom("축구","인천",MatchingViewController.teams[2],"축구할사람1","asdf","올림픽경기장","2017.3.13 17:00",10),
-            MatchingRoom("축구","인천",MatchingViewController.teams[0],"축구할사람2","asdf","올림픽경기장","2017.3.13 17:00",9),
-            MatchingRoom("축구","경기",MatchingViewController.teams[1],"축구할사람1","asdf","올림픽경기장","2017.3.13 17:00",8),
-            MatchingRoom("농구","서울",MatchingViewController.teams[2],"농구할사람서울","asdf","올림픽경기장","2017.3.13 17:00",3),
-            MatchingRoom("야구","서울",MatchingViewController.teams[0],"야구할사람서울","asdf","올림픽경기장","2017.3.13 17:00",6)]
+            MatchingRoom("축구","서울","FC병점","축구할사람2","asdf","올림픽올림픽경기장","2017.3.13 17:00",10),
+            MatchingRoom("축구","서울","FC병점","축구할사람3","asdf","올림픽경기장","2017.3.13 17:00",9),
+            MatchingRoom("축구","인천","FC병점","축구할사람1","asdf","올림픽경기장","2017.3.13 17:00",10),
+            MatchingRoom("축구","인천","FC병점","축구할사람2","asdf","올림픽경기장","2017.3.13 17:00",9),
+            MatchingRoom("축구","경기","FC병점","축구할사람1","asdf","올림픽경기장","2017.3.13 17:00",8),
+            MatchingRoom("농구","서울","FC병점","농구할사람서울","asdf","올림픽경기장","2017.3.13 17:00",3),
+            MatchingRoom("야구","서울","FC병점","야구할사람서울","asdf","올림픽경기장","2017.3.13 17:00",6)]
         
         
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "  \(selectedCity) ⌄", style: .plain, target: self, action: #selector(dropDownCityFunc(_:)))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "  \(MatchingViewController.selectedCity) ⌄", style: .plain, target: self, action: #selector(dropDownCityFunc(_:)))
         self.navigationItem.rightBarButtonItem?.setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.white], for: .normal)
         
         button.frame = CGRect(x: 0, y: 0, width: 100, height: 40)
@@ -77,27 +79,29 @@ class MatchingViewController: UITableViewController {
         dropDownCity.shadowOffset=CGSize(width: 0.0, height: 10.0)
         dropDownCity.selectionAction = { [unowned self] (index: Int, item: String) in
             self.navigationItem.rightBarButtonItem?.title=" \(item) ⌄"
-            self.selectedCity=item
+            MatchingViewController.selectedCity=item
             
             
             
             // All three of these calls are equivalent
-            Alamofire.request("http://192.168.120.4:8080/game", method: .get, parameters: ["city":"\(item)"], encoding: URLEncoding.default, headers: nil).responseJSON { (response:DataResponse<Any>) in
-                
-                switch(response.result) {
-                case .success(_):
-                    if response.result.value != nil{
-                        print(response.result.value!)
-                    }
-                    break
+            Alamofire.request("http://172.30.1.27:8080/game", method: .get, parameters: ["city":MatchingViewController.selectedCity,"type":MatchingViewController.selectedGame]).responseJSON { (responseData) -> Void in
+                if((responseData.result.value) != nil) {
+                    let swiftyJsonVar = JSON(responseData.result.value!)
                     
-                case .failure(_):
-                    print(response.result.error as Any)
-                    break
+                    if let resData = swiftyJsonVar.arrayObject {
+                        self.jsondata = resData as! [[String:AnyObject]]
+                        if self.jsondata.count != 0{
+                            self.matchingRooms.removeAll()
+                            for i in 0...(self.jsondata.count-1){
+                                let dict = self.jsondata[i]
+                                self.matchingRooms.append(MatchingRoom((dict["type"] as? String)!,(dict["city"] as? String)!,(dict["team"] as? String)!,(dict["title"] as? String)!,(dict["contents"] as? String)!,(dict["stadium"] as? String)!,(dict["time_game"] as? String)!,(dict["people_num"] as? Int)!))
+                            }
+                            self.tableView.reloadData()
+                        }
+                    }
                     
                 }
             }
-            
             
             self.tableView.reloadData()
             print("Selected item: \(item) at index: \(index)")
@@ -153,7 +157,7 @@ class MatchingViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        self.filterRooms = matchingRooms.filter { $0.city == selectedCity && $0.game==MatchingViewController.selectedGame}
+        self.filterRooms = matchingRooms.filter { $0.city == MatchingViewController.selectedCity && $0.game==MatchingViewController.selectedGame}
         
         return filterRooms.count
     }
@@ -171,8 +175,12 @@ class MatchingViewController: UITableViewController {
         cell.labelStadium.text=stadium
         cell.labelTime.text=matchTime
         cell.labelPeopleNum.text="\(peopleNum)명"
-        cell.labelTeamName.text=team.teamName
-        cell.teamIMG.image=UIImage(named: team.emblem)
+        for i in 0...MatchingViewController.teams.count-1{
+            if MatchingViewController.teams[i].teamName == team{
+                cell.labelTeamName.text=MatchingViewController.teams[i].teamName
+                cell.teamIMG.image=UIImage(named: MatchingViewController.teams[i].emblem)
+            }
+        }
         
         // Configure the cell...
         
@@ -195,7 +203,12 @@ class MatchingViewController: UITableViewController {
         detailViewController.sStadium = stadium
         detailViewController.sTime = matchTime
         detailViewController.sNum = peopleNum
-        detailViewController.sTeam = team
+        for i in 0...MatchingViewController.teams.count-1{
+            if MatchingViewController.teams[i].teamName == team{
+                detailViewController.sTeam = MatchingViewController.teams[i]
+            }
+        }
+        
     }
 }
 

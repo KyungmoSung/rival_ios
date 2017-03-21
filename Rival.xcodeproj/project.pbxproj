@@ -13,6 +13,7 @@
 		A722BC061E7A345C00F8A960 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A722BC051E7A345C00F8A960 /* LoginViewController.swift */; };
 		A722BC0D1E7A35CA00F8A960 /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A722BC0A1E7A35B600F8A960 /* KakaoOpenSDK.framework */; };
 		A722BC1C1E7A53C200F8A960 /* MatchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A722BC1B1E7A53C200F8A960 /* MatchDetailViewController.swift */; };
+		A72E802D1E81145C00421B47 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A72E802C1E81145C00421B47 /* SwiftyJSON.framework */; };
 		A7445D481E77B4FA00CEDED3 /* MatchingRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7445D471E77B4FA00CEDED3 /* MatchingRoom.swift */; };
 		A77295DE1E7D308600138F44 /* TeamTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77295DD1E7D308600138F44 /* TeamTableViewController.swift */; };
 		A77295E01E7D397700138F44 /* TeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77295DF1E7D397700138F44 /* TeamTableViewCell.swift */; };
@@ -60,6 +61,7 @@
 		A722BC0A1E7A35B600F8A960 /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoOpenSDK.framework; sourceTree = "<group>"; };
 		A722BC151E7A3AAC00F8A960 /* KakaoOpenSDK-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KakaoOpenSDK-Bridging-Header.h"; sourceTree = "<group>"; };
 		A722BC1B1E7A53C200F8A960 /* MatchDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchDetailViewController.swift; sourceTree = "<group>"; };
+		A72E802C1E81145C00421B47 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../../Library/Developer/Xcode/DerivedData/Rival-ahzynhushjqcpsgbovvsqhebcqnq/Build/Products/Debug-iphoneos/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		A7445D471E77B4FA00CEDED3 /* MatchingRoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchingRoom.swift; sourceTree = "<group>"; };
 		A77295DD1E7D308600138F44 /* TeamTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamTableViewController.swift; sourceTree = "<group>"; };
 		A77295DF1E7D397700138F44 /* TeamTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamTableViewCell.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A72E802D1E81145C00421B47 /* SwiftyJSON.framework in Frameworks */,
 				A773F4F11E7CF1F6007BC39E /* Alamofire.framework in Frameworks */,
 				A7CE49D11E7BED4C0002AD05 /* SideMenu.framework in Frameworks */,
 				50676D43EED69E3B1D5BD101 /* Pods_Rival.framework in Frameworks */,
@@ -204,6 +207,7 @@
 		D665001D92D925F0E083D5E1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A72E802C1E81145C00421B47 /* SwiftyJSON.framework */,
 				A773F4F01E7CF1F6007BC39E /* Alamofire.framework */,
 				A7CE49D01E7BED4C0002AD05 /* SideMenu.framework */,
 				A722BC0A1E7A35B600F8A960 /* KakaoOpenSDK.framework */,
