@@ -30,6 +30,10 @@
 		A7920DCC1E6E7EBF00B37B81 /* RivalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7920DCB1E6E7EBF00B37B81 /* RivalUITests.swift */; };
 		A7CE49CF1E7BCCC60002AD05 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE49CE1E7BCCC60002AD05 /* CategoryViewController.swift */; };
 		A7CE49D11E7BED4C0002AD05 /* SideMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7CE49D01E7BED4C0002AD05 /* SideMenu.framework */; };
+		CE76179B1E7E624100BFED08 /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE76179A1E7E624100BFED08 /* UserDetailViewController.swift */; };
+		CE76179E1E7E660E00BFED08 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE76179D1E7E660E00BFED08 /* User.swift */; };
+		CE7617A01E7EBC7B00BFED08 /* Communication.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE76179F1E7EBC7B00BFED08 /* Communication.swift */; };
+		CEAB80C51E7D341100140C90 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAB80C41E7D341100140C90 /* MenuTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +89,10 @@
 		A7CE49CE1E7BCCC60002AD05 /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		A7CE49D01E7BED4C0002AD05 /* SideMenu.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SideMenu.framework; path = "../../../Library/Developer/Xcode/DerivedData/Rival-ahzynhushjqcpsgbovvsqhebcqnq/Build/Products/Debug-iphoneos/SideMenu/SideMenu.framework"; sourceTree = "<group>"; };
 		CD60E0FE0CA6EAC8B3DA73EA /* Pods_RivalUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RivalUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE76179A1E7E624100BFED08 /* UserDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserDetailViewController.swift; path = ../UserDetailViewController.swift; sourceTree = "<group>"; };
+		CE76179D1E7E660E00BFED08 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		CE76179F1E7EBC7B00BFED08 /* Communication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Communication.swift; sourceTree = "<group>"; };
+		CEAB80C41E7D341100140C90 /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		FBFD2B19224EDDE5A2E37F0E /* Pods-Rival.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rival.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Rival/Pods-Rival.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -133,15 +141,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		A773F4F41E7D0550007BC39E /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				A7445D471E77B4FA00CEDED3 /* MatchingRoom.swift */,
-				A773F4F21E7D025C007BC39E /* Team.swift */,
-			);
-			name = Data;
-			sourceTree = "<group>";
-		};
 		A7920D9D1E6E7EBF00B37B81 = {
 			isa = PBXGroup;
 			children = (
@@ -168,8 +167,9 @@
 		A7920DA81E6E7EBF00B37B81 /* Rival */ = {
 			isa = PBXGroup;
 			children = (
+				CE76179C1E7E65FB00BFED08 /* model */,
+				CE76179A1E7E624100BFED08 /* UserDetailViewController.swift */,
 				A7920DA91E6E7EBF00B37B81 /* AppDelegate.swift */,
-				A773F4F41E7D0550007BC39E /* Data */,
 				A722BC051E7A345C00F8A960 /* LoginViewController.swift */,
 				A7CE49CE1E7BCCC60002AD05 /* CategoryViewController.swift */,
 				A7920DAB1E6E7EBF00B37B81 /* MatchingViewController.swift */,
@@ -182,6 +182,8 @@
 				A7920DB21E6E7EBF00B37B81 /* Assets.xcassets */,
 				A7920DB41E6E7EBF00B37B81 /* LaunchScreen.storyboard */,
 				A7920DB71E6E7EBF00B37B81 /* Info.plist */,
+				CEAB80C41E7D341100140C90 /* MenuTableViewController.swift */,
+				CE76179F1E7EBC7B00BFED08 /* Communication.swift */,
 			);
 			path = Rival;
 			sourceTree = "<group>";
@@ -202,6 +204,16 @@
 				A7920DCD1E6E7EBF00B37B81 /* Info.plist */,
 			);
 			path = RivalUITests;
+			sourceTree = "<group>";
+		};
+		CE76179C1E7E65FB00BFED08 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				A7445D471E77B4FA00CEDED3 /* MatchingRoom.swift */,
+				A773F4F21E7D025C007BC39E /* Team.swift */,
+				CE76179D1E7E660E00BFED08 /* User.swift */,
+			);
+			name = model;
 			sourceTree = "<group>";
 		};
 		D665001D92D925F0E083D5E1 /* Frameworks */ = {
@@ -295,7 +307,7 @@
 				TargetAttributes = {
 					A7920DA51E6E7EBF00B37B81 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = YV47R3P48P;
+						DevelopmentTeam = 5LSLQSP87C;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -305,13 +317,13 @@
 					};
 					A7920DBB1E6E7EBF00B37B81 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = YV47R3P48P;
+						DevelopmentTeam = 5LSLQSP87C;
 						ProvisioningStyle = Automatic;
 						TestTargetID = A7920DA51E6E7EBF00B37B81;
 					};
 					A7920DC61E6E7EBF00B37B81 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = YV47R3P48P;
+						DevelopmentTeam = 5LSLQSP87C;
 						ProvisioningStyle = Automatic;
 						TestTargetID = A7920DA51E6E7EBF00B37B81;
 					};
@@ -509,11 +521,15 @@
 			files = (
 				A773F4F71E7D1B14007BC39E /* TeamDetailViewController.swift in Sources */,
 				A773F4F31E7D025C007BC39E /* Team.swift in Sources */,
+				CE76179B1E7E624100BFED08 /* UserDetailViewController.swift in Sources */,
 				A722BC061E7A345C00F8A960 /* LoginViewController.swift in Sources */,
+				CEAB80C51E7D341100140C90 /* MenuTableViewController.swift in Sources */,
 				A7445D481E77B4FA00CEDED3 /* MatchingRoom.swift in Sources */,
+				CE76179E1E7E660E00BFED08 /* User.swift in Sources */,
 				A7CE49CF1E7BCCC60002AD05 /* CategoryViewController.swift in Sources */,
 				A7920DAA1E6E7EBF00B37B81 /* AppDelegate.swift in Sources */,
 				A77295DE1E7D308600138F44 /* TeamTableViewController.swift in Sources */,
+				CE7617A01E7EBC7B00BFED08 /* Communication.swift in Sources */,
 				A773F4F91E7D1EBD007BC39E /* MatchTableViewCell.swift in Sources */,
 				A7920DAC1E6E7EBF00B37B81 /* MatchingViewController.swift in Sources */,
 				A722BC1C1E7A53C200F8A960 /* MatchDetailViewController.swift in Sources */,
@@ -673,7 +689,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_HEADERS_RUN_UNIFDEF = NO;
-				DEVELOPMENT_TEAM = YV47R3P48P;
+				DEVELOPMENT_TEAM = 5LSLQSP87C;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -683,9 +699,9 @@
 				INFOPLIST_FILE = Rival/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-all_load";
-				PRODUCT_BUNDLE_IDENTIFIER = hs.Rival;
+				PRODUCT_BUNDLE_IDENTIFIER = hs.Rival12322;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Sung/Desktop/Rival/rival_ios/KakaoOpenSDK-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Minwoo/Documents/workspace/git/rival/rival_ios/KakaoOpenSDK-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				USER_HEADER_SEARCH_PATHS = "";
 			};
@@ -699,7 +715,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_HEADERS_RUN_UNIFDEF = NO;
-				DEVELOPMENT_TEAM = YV47R3P48P;
+				DEVELOPMENT_TEAM = 5LSLQSP87C;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -709,9 +725,9 @@
 				INFOPLIST_FILE = Rival/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-all_load";
-				PRODUCT_BUNDLE_IDENTIFIER = hs.Rival;
+				PRODUCT_BUNDLE_IDENTIFIER = hs.Rival12322;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Sung/Desktop/Rival/rival_ios/KakaoOpenSDK-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Minwoo/Documents/workspace/git/rival/rival_ios/KakaoOpenSDK-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				USER_HEADER_SEARCH_PATHS = "";
 			};
@@ -723,7 +739,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = YV47R3P48P;
+				DEVELOPMENT_TEAM = 5LSLQSP87C;
 				INFOPLIST_FILE = RivalTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hs.RivalTests;
@@ -739,7 +755,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = YV47R3P48P;
+				DEVELOPMENT_TEAM = 5LSLQSP87C;
 				INFOPLIST_FILE = RivalTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hs.RivalTests;
@@ -754,7 +770,7 @@
 			baseConfigurationReference = 7BFD5FF3F8AC4BE6EB80DA5C /* Pods-RivalUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = YV47R3P48P;
+				DEVELOPMENT_TEAM = 5LSLQSP87C;
 				INFOPLIST_FILE = RivalUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hs.RivalUITests;
@@ -769,7 +785,7 @@
 			baseConfigurationReference = 344786514E07564AB82A9611 /* Pods-RivalUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = YV47R3P48P;
+				DEVELOPMENT_TEAM = 5LSLQSP87C;
 				INFOPLIST_FILE = RivalUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hs.RivalUITests;

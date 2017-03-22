@@ -28,4 +28,5 @@ class MatchingRoom {
         self.time = time
         self.peopleNum = peopleNum
     }
+    
 }

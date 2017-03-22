@@ -18,7 +18,6 @@ class MatchingViewController: UITableViewController {
                               Team("축구","서울","FC철산","안녕철산~","김희중","chulsan_emblem","team_img")
     )
     var matchingRooms = [MatchingRoom]()
-    var filterRooms = [MatchingRoom]()
     
     static var selectedCity:String = "서울"
     static var selectedGame:String = "축구"
@@ -131,18 +130,16 @@ class MatchingViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        self.filterRooms = matchingRooms.filter { $0.city == MatchingViewController.selectedCity && $0.game==MatchingViewController.selectedGame}
-        
-        return filterRooms.count
+        return matchingRooms.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "gameCell", for: indexPath) as! MatchTableViewCell
-        let title = self.filterRooms[indexPath.row].title
-        let stadium = self.filterRooms[indexPath.row].stadium
-        let matchTime = self.filterRooms[indexPath.row].time
-        let peopleNum = self.filterRooms[indexPath.row].peopleNum
-        let team = self.filterRooms[indexPath.row].team
+        let title = self.matchingRooms[indexPath.row].title
+        let stadium = self.matchingRooms[indexPath.row].stadium
+        let matchTime = self.matchingRooms[indexPath.row].time
+        let peopleNum = self.matchingRooms[indexPath.row].peopleNum
+        let team = self.matchingRooms[indexPath.row].team
         
         tableView.backgroundColor = UIColor.groupTableViewBackground
         cell.labelTitle.text=title
@@ -165,11 +162,11 @@ class MatchingViewController: UITableViewController {
         
         let indexPath = tableView.indexPathForSelectedRow
         
-        let title = self.filterRooms[(indexPath?.row)!].title
-        let stadium = self.filterRooms[(indexPath?.row)!].stadium
-        let matchTime = self.filterRooms[(indexPath?.row)!].time
-        let peopleNum = self.filterRooms[(indexPath?.row)!].peopleNum
-        let team = self.filterRooms[(indexPath?.row)!].team
+        let title = self.matchingRooms[(indexPath?.row)!].title
+        let stadium = self.matchingRooms[(indexPath?.row)!].stadium
+        let matchTime = self.matchingRooms[(indexPath?.row)!].time
+        let peopleNum = self.matchingRooms[(indexPath?.row)!].peopleNum
+        let team = self.matchingRooms[(indexPath?.row)!].team
         
         
         let detailViewController = segue.destination as! MatchDetailViewController
@@ -185,14 +182,13 @@ class MatchingViewController: UITableViewController {
         
     }
     func getMatchingRoomsDB(){
+        self.matchingRooms.removeAll()
         Alamofire.request("http://172.30.1.27:8080/game", method: .get, parameters: ["city":MatchingViewController.selectedCity,"type":MatchingViewController.selectedGame]).responseJSON { (responseData) -> Void in
             if((responseData.result.value) != nil) {
                 let swiftyJsonVar = JSON(responseData.result.value!)
-                
                 if let resData = swiftyJsonVar.arrayObject {
                     self.jsondata = resData as! [[String:AnyObject]]
                     if self.jsondata.count != 0{
-                        self.matchingRooms.removeAll()
                         for i in 0...(self.jsondata.count-1){
                             let dict = self.jsondata[i]
                             self.matchingRooms.append(MatchingRoom((dict["type"] as? String)!,(dict["city"] as? String)!,(dict["team"] as? String)!,(dict["title"] as? String)!,(dict["contents"] as? String)!,(dict["stadium"] as? String)!,(dict["time_game"] as? String)!,(dict["people_num"] as? Int)!))

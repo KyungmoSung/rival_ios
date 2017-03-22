@@ -20,6 +20,8 @@ class TeamDetailViewController: UITableViewController {
     @IBOutlet weak var labelCaptain: UILabel!
     @IBOutlet weak var labelTeamName_emb: UILabel!
     
+    
+    
     var sTeam: Team!
     
     override func viewDidLoad() {
@@ -35,4 +37,11 @@ class TeamDetailViewController: UITableViewController {
         
         super.viewDidLoad()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        print("test")
+
+    }
+    
 }

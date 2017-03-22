@@ -9,6 +9,7 @@
 import UIKit
 import DropDown
 import Alamofire
+import SwiftyJSON
 
 class TeamTableViewController: UITableViewController {
     
@@ -18,6 +19,7 @@ class TeamTableViewController: UITableViewController {
     let dropDownCity = DropDown()
     let dropDownGame = DropDown()
     var filterTeams = [Team]()
+    var jsondata = [[String:AnyObject]]()
     
     
     override func viewDidLoad() {
@@ -161,5 +163,23 @@ class TeamTableViewController: UITableViewController {
         let detailViewController = segue.destination as! TeamDetailViewController
         detailViewController.sTeam = team
         
+    }
+    func getTeamsDB(){
+        MatchingViewController.teams.removeAll()
+        Alamofire.request("http://172.30.1.27:8080/team", method: .get, parameters: ["city":TeamTableViewController.selectedCity,"type":TeamTableViewController.selectedGame]).responseJSON { (responseData) -> Void in
+            if((responseData.result.value) != nil) {
+                let swiftyJsonVar = JSON(responseData.result.value!)
+                if let resData = swiftyJsonVar.arrayObject {
+                    self.jsondata = resData as! [[String:AnyObject]]
+                    if self.jsondata.count != 0{
+                        for i in 0...(self.jsondata.count-1){
+                            let dict = self.jsondata[i]
+                            self.matchingRooms.append(MatchingRoom((dict["type"] as? String)!,(dict["city"] as? String)!,(dict["team"] as? String)!,(dict["title"] as? String)!,(dict["contents"] as? String)!,(dict["stadium"] as? String)!,(dict["time_game"] as? String)!,(dict["people_num"] as? Int)!))
+                        }
+                        self.tableView.reloadData()
+                    }
+                }
+            }
+        }
     }
 }
