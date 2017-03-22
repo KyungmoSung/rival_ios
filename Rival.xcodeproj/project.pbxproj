@@ -12,14 +12,16 @@
 		52152CD7D437C9B9B88532CB /* Pods_RivalUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD60E0FE0CA6EAC8B3DA73EA /* Pods_RivalUITests.framework */; };
 		A722BC061E7A345C00F8A960 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A722BC051E7A345C00F8A960 /* LoginViewController.swift */; };
 		A722BC0D1E7A35CA00F8A960 /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A722BC0A1E7A35B600F8A960 /* KakaoOpenSDK.framework */; };
-		A722BC1C1E7A53C200F8A960 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A722BC1B1E7A53C200F8A960 /* DetailViewController.swift */; };
+		A722BC1C1E7A53C200F8A960 /* MatchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A722BC1B1E7A53C200F8A960 /* MatchDetailViewController.swift */; };
 		A7445D481E77B4FA00CEDED3 /* MatchingRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7445D471E77B4FA00CEDED3 /* MatchingRoom.swift */; };
-		A7445D4A1E77D9B100CEDED3 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7445D491E77D9B100CEDED3 /* TableViewCell.swift */; };
+		A77295DE1E7D308600138F44 /* TeamTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77295DD1E7D308600138F44 /* TeamTableViewController.swift */; };
+		A77295E01E7D397700138F44 /* TeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77295DF1E7D397700138F44 /* TeamTableViewCell.swift */; };
 		A773F4F11E7CF1F6007BC39E /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A773F4F01E7CF1F6007BC39E /* Alamofire.framework */; };
 		A773F4F31E7D025C007BC39E /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = A773F4F21E7D025C007BC39E /* Team.swift */; };
+		A773F4F71E7D1B14007BC39E /* TeamDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A773F4F61E7D1B14007BC39E /* TeamDetailViewController.swift */; };
+		A773F4F91E7D1EBD007BC39E /* MatchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A773F4F81E7D1EBD007BC39E /* MatchTableViewCell.swift */; };
 		A7920DAA1E6E7EBF00B37B81 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7920DA91E6E7EBF00B37B81 /* AppDelegate.swift */; };
 		A7920DAC1E6E7EBF00B37B81 /* MatchingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7920DAB1E6E7EBF00B37B81 /* MatchingViewController.swift */; };
-		A7920DAE1E6E7EBF00B37B81 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7920DAD1E6E7EBF00B37B81 /* SecondViewController.swift */; };
 		A7920DB11E6E7EBF00B37B81 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7920DAF1E6E7EBF00B37B81 /* Main.storyboard */; };
 		A7920DB31E6E7EBF00B37B81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7920DB21E6E7EBF00B37B81 /* Assets.xcassets */; };
 		A7920DB61E6E7EBF00B37B81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7920DB41E6E7EBF00B37B81 /* LaunchScreen.storyboard */; };
@@ -27,6 +29,9 @@
 		A7920DCC1E6E7EBF00B37B81 /* RivalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7920DCB1E6E7EBF00B37B81 /* RivalUITests.swift */; };
 		A7CE49CF1E7BCCC60002AD05 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE49CE1E7BCCC60002AD05 /* CategoryViewController.swift */; };
 		A7CE49D11E7BED4C0002AD05 /* SideMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7CE49D01E7BED4C0002AD05 /* SideMenu.framework */; };
+		CE76179B1E7E624100BFED08 /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE76179A1E7E624100BFED08 /* UserDetailViewController.swift */; };
+		CE76179E1E7E660E00BFED08 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE76179D1E7E660E00BFED08 /* User.swift */; };
+		CE7617A01E7EBC7B00BFED08 /* Communication.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE76179F1E7EBC7B00BFED08 /* Communication.swift */; };
 		CEAB80C51E7D341100140C90 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAB80C41E7D341100140C90 /* MenuTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -58,15 +63,17 @@
 		A722BC051E7A345C00F8A960 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A722BC0A1E7A35B600F8A960 /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoOpenSDK.framework; sourceTree = "<group>"; };
 		A722BC151E7A3AAC00F8A960 /* KakaoOpenSDK-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KakaoOpenSDK-Bridging-Header.h"; sourceTree = "<group>"; };
-		A722BC1B1E7A53C200F8A960 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		A722BC1B1E7A53C200F8A960 /* MatchDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchDetailViewController.swift; sourceTree = "<group>"; };
 		A7445D471E77B4FA00CEDED3 /* MatchingRoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchingRoom.swift; sourceTree = "<group>"; };
-		A7445D491E77D9B100CEDED3 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		A77295DD1E7D308600138F44 /* TeamTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamTableViewController.swift; sourceTree = "<group>"; };
+		A77295DF1E7D397700138F44 /* TeamTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamTableViewCell.swift; sourceTree = "<group>"; };
 		A773F4F01E7CF1F6007BC39E /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
 		A773F4F21E7D025C007BC39E /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		A773F4F61E7D1B14007BC39E /* TeamDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamDetailViewController.swift; sourceTree = "<group>"; };
+		A773F4F81E7D1EBD007BC39E /* MatchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchTableViewCell.swift; sourceTree = "<group>"; };
 		A7920DA61E6E7EBF00B37B81 /* Rival.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rival.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7920DA91E6E7EBF00B37B81 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7920DAB1E6E7EBF00B37B81 /* MatchingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingViewController.swift; sourceTree = "<group>"; };
-		A7920DAD1E6E7EBF00B37B81 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		A7920DB01E6E7EBF00B37B81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A7920DB21E6E7EBF00B37B81 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A7920DB51E6E7EBF00B37B81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -80,6 +87,9 @@
 		A7CE49CE1E7BCCC60002AD05 /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		A7CE49D01E7BED4C0002AD05 /* SideMenu.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SideMenu.framework; path = "../../../Library/Developer/Xcode/DerivedData/Rival-ahzynhushjqcpsgbovvsqhebcqnq/Build/Products/Debug-iphoneos/SideMenu/SideMenu.framework"; sourceTree = "<group>"; };
 		CD60E0FE0CA6EAC8B3DA73EA /* Pods_RivalUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RivalUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE76179A1E7E624100BFED08 /* UserDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserDetailViewController.swift; path = ../UserDetailViewController.swift; sourceTree = "<group>"; };
+		CE76179D1E7E660E00BFED08 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		CE76179F1E7EBC7B00BFED08 /* Communication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Communication.swift; sourceTree = "<group>"; };
 		CEAB80C41E7D341100140C90 /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		FBFD2B19224EDDE5A2E37F0E /* Pods-Rival.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rival.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Rival/Pods-Rival.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -128,15 +138,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		A773F4F41E7D0550007BC39E /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				A7445D471E77B4FA00CEDED3 /* MatchingRoom.swift */,
-				A773F4F21E7D025C007BC39E /* Team.swift */,
-			);
-			name = Data;
-			sourceTree = "<group>";
-		};
 		A7920D9D1E6E7EBF00B37B81 = {
 			isa = PBXGroup;
 			children = (
@@ -163,19 +164,23 @@
 		A7920DA81E6E7EBF00B37B81 /* Rival */ = {
 			isa = PBXGroup;
 			children = (
-				A773F4F41E7D0550007BC39E /* Data */,
-				A7CE49CE1E7BCCC60002AD05 /* CategoryViewController.swift */,
-				A722BC051E7A345C00F8A960 /* LoginViewController.swift */,
+				CE76179C1E7E65FB00BFED08 /* model */,
+				CE76179A1E7E624100BFED08 /* UserDetailViewController.swift */,
 				A7920DA91E6E7EBF00B37B81 /* AppDelegate.swift */,
+				A722BC051E7A345C00F8A960 /* LoginViewController.swift */,
+				A7CE49CE1E7BCCC60002AD05 /* CategoryViewController.swift */,
 				A7920DAB1E6E7EBF00B37B81 /* MatchingViewController.swift */,
-				A7445D491E77D9B100CEDED3 /* TableViewCell.swift */,
-				A722BC1B1E7A53C200F8A960 /* DetailViewController.swift */,
-				A7920DAD1E6E7EBF00B37B81 /* SecondViewController.swift */,
+				A773F4F81E7D1EBD007BC39E /* MatchTableViewCell.swift */,
+				A722BC1B1E7A53C200F8A960 /* MatchDetailViewController.swift */,
+				A77295DD1E7D308600138F44 /* TeamTableViewController.swift */,
+				A77295DF1E7D397700138F44 /* TeamTableViewCell.swift */,
+				A773F4F61E7D1B14007BC39E /* TeamDetailViewController.swift */,
 				A7920DAF1E6E7EBF00B37B81 /* Main.storyboard */,
 				A7920DB21E6E7EBF00B37B81 /* Assets.xcassets */,
 				A7920DB41E6E7EBF00B37B81 /* LaunchScreen.storyboard */,
 				A7920DB71E6E7EBF00B37B81 /* Info.plist */,
 				CEAB80C41E7D341100140C90 /* MenuTableViewController.swift */,
+				CE76179F1E7EBC7B00BFED08 /* Communication.swift */,
 			);
 			path = Rival;
 			sourceTree = "<group>";
@@ -196,6 +201,16 @@
 				A7920DCD1E6E7EBF00B37B81 /* Info.plist */,
 			);
 			path = RivalUITests;
+			sourceTree = "<group>";
+		};
+		CE76179C1E7E65FB00BFED08 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				A7445D471E77B4FA00CEDED3 /* MatchingRoom.swift */,
+				A773F4F21E7D025C007BC39E /* Team.swift */,
+				CE76179D1E7E660E00BFED08 /* User.swift */,
+			);
+			name = model;
 			sourceTree = "<group>";
 		};
 		D665001D92D925F0E083D5E1 /* Frameworks */ = {
@@ -500,16 +515,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A773F4F71E7D1B14007BC39E /* TeamDetailViewController.swift in Sources */,
 				A773F4F31E7D025C007BC39E /* Team.swift in Sources */,
+				CE76179B1E7E624100BFED08 /* UserDetailViewController.swift in Sources */,
 				A722BC061E7A345C00F8A960 /* LoginViewController.swift in Sources */,
 				CEAB80C51E7D341100140C90 /* MenuTableViewController.swift in Sources */,
-				A7445D4A1E77D9B100CEDED3 /* TableViewCell.swift in Sources */,
-				A7920DAE1E6E7EBF00B37B81 /* SecondViewController.swift in Sources */,
 				A7445D481E77B4FA00CEDED3 /* MatchingRoom.swift in Sources */,
+				CE76179E1E7E660E00BFED08 /* User.swift in Sources */,
 				A7CE49CF1E7BCCC60002AD05 /* CategoryViewController.swift in Sources */,
 				A7920DAA1E6E7EBF00B37B81 /* AppDelegate.swift in Sources */,
+				A77295DE1E7D308600138F44 /* TeamTableViewController.swift in Sources */,
+				CE7617A01E7EBC7B00BFED08 /* Communication.swift in Sources */,
+				A773F4F91E7D1EBD007BC39E /* MatchTableViewCell.swift in Sources */,
 				A7920DAC1E6E7EBF00B37B81 /* MatchingViewController.swift in Sources */,
-				A722BC1C1E7A53C200F8A960 /* DetailViewController.swift in Sources */,
+				A722BC1C1E7A53C200F8A960 /* MatchDetailViewController.swift in Sources */,
+				A77295E01E7D397700138F44 /* TeamTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

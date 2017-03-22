@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailViewController: UITableViewController {
+class MatchDetailViewController: UITableViewController {
     
     @IBOutlet weak var teamIMG: UIImageView!
     @IBOutlet weak var labelTitle: UILabel!
@@ -23,6 +23,12 @@ class DetailViewController: UITableViewController {
     var sStadium: String? = nil
     var sTeam: Team? = nil
     var sTeamIMG: String? = nil
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let detailViewController = segue.destination as! TeamDetailViewController
+        detailViewController.sTeam = sTeam
+    }
     
     override func viewDidLoad() {
         labelTitle.text = sTitle!

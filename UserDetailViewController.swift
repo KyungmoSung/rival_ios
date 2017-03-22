@@ -1,15 +1,14 @@
 //
-//  MenuTableViewController.swift
+//  UserDetailViewController.swift
 //  Rival
 //
-//  Created by ParkMinwoo on 2017. 3. 18..
+//  Created by ParkMinwoo on 2017. 3. 19..
 //  Copyright © 2017년 Sung Kyungmo. All rights reserved.
 //
 
 import UIKit
-import Alamofire
 
-class MenuTableViewController: UITableViewController {
+class UserDetailViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,26 +32,11 @@ class MenuTableViewController: UITableViewController {
         return 1
     }
 
-//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        // #warning Incomplete implementation, return the number of rows
-//        return 0
-//    }
-
-    @IBAction func logout(_ sender: AnyObject) {
-
-        KOSession.shared().logoutAndClose { [weak self] (success, error) -> Void in
-            _ = self?.navigationController?.popViewController(animated: true)
-        }
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return 1
     }
-    
-    var t = Communication()
-    
-    @IBAction func my_info(_ sender: AnyObject) {
-        
-        t.test()
-        
-    }
-    
+
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)

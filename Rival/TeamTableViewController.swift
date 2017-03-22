@@ -1,8 +1,8 @@
 //
-//  FirstViewController.swift
+//  TeamTableViewController.swift
 //  Rival
 //
-//  Created by Sung Kyungmo on 2017. 3. 7..
+//  Created by Sung Kyungmo on 2017. 3. 18..
 //  Copyright © 2017년 Sung Kyungmo. All rights reserved.
 //
 
@@ -10,41 +10,22 @@ import UIKit
 import DropDown
 import Alamofire
 
-class MatchingViewController: UITableViewController {
-    static var teams = [Team](arrayLiteral:
-        Team("축구","서울","FC병점","안녕병점~","성경모","byungjum_emblem","team_img"),
-                       Team("축구","서울","FC당진","안녕당진~","박민우","dangjin_emblem","team_img"),
-                       Team("축구","서울","FC철산","안녕철산~","김희중","chulsan_emblem","team_img")
-    )
-    var matchingRooms = [MatchingRoom]()
-    var filterRooms = [MatchingRoom]()
+class TeamTableViewController: UITableViewController {
     
+    let button =  UIButton(type: .custom)
     var selectedCity:String = "서울"
-    static var selectedGame:String = ""
-    static var img_name="soccer_img.png"
+    static var selectedGame:String = "축구"
     let dropDownCity = DropDown()
     let dropDownGame = DropDown()
-    let button =  UIButton(type: .custom)
+    var filterTeams = [Team]()
     
     
     override func viewDidLoad() {
-        
-        matchingRooms+=[
-            MatchingRoom("축구","서울",MatchingViewController.teams[0],"축구할사람2","asdf","올림픽올림픽경기장","2017.3.13 17:00",10),
-            MatchingRoom("축구","서울",MatchingViewController.teams[1],"축구할사람3","asdf","올림픽경기장","2017.3.13 17:00",9),
-            MatchingRoom("축구","인천",MatchingViewController.teams[2],"축구할사람1","asdf","올림픽경기장","2017.3.13 17:00",10),
-            MatchingRoom("축구","인천",MatchingViewController.teams[0],"축구할사람2","asdf","올림픽경기장","2017.3.13 17:00",9),
-            MatchingRoom("축구","경기",MatchingViewController.teams[1],"축구할사람1","asdf","올림픽경기장","2017.3.13 17:00",8),
-            MatchingRoom("농구","서울",MatchingViewController.teams[2],"농구할사람서울","asdf","올림픽경기장","2017.3.13 17:00",3),
-            MatchingRoom("야구","서울",MatchingViewController.teams[0],"야구할사람서울","asdf","올림픽경기장","2017.3.13 17:00",6)]
-        
-        
-        
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "  \(selectedCity) ⌄", style: .plain, target: self, action: #selector(dropDownCityFunc(_:)))
         self.navigationItem.rightBarButtonItem?.setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.white], for: .normal)
         
         button.frame = CGRect(x: 0, y: 0, width: 100, height: 40)
-        button.setTitle("  \(MatchingViewController.selectedGame) ⌄", for: .normal)
+        button.setTitle("  \(TeamTableViewController.selectedGame) ⌄", for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 25)
         button.addTarget(self, action: #selector(dropDownGameFunc(_:)), for: .touchUpInside)
         
@@ -58,9 +39,8 @@ class MatchingViewController: UITableViewController {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
-        
-        // Do any additional setup after loading the view, typically from a nib.
     }
+    
     func back(sender: UIBarButtonItem) {
         self.navigationController?.navigationBar.setBackgroundImage(nil,for: .default)
         _ = navigationController?.popViewController(animated: true)
@@ -132,47 +112,40 @@ class MatchingViewController: UITableViewController {
                                                                         for: .default)
             self.button.setTitle("  \(item) ⌄", for: .normal)
             self.navigationItem.titleView = self.button
-            MatchingViewController.selectedGame=item
+            TeamTableViewController.selectedGame=item
             self.tableView.reloadData()
             print("Selected item: \(item) at index: \(index)")
         }
         dropDownGame.show()
     }
     
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: - Table view data source
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        
         return 1
     }
     
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        self.filterRooms = matchingRooms.filter { $0.city == selectedCity && $0.game==MatchingViewController.selectedGame}
+        self.filterTeams = MatchingViewController.teams.filter { $0.city == selectedCity && $0.gameType==TeamTableViewController.selectedGame}
         
-        return filterRooms.count
+        return filterTeams.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "gameCell", for: indexPath) as! MatchTableViewCell
-        let title = self.filterRooms[indexPath.row].title
-        let stadium = self.filterRooms[indexPath.row].stadium
-        let matchTime = self.filterRooms[indexPath.row].time
-        let peopleNum = self.filterRooms[indexPath.row].peopleNum
-        let team = self.filterRooms[indexPath.row].team
+        let cell = tableView.dequeueReusableCell(withIdentifier: "teamCell", for: indexPath) as! TeamTableViewCell
+        let team = self.filterTeams[indexPath.row]
         
         tableView.backgroundColor = UIColor.groupTableViewBackground
-        cell.labelTitle.text=title
-        cell.labelStadium.text=stadium
-        cell.labelTime.text=matchTime
-        cell.labelPeopleNum.text="\(peopleNum)명"
         cell.labelTeamName.text=team.teamName
-        cell.teamIMG.image=UIImage(named: team.emblem)
+        cell.teamEmblem.image=UIImage(named: team.emblem)
         
         // Configure the cell...
         
@@ -183,20 +156,10 @@ class MatchingViewController: UITableViewController {
         
         let indexPath = tableView.indexPathForSelectedRow
         
-        let title = self.filterRooms[(indexPath?.row)!].title
-        let stadium = self.filterRooms[(indexPath?.row)!].stadium
-        let matchTime = self.filterRooms[(indexPath?.row)!].time
-        let peopleNum = self.filterRooms[(indexPath?.row)!].peopleNum
-        let team = self.filterRooms[(indexPath?.row)!].team
+        let team = self.filterTeams[(indexPath?.row)!]
         
-        
-        let detailViewController = segue.destination as! MatchDetailViewController
-        detailViewController.sTitle = title
-        detailViewController.sStadium = stadium
-        detailViewController.sTime = matchTime
-        detailViewController.sNum = peopleNum
+        let detailViewController = segue.destination as! TeamDetailViewController
         detailViewController.sTeam = team
+        
     }
 }
-
-

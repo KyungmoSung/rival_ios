@@ -8,8 +8,8 @@
 
 import UIKit
 
-class TableViewCell: UITableViewCell {
-
+class MatchTableViewCell: UITableViewCell {
+    
     
     @IBOutlet weak var teamIMG: UIImageView!
     @IBOutlet weak var labelTitle: UILabel!
@@ -17,7 +17,7 @@ class TableViewCell: UITableViewCell {
     @IBOutlet weak var labelPeopleNum: UILabel!
     @IBOutlet weak var labelTime: UILabel!
     @IBOutlet weak var labelTeamName: UILabel!
-
+    
     
     
 }
