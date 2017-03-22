@@ -307,7 +307,7 @@
 				TargetAttributes = {
 					A7920DA51E6E7EBF00B37B81 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 5LSLQSP87C;
+						DevelopmentTeam = YV47R3P48P;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -689,7 +689,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_HEADERS_RUN_UNIFDEF = NO;
-				DEVELOPMENT_TEAM = 5LSLQSP87C;
+				DEVELOPMENT_TEAM = YV47R3P48P;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -699,9 +699,9 @@
 				INFOPLIST_FILE = Rival/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-all_load";
-				PRODUCT_BUNDLE_IDENTIFIER = hs.Rival12322;
+				PRODUCT_BUNDLE_IDENTIFIER = hs.Rival;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Minwoo/Documents/workspace/git/rival/rival_ios/KakaoOpenSDK-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Sung/Desktop/Rival/rival_ios/KakaoOpenSDK-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				USER_HEADER_SEARCH_PATHS = "";
 			};
@@ -715,7 +715,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_HEADERS_RUN_UNIFDEF = NO;
-				DEVELOPMENT_TEAM = 5LSLQSP87C;
+				DEVELOPMENT_TEAM = YV47R3P48P;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -725,9 +725,9 @@
 				INFOPLIST_FILE = Rival/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-all_load";
-				PRODUCT_BUNDLE_IDENTIFIER = hs.Rival12322;
+				PRODUCT_BUNDLE_IDENTIFIER = hs.Rival;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Minwoo/Documents/workspace/git/rival/rival_ios/KakaoOpenSDK-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Sung/Desktop/Rival/rival_ios/KakaoOpenSDK-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				USER_HEADER_SEARCH_PATHS = "";
 			};

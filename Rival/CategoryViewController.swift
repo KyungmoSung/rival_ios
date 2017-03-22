@@ -44,33 +44,33 @@ class CategoryViewController: UIViewController{
     }
     
     @IBAction func clickedSoccer(_ sender: Any) {
-        MatchingViewController.selectedGame = "축구"
-        MatchingViewController.img_name = "soccer_bg"
+        Communication.selectedGame = "축구"
+        Communication.nav_bg = "soccer_bg"
         
     }
     @IBAction func clickedBaseball(_ sender: Any) {
-        MatchingViewController.selectedGame = "야구"
-        MatchingViewController.img_name = "baseball_bg"
+        Communication.selectedGame = "야구"
+        Communication.nav_bg = "baseball_bg"
     }
     
     @IBAction func clickedBasketball(_ sender: Any) {
-        MatchingViewController.selectedGame = "농구"
-        MatchingViewController.img_name = "basketball_bg"
+        Communication.selectedGame = "농구"
+        Communication.nav_bg = "basketball_bg"
     }
     
     @IBAction func clickedVolleyball(_ sender: Any) {
-        MatchingViewController.selectedGame = "족구"
-        MatchingViewController.img_name = "volleyball_bg"
+        Communication.selectedGame = "족구"
+        Communication.nav_bg = "volleyball_bg"
     }
     
     @IBAction func clickedBilliards(_ sender: Any) {
-        MatchingViewController.selectedGame = "당구"
-        MatchingViewController.img_name = "billiards_bg"
+        Communication.selectedGame = "당구"
+        Communication.nav_bg = "billiards_bg"
     }
     
     @IBAction func clickedBowling(_ sender: Any) {
-        MatchingViewController.selectedGame = "볼링"
-        MatchingViewController.img_name = "bowling_bg"
+        Communication.selectedGame = "볼링"
+        Communication.nav_bg = "bowling_bg"
     }
     
     

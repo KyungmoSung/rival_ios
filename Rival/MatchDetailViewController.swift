@@ -41,4 +41,5 @@ class MatchDetailViewController: UITableViewController {
         
         super.viewDidLoad()
     }
+    
 }

@@ -7,33 +7,35 @@
 //
 
 import UIKit
-import DropDown
 import Alamofire
-import SwiftyJSON
+import DropDown
 
 class TeamTableViewController: UITableViewController {
     
-    let button =  UIButton(type: .custom)
-    var selectedCity:String = "서울"
-    static var selectedGame:String = "축구"
+    var jsondata = [[String:AnyObject]]()
+    let com = Communication()
     let dropDownCity = DropDown()
     let dropDownGame = DropDown()
-    var filterTeams = [Team]()
-    var jsondata = [[String:AnyObject]]()
+    let button =  UIButton(type: .custom)
     
     
     override func viewDidLoad() {
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "  \(selectedCity) ⌄", style: .plain, target: self, action: #selector(dropDownCityFunc(_:)))
+        
+        com.getTeamsDB()
+        com.getMatchingRoomsDB()
+        
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "  \(Communication.selectedCity) ⌄", style: .plain, target: self, action: #selector(self.dropDownCityFunc(_:)))
         self.navigationItem.rightBarButtonItem?.setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.white], for: .normal)
         
         button.frame = CGRect(x: 0, y: 0, width: 100, height: 40)
-        button.setTitle("  \(TeamTableViewController.selectedGame) ⌄", for: .normal)
+        button.setTitle("  \(Communication.selectedGame) ⌄", for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 25)
-        button.addTarget(self, action: #selector(dropDownGameFunc(_:)), for: .touchUpInside)
+        button.addTarget(self, action: #selector(self.dropDownGameFunc(_:)), for: .touchUpInside)
         
         self.navigationItem.titleView = button
         
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: MatchingViewController.img_name),for: .default)
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: Communication.nav_bg),for: .default)
         
         let newBackButton = UIBarButtonItem(title: "〈 Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(back(sender:)))
         self.navigationItem.leftBarButtonItem = newBackButton
@@ -41,6 +43,21 @@ class TeamTableViewController: UITableViewController {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadTableTeam), name: NSNotification.Name(rawValue: "reload_Table_Team"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadNavTeam), name: NSNotification.Name(rawValue: "reload_Nav_Team"), object: nil)
+    }
+    
+    func reloadTableTeam(){
+        print("reload_Table_Team")
+        self.tableView.reloadData()
+    }
+    func reloadNavTeam(){
+        print("reload_Nav_Team")
+        button.setTitle("  \(Communication.selectedGame) ⌄", for: .normal)
+        self.navigationItem.titleView = button
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: Communication.nav_bg),for: .default)
+        self.navigationItem.rightBarButtonItem?.title = "  \(Communication.selectedCity) ⌄"
     }
     
     func back(sender: UIBarButtonItem) {
@@ -59,30 +76,13 @@ class TeamTableViewController: UITableViewController {
         dropDownCity.shadowOffset=CGSize(width: 0.0, height: 10.0)
         dropDownCity.selectionAction = { [unowned self] (index: Int, item: String) in
             self.navigationItem.rightBarButtonItem?.title=" \(item) ⌄"
-            self.selectedCity=item
+            Communication.selectedCity=item
             
+            self.com.getTeamsDB()
+            self.com.getMatchingRoomsDB()
             
-            
-            // All three of these calls are equivalent
-            Alamofire.request("http://192.168.120.4:8080/game", method: .get, parameters: ["city":"\(item)"], encoding: URLEncoding.default, headers: nil).responseJSON { (response:DataResponse<Any>) in
-                
-                switch(response.result) {
-                case .success(_):
-                    if response.result.value != nil{
-                        print(response.result.value!)
-                    }
-                    break
-                    
-                case .failure(_):
-                    print(response.result.error as Any)
-                    break
-                    
-                }
-            }
-            
-            
-            self.tableView.reloadData()
-            print("Selected item: \(item) at index: \(index)")
+            print("Selected item: \(Communication.selectedGame) / \(Communication.selectedCity)")
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reload_Nav_Match"), object: nil)
         }
         dropDownCity.show()
     }
@@ -96,27 +96,30 @@ class TeamTableViewController: UITableViewController {
         dropDownGame.dataSource = ["축구","야구","농구","족구","당구","볼링"]
         dropDownGame.bottomOffset = CGPoint(x: 0, y:self.navigationController!.navigationBar.frame.size.height+UIApplication.shared.statusBarFrame.height)
         dropDownGame.shadowOffset=CGSize(width: 0.0, height: 10.0)
+        // The list of items to display. Can be changed dynamically
         dropDownGame.selectionAction = { [unowned self] (index: Int, item: String) in
             if item == "축구" {
-                MatchingViewController.img_name = "soccer_bg"
+                Communication.nav_bg = "soccer_bg"
             }else if item == "농구"{
-                MatchingViewController.img_name = "basketball_bg"
+                Communication.nav_bg = "basketball_bg"
             }else if item == "야구"{
-                MatchingViewController.img_name = "baseball_bg"
+                Communication.nav_bg = "baseball_bg"
             }else if item == "족구"{
-                MatchingViewController.img_name = "volleyball_bg"
+                Communication.nav_bg = "volleyball_bg"
             }else if item == "당구"{
-                MatchingViewController.img_name = "billiards_bg"
+                Communication.nav_bg = "billiards_bg"
             }else{
-                MatchingViewController.img_name = "bowling_bg"
+                Communication.nav_bg = "bowling_bg"
             }
-            self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: MatchingViewController.img_name),
+            self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: Communication.nav_bg),
                                                                         for: .default)
             self.button.setTitle("  \(item) ⌄", for: .normal)
             self.navigationItem.titleView = self.button
-            TeamTableViewController.selectedGame=item
-            self.tableView.reloadData()
-            print("Selected item: \(item) at index: \(index)")
+            Communication.selectedGame=item
+            self.com.getTeamsDB()
+            self.com.getMatchingRoomsDB()
+            print("Selected item: \(Communication.selectedGame) / \(Communication.selectedCity)")
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reload_Nav_Match"), object: nil)
         }
         dropDownGame.show()
     }
@@ -136,14 +139,13 @@ class TeamTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        self.filterTeams = MatchingViewController.teams.filter { $0.city == selectedCity && $0.gameType==TeamTableViewController.selectedGame}
-        
-        return filterTeams.count
+        return Communication.teams.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt
+        indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "teamCell", for: indexPath) as! TeamTableViewCell
-        let team = self.filterTeams[indexPath.row]
+        let team = Communication.teams[indexPath.row]
         
         tableView.backgroundColor = UIColor.groupTableViewBackground
         cell.labelTeamName.text=team.teamName
@@ -158,28 +160,10 @@ class TeamTableViewController: UITableViewController {
         
         let indexPath = tableView.indexPathForSelectedRow
         
-        let team = self.filterTeams[(indexPath?.row)!]
+        let team = Communication.teams[(indexPath?.row)!]
         
         let detailViewController = segue.destination as! TeamDetailViewController
         detailViewController.sTeam = team
         
-    }
-    func getTeamsDB(){
-        MatchingViewController.teams.removeAll()
-        Alamofire.request("http://172.30.1.27:8080/team", method: .get, parameters: ["city":TeamTableViewController.selectedCity,"type":TeamTableViewController.selectedGame]).responseJSON { (responseData) -> Void in
-            if((responseData.result.value) != nil) {
-                let swiftyJsonVar = JSON(responseData.result.value!)
-                if let resData = swiftyJsonVar.arrayObject {
-                    self.jsondata = resData as! [[String:AnyObject]]
-                    if self.jsondata.count != 0{
-                        for i in 0...(self.jsondata.count-1){
-                            let dict = self.jsondata[i]
-                            self.matchingRooms.append(MatchingRoom((dict["type"] as? String)!,(dict["city"] as? String)!,(dict["team"] as? String)!,(dict["title"] as? String)!,(dict["contents"] as? String)!,(dict["stadium"] as? String)!,(dict["time_game"] as? String)!,(dict["people_num"] as? Int)!))
-                        }
-                        self.tableView.reloadData()
-                    }
-                }
-            }
-        }
     }
 }
