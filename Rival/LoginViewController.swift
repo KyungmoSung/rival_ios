@@ -9,17 +9,18 @@
 import Foundation
 
 class LoginViewController: UIViewController, UIAlertViewDelegate {
-    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var loginBt_kakao: UIButton!
+    @IBOutlet weak var loginBt_facebook: UIButton!
+    static var myProfile = User()
+    static var myTeam = Team()
+    
+    let com = Communication()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        loginBt_kakao.imageView?.contentMode = .scaleAspectFit
+        loginBt_facebook.imageView?.contentMode = .scaleAspectFit
         
-        
-        //loginButton.setBackgroundColor(UIColor(red: 0xff / 255.0, green:  0xcc / 255.0, blue:  0x00 / 255.0, alpha: 1.0), forState: UIControlState())
-        //loginButton.setBackgroundColor(UIColor(red: 0xff / 255.0, green:  0xb4 / 255.0, blue:  0x00 / 255.0, alpha: 1.0), forState: UIControlState.highlighted)
-        loginButton.clipsToBounds = true
-        loginButton.layer.cornerRadius = 4
     }
     
     override func didReceiveMemoryWarning() {
@@ -29,40 +30,44 @@ class LoginViewController: UIViewController, UIAlertViewDelegate {
     
     @IBAction func login(_ sender: AnyObject) {
         
-        
-        
         let session: KOSession = KOSession.shared();
-        
         if session.isOpen() {
             session.close()
         }
-        
-        session.presentingViewController = self.navigationController
+        session.presentingViewController = self
         session.open(completionHandler: { (error) -> Void in
-            session.presentingViewController = nil
-            
-            if !session.isOpen() {
-                switch ((error as! NSError).code) {
-                case Int(KOErrorCancelled.rawValue):
-                    break;
-                default:
-                    UIAlertView(title: "에러", message: error?.localizedDescription, delegate: nil, cancelButtonTitle: "확인").show()
-                    break;
-                }
+            if error != nil{
+                print(error?.localizedDescription as Any)
+            }else if session.isOpen() == true{
+                KOSessionTask.meTask(completionHandler: { (profile , error) -> Void in
+                    if profile != nil{
+                        let kakao : KOUser = profile as! KOUser
+                        if let value = kakao.id as Int?{
+                            LoginViewController.myProfile.id = value
+                            print("\(value) / \(LoginViewController.myProfile.id)")
+                        }
+                        if let value = kakao.properties["nickname"] as? String{
+                            LoginViewController.myProfile.nickname = value
+                            print("\(value) / \(LoginViewController.myProfile.nickname)")
+
+                        }
+                        if let value = kakao.properties["profile_image"] as? String{
+                            LoginViewController.myProfile.profile_image = value
+                            print("\(value) / \(LoginViewController.myProfile.profile_image)")
+                        }
+                        if let value = kakao.properties["thumbnail_image"] as? String{
+                            LoginViewController.myProfile.thumbnail_image = value
+                            print("\(value) / \(LoginViewController.myProfile.thumbnail_image)")
+                        }
+                        self.com.getProfile(id: (LoginViewController.myProfile.id))
+                        
+                        print(LoginViewController.myProfile)
+                    }
+                    
+                })
+            }else{
+                print("isNotOpen")
             }
-        }, authParams: nil, authTypes: [NSNumber(value: KOAuthType.talk.rawValue), NSNumber(value: KOAuthType.account.rawValue)])
+        })
     }
-    
-    //    // MARK: - Navigation
-    //
-    //    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    //    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    //    // Get the new view controller using segue.destinationViewController.
-    //    // Pass the selected object to the new view controller.
-    //
-    //        if segue.identifier == "login" {
-    //            let choiceViewController: LoginChoiceViewController = segue.destinationViewController as! LoginChoiceViewController
-    //            choiceViewController.authTypes = authenticationController.availableAuthType()
-    //        }
-    //    }
 }
