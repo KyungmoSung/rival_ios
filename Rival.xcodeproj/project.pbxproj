@@ -168,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				CE76179C1E7E65FB00BFED08 /* model */,
+				CE76179F1E7EBC7B00BFED08 /* Communication.swift */,
 				CE76179A1E7E624100BFED08 /* UserDetailViewController.swift */,
 				A7920DA91E6E7EBF00B37B81 /* AppDelegate.swift */,
 				A722BC051E7A345C00F8A960 /* LoginViewController.swift */,
@@ -183,7 +184,6 @@
 				A7920DB41E6E7EBF00B37B81 /* LaunchScreen.storyboard */,
 				A7920DB71E6E7EBF00B37B81 /* Info.plist */,
 				CEAB80C41E7D341100140C90 /* MenuTableViewController.swift */,
-				CE76179F1E7EBC7B00BFED08 /* Communication.swift */,
 			);
 			path = Rival;
 			sourceTree = "<group>";

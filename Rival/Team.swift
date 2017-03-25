@@ -26,5 +26,15 @@ class Team {
         self.introduce = introduce
         self.captain = captain
     }
+    
+    init() {
+        self.gameType = ""
+        self.teamName = ""
+        self.emblem = ""
+        self.image = ""
+        self.city = ""
+        self.introduce = ""
+        self.captain = ""
+    }
 }
 

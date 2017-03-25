@@ -25,7 +25,7 @@ class CategoryViewController: UIViewController{
         
         SideMenuManager.menuPresentMode = .menuSlideIn
         SideMenuManager.menuAnimationBackgroundColor = UIColor.clear
-        SideMenuManager.menuWidth = CGFloat(max(round(min((UIScreen.main.bounds.width), (UIScreen.main.bounds.height)) * 0.5), 240))
+        SideMenuManager.menuWidth = CGFloat(max(round(min((UIScreen.main.bounds.width), (UIScreen.main.bounds.height)) * 0.5), 180))
         let button =  UIButton(type: .custom)
         
         button.frame = CGRect(x: 0, y: 0, width: 100, height: 70)
