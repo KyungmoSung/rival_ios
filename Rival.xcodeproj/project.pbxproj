@@ -28,6 +28,7 @@
 		A7920DB61E6E7EBF00B37B81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7920DB41E6E7EBF00B37B81 /* LaunchScreen.storyboard */; };
 		A7920DC11E6E7EBF00B37B81 /* RivalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7920DC01E6E7EBF00B37B81 /* RivalTests.swift */; };
 		A7920DCC1E6E7EBF00B37B81 /* RivalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7920DCB1E6E7EBF00B37B81 /* RivalUITests.swift */; };
+		A7A572BE1E88F97100D22860 /* AddMatchingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A572BD1E88F97100D22860 /* AddMatchingViewController.swift */; };
 		A7CE49CF1E7BCCC60002AD05 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE49CE1E7BCCC60002AD05 /* CategoryViewController.swift */; };
 		A7CE49D11E7BED4C0002AD05 /* SideMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7CE49D01E7BED4C0002AD05 /* SideMenu.framework */; };
 		CE76179B1E7E624100BFED08 /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE76179A1E7E624100BFED08 /* UserDetailViewController.swift */; };
@@ -86,6 +87,7 @@
 		A7920DC71E6E7EBF00B37B81 /* RivalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RivalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7920DCB1E6E7EBF00B37B81 /* RivalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RivalUITests.swift; sourceTree = "<group>"; };
 		A7920DCD1E6E7EBF00B37B81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A7A572BD1E88F97100D22860 /* AddMatchingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMatchingViewController.swift; sourceTree = "<group>"; };
 		A7CE49CE1E7BCCC60002AD05 /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		A7CE49D01E7BED4C0002AD05 /* SideMenu.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SideMenu.framework; path = "../../../Library/Developer/Xcode/DerivedData/Rival-ahzynhushjqcpsgbovvsqhebcqnq/Build/Products/Debug-iphoneos/SideMenu/SideMenu.framework"; sourceTree = "<group>"; };
 		CD60E0FE0CA6EAC8B3DA73EA /* Pods_RivalUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RivalUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -169,6 +171,7 @@
 			children = (
 				CE76179C1E7E65FB00BFED08 /* model */,
 				CE76179F1E7EBC7B00BFED08 /* Communication.swift */,
+				CEAB80C41E7D341100140C90 /* MenuTableViewController.swift */,
 				CE76179A1E7E624100BFED08 /* UserDetailViewController.swift */,
 				A7920DA91E6E7EBF00B37B81 /* AppDelegate.swift */,
 				A722BC051E7A345C00F8A960 /* LoginViewController.swift */,
@@ -176,6 +179,7 @@
 				A7920DAB1E6E7EBF00B37B81 /* MatchingViewController.swift */,
 				A773F4F81E7D1EBD007BC39E /* MatchTableViewCell.swift */,
 				A722BC1B1E7A53C200F8A960 /* MatchDetailViewController.swift */,
+				A7A572BD1E88F97100D22860 /* AddMatchingViewController.swift */,
 				A77295DD1E7D308600138F44 /* TeamTableViewController.swift */,
 				A77295DF1E7D397700138F44 /* TeamTableViewCell.swift */,
 				A773F4F61E7D1B14007BC39E /* TeamDetailViewController.swift */,
@@ -183,7 +187,6 @@
 				A7920DB21E6E7EBF00B37B81 /* Assets.xcassets */,
 				A7920DB41E6E7EBF00B37B81 /* LaunchScreen.storyboard */,
 				A7920DB71E6E7EBF00B37B81 /* Info.plist */,
-				CEAB80C41E7D341100140C90 /* MenuTableViewController.swift */,
 			);
 			path = Rival;
 			sourceTree = "<group>";
@@ -532,6 +535,7 @@
 				CE7617A01E7EBC7B00BFED08 /* Communication.swift in Sources */,
 				A773F4F91E7D1EBD007BC39E /* MatchTableViewCell.swift in Sources */,
 				A7920DAC1E6E7EBF00B37B81 /* MatchingViewController.swift in Sources */,
+				A7A572BE1E88F97100D22860 /* AddMatchingViewController.swift in Sources */,
 				A722BC1C1E7A53C200F8A960 /* MatchDetailViewController.swift in Sources */,
 				A77295E01E7D397700138F44 /* TeamTableViewCell.swift in Sources */,
 			);
