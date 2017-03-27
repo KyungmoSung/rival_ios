@@ -19,7 +19,7 @@ class Communication {
     static var selectedGame:String = "축구"
     static var nav_bg="soccer_img.png"
     
-    let url = "http://192.168.0.3:8080"
+    let url = "http://192.168.0.5:8080"
     
     func getProfile(id:Int) {
         
@@ -58,6 +58,7 @@ class Communication {
             }
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reload_Table_Team"), object: nil)
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reload_Table_Match"), object: nil)
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reload_Nav_Match"), object: nil)
         }
     }
     
@@ -79,6 +80,7 @@ class Communication {
             }
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reload_Table_Match"), object: nil)
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reload_Table_Team"), object: nil)
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reload_Nav_Match"), object: nil)
         }
     }
     
@@ -88,7 +90,6 @@ class Communication {
             if((responseData.result.value) != nil) {
                 let json = JSON(responseData.result.value!)
                 LoginViewController.myTeam=Team((json[0]["type"].stringValue),(json[0]["city"].stringValue),(json[0]["name"].stringValue),(json[0]["introduce"].stringValue),(json[0]["captain"].stringValue),(json[0]["emblem"].stringValue),(json[0]["image"].stringValue))
-                print("\(json)  / \(json[0]["type"].stringValue),\(json[0]["city"].stringValue),\(json[0]["name"].stringValue),\(json[0]["introduce"].stringValue),\(json[0]["captain"].stringValue)")
             }
         }
         
