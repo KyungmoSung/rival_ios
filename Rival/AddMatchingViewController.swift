@@ -24,6 +24,8 @@ class AddMatchingViewController: UITableViewController {
     @IBOutlet weak var selectCityTxt: UILabel!
     @IBOutlet weak var gameCell: UITableViewCell!
     @IBOutlet weak var cityCell: UITableViewCell!
+    let dropDown = DropDown()
+    var dropDownData = [""]
     
     let datePicker = UIDatePicker()
     
@@ -34,7 +36,29 @@ class AddMatchingViewController: UITableViewController {
         CreateDatePicker()
     }
     
- 
+    func dropDownFunc(_ label:UILabel,_ cell:UITableViewCell) {
+        DropDown.appearance().backgroundColor = UIColor.white
+        dropDown.dataSource = dropDownData
+        dropDown.anchorView = cell
+        dropDown.bottomOffset = CGPoint(x:0, y:cell.frame.size.height)
+        dropDown.shadowOffset=CGSize(width: 0.0, height: 10.0)
+        dropDown.selectionAction = { [] (index: Int, item: String) in
+            label.text = item
+        }
+        dropDown.show()
+    }
+    
+    @IBAction func selectGameBtClicked(_ sender: Any) {
+        dropDownData=["축구","야구","농구","족구","당구","볼링"]
+        dropDownFunc(selectGameTxt,gameCell)
+        
+    }
+    @IBAction func selectCityBtClicked(_ sender: Any) {
+        dropDownData=["서울","경기","인천"]
+        dropDownFunc(selectCityTxt,cityCell)
+       
+        
+    }
     
     @IBAction func stepperValueChanged(_ sender: UIStepper){
         peopleNum.text = Int(sender.value).description
