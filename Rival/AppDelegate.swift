@@ -17,7 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var deviceToken: Data? = nil
     
+    let com = Communication()
+    
     fileprivate func setupEntryController() {
+        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let navigationController = storyboard.instantiateViewController(withIdentifier: "navigator") as! UINavigationController
         let navigationController2 = storyboard.instantiateViewController(withIdentifier: "navigator") as! UINavigationController
@@ -34,6 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     fileprivate func reloadRootViewController() {
         let isOpened = KOSession.shared().isOpen()
         if !isOpened {
+            
             let mainViewController = self.mainViewController as! UINavigationController
             
             let stack = mainViewController.viewControllers
@@ -74,6 +78,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             application.registerForRemoteNotifications(matching: [UIRemoteNotificationType.badge, UIRemoteNotificationType.sound, UIRemoteNotificationType.alert])
         }
+        
+        
+        self.com.getSessionProfile()
         
         let session = KOSession.shared()
         session?.presentedViewBarTintColor = UIColor(red: 0x2a / 255.0, green: 0x2a / 255.0, blue: 0x2a / 255.0, alpha: 1.0)
@@ -119,6 +126,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applicationWillEnterForeground(_ application: UIApplication) {
+        
+        
+        self.com.getSessionProfile()
+        
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
         KOSession.handleDidBecomeActive()
     }
