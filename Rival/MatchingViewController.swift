@@ -46,11 +46,9 @@ class MatchingViewController: UITableViewController {
         
     }
     func reloadTableMatch(){
-        print("reload_Table_Match")
         self.tableView.reloadData()
     }
     func reloadNavMatch(){
-        print("reload_Nav_Match")
         button.setTitle("    \(Communication.selectedGame) ⌄", for: .normal)
         self.navigationItem.titleView = button
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: Communication.nav_bg),for: .default)
@@ -145,21 +143,15 @@ class MatchingViewController: UITableViewController {
         let matchTime = Communication.matchingRooms[indexPath.row].time
         let peopleNum = Communication.matchingRooms[indexPath.row].peopleNum
         let team = Communication.matchingRooms[indexPath.row].team
+        let emblem = Communication.matchingRooms[indexPath.row].emblem
         
         tableView.backgroundColor = UIColor.groupTableViewBackground
         cell.labelTitle.text=title
         cell.labelStadium.text=stadium
         cell.labelTime.text=matchTime
         cell.labelPeopleNum.text="\(peopleNum)명"
-        if Communication.teams.count != 0{
-            for i in 0...Communication.teams.count-1{
-                if Communication.teams[i].teamName == team{
-                    cell.labelTeamName.text=Communication.teams[i].teamName
-                    cell.teamIMG.image=UIImage(named: Communication.teams[i].emblem)
-                }
-            }
-        }
-        // Configure the cell...
+        cell.labelTeamName.text=team
+        cell.emblem.image=UIImage(named: emblem)
         
         return cell
     }
@@ -172,21 +164,19 @@ class MatchingViewController: UITableViewController {
             let stadium = Communication.matchingRooms[(indexPath.row)].stadium
             let matchTime = Communication.matchingRooms[(indexPath.row)].time
             let peopleNum = Communication.matchingRooms[(indexPath.row)].peopleNum
-            let team = Communication.matchingRooms[(indexPath.row)].team
+            let team = com.getTeam(Communication.matchingRooms[(indexPath.row)].team)
+            let teamName = Communication.matchingRooms[(indexPath.row)].team
+            let teamEmblem = Communication.matchingRooms[(indexPath.row)].emblem
             
             let detailViewController = segue.destination as! MatchDetailViewController
+            
             detailViewController.sTitle = title
             detailViewController.sStadium = stadium
             detailViewController.sTime = matchTime
             detailViewController.sNum = peopleNum
-            
-            if Communication.teams.count != 0{
-                for i in 0...Communication.teams.count-1{
-                    if Communication.teams[i].teamName == team{
-                        detailViewController.sTeam = Communication.teams[i]
-                    }
-                }
-            }
+            detailViewController.sTeam = team
+            detailViewController.sTeamName = teamName
+            detailViewController.sTeamEmblem = teamEmblem
             
         }
         
