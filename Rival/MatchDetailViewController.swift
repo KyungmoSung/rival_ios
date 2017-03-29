@@ -10,7 +10,7 @@ import UIKit
 
 class MatchDetailViewController: UITableViewController {
     
-    @IBOutlet weak var teamIMG: UIImageView!
+    
     @IBOutlet weak var labelTitle: UILabel!
     @IBOutlet weak var labelPeopleNum: UILabel!
     @IBOutlet weak var labelTime: UILabel!
@@ -21,25 +21,26 @@ class MatchDetailViewController: UITableViewController {
     var sNum: Int? = nil
     var sTime: String? = nil
     var sStadium: String? = nil
-    var sTeam: Team? = nil
-    var sTeamIMG: String? = nil
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        let detailViewController = segue.destination as! TeamDetailViewController
-        detailViewController.sTeam = sTeam
-    }
+    var sTeamName: String? = nil
+    var sTeamEmblem: String? = nil
+    var sTeam: Team!
     
     override func viewDidLoad() {
         labelTitle.text = sTitle!
         labelPeopleNum.text = "인원 : \(sNum!)명"
         labelTime.text = "시간 : \(sTime!)"
         labelStadium.text = "장소 : \(sStadium!)"
-        labelTeamName.text = sTeam?.teamName
-        teamIMG.image=UIImage(named: (sTeam?.image)!)
-        teamEmblem.image=UIImage(named: (sTeam?.emblem)!)
+        labelTeamName.text = sTeamName!
+        teamEmblem.image=UIImage(named: sTeamEmblem!)
         
         super.viewDidLoad()
+        
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let detailViewController = segue.destination as! TeamDetailViewController
+        detailViewController.sTeam = sTeam
+    }
+    
     
 }

@@ -19,7 +19,7 @@ class MenuTableViewController: UITableViewController {
         super.viewDidLoad()
         kakaoThumbnail.layer.cornerRadius = kakaoThumbnail.frame.size.width/2
         kakaoThumbnail.clipsToBounds = true
-        if (LoginViewController.myProfile.thumbnail_image != ""){
+        if (LoginViewController.myProfile.nickname != ""){
             kakaoNick.text = LoginViewController.myProfile.nickname
             kakaoThumbnail.image = UIImage(data: NSData(contentsOf: NSURL(string: (LoginViewController.myProfile.thumbnail_image))! as URL)! as Data)
             labelTeamName.text=LoginViewController.myTeam.teamName

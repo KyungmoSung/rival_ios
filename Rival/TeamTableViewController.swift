@@ -49,11 +49,9 @@ class TeamTableViewController: UITableViewController {
     }
     
     func reloadTableTeam(){
-        print("reload_Table_Team")
         self.tableView.reloadData()
     }
     func reloadNavTeam(){
-        print("reload_Nav_Team")
         button.setTitle("  \(Communication.selectedGame) ⌄", for: .normal)
         self.navigationItem.titleView = button
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: Communication.nav_bg),for: .default)
@@ -81,7 +79,6 @@ class TeamTableViewController: UITableViewController {
             self.com.getTeamsDB()
             self.com.getMatchingRoomsDB()
             
-            print("Selected item: \(Communication.selectedGame) / \(Communication.selectedCity)")
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reload_Nav_Match"), object: nil)
         }
         dropDownCity.show()
@@ -118,7 +115,6 @@ class TeamTableViewController: UITableViewController {
             Communication.selectedGame=item
             self.com.getTeamsDB()
             self.com.getMatchingRoomsDB()
-            print("Selected item: \(Communication.selectedGame) / \(Communication.selectedCity)")
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reload_Nav_Match"), object: nil)
         }
         dropDownGame.show()
