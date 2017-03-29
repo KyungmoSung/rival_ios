@@ -11,21 +11,26 @@ import DropDown
 
 class AddMatchingViewController: UITableViewController {
     
+    let com = Communication()
+    
     @IBOutlet weak var editPeopleNum: UIStepper!
     @IBOutlet weak var peopleNum: UILabel!
     @IBOutlet weak var teamEmblem: UIImageView!
     @IBOutlet weak var teamName: UILabel!
-    @IBOutlet weak var editTitle: UITextField!
-    @IBOutlet weak var editContents: UITextView!
-    @IBOutlet weak var dateTextField: UITextField!
+    @IBOutlet weak var titleTxt: UITextField!
+    @IBOutlet weak var contentsTxt: UITextView!
+    @IBOutlet weak var dateTxt: UITextField!
     @IBOutlet weak var selectGameBT: UIButton!
     @IBOutlet weak var selectCityBT: UIButton!
     @IBOutlet weak var selectGameTxt: UILabel!
     @IBOutlet weak var selectCityTxt: UILabel!
     @IBOutlet weak var gameCell: UITableViewCell!
     @IBOutlet weak var cityCell: UITableViewCell!
+    @IBOutlet weak var stadium: UILabel!
     let dropDown = DropDown()
     var dropDownData = [""]
+    var numberOfPeople = 1
+    
     
     let datePicker = UIDatePicker()
     
@@ -57,12 +62,11 @@ class AddMatchingViewController: UITableViewController {
         dropDownData=["서울","경기","인천"]
         dropDownFunc(selectCityTxt,cityCell)
        
-        
     }
     
     @IBAction func stepperValueChanged(_ sender: UIStepper){
-        peopleNum.text = Int(sender.value).description
-        peopleNum.text?.append(" 명")
+        numberOfPeople = Int(sender.value)
+        peopleNum.text = "\(numberOfPeople) 명"
     }
     
     func CreateDatePicker() {
@@ -79,10 +83,10 @@ class AddMatchingViewController: UITableViewController {
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
         toolbar.setItems([doneButton], animated: false)
         
-        dateTextField.inputAccessoryView = toolbar
+        dateTxt.inputAccessoryView = toolbar
         
         //assigning date picker to text field
-        dateTextField.inputView = datePicker
+        dateTxt.inputView = datePicker
     }// end advanceBookingAction
     
    
@@ -94,7 +98,7 @@ class AddMatchingViewController: UITableViewController {
         
         dateFormatter.dateFormat = "yyyy.MM.dd HH:mm"
         
-        dateTextField.text = dateFormatter.string(from: datePicker.date)
+        dateTxt.text = dateFormatter.string(from: datePicker.date)
         self.view.endEditing(true)
     }
     
@@ -103,6 +107,15 @@ class AddMatchingViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     @IBAction func addMatchingButtonClicked(_ sender: Any) {
+        let team = LoginViewController.myTeam.teamName
+        let emblem = LoginViewController.myTeam.emblem
+        let type = self.selectGameTxt.text
+        let city = self.selectCityTxt.text
+        let peopleNum = self.numberOfPeople
+        let title = self.titleTxt.text
+        let contents = self.contentsTxt.text
+        let stadium = self.stadium.text
+        let time = self.dateTxt.text
+        com.saveMatch(MatchingRoom(type!,city!,team,emblem,title!,contents!,stadium!,time!,peopleNum))
     }
-    
 }
