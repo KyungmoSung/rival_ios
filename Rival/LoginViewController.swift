@@ -39,32 +39,7 @@ class LoginViewController: UIViewController, UIAlertViewDelegate {
             if error != nil{
                 print(error?.localizedDescription as Any)
             }else if session.isOpen() == true{
-                KOSessionTask.meTask(completionHandler: { (profile , error) -> Void in
-                    if profile != nil{
-                        let kakao : KOUser = profile as! KOUser
-                        if let value = kakao.id as Int?{
-                            LoginViewController.myProfile.id = value
-                            print("\(value) / \(LoginViewController.myProfile.id)")
-                        }
-                        if let value = kakao.properties["nickname"] as? String{
-                            LoginViewController.myProfile.nickname = value
-                            print("\(value) / \(LoginViewController.myProfile.nickname)")
-
-                        }
-                        if let value = kakao.properties["profile_image"] as? String{
-                            LoginViewController.myProfile.profile_image = value
-                            print("\(value) / \(LoginViewController.myProfile.profile_image)")
-                        }
-                        if let value = kakao.properties["thumbnail_image"] as? String{
-                            LoginViewController.myProfile.thumbnail_image = value
-                            print("\(value) / \(LoginViewController.myProfile.thumbnail_image)")
-                        }
-                        self.com.getProfile(id: (LoginViewController.myProfile.id))
-                        
-                        print(LoginViewController.myProfile)
-                    }
-                    
-                })
+                self.com.getSessionProfile()
             }else{
                 print("isNotOpen")
             }

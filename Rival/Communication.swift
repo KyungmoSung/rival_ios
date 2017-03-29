@@ -19,7 +19,29 @@ class Communication {
     static var selectedGame:String = "축구"
     static var nav_bg="soccer_img.png"
     
-    let url = "http://192.168.0.5:8080"
+    let url = "http://172.20.10.6:8080"
+    
+    func getSessionProfile(){
+        
+        KOSessionTask.meTask(completionHandler: { (profile , error) -> Void in
+            if profile != nil{
+                let kakao : KOUser = profile as! KOUser
+                if let value = kakao.id as Int?{
+                    LoginViewController.myProfile.id = value
+                }
+                if let value = kakao.properties["nickname"] as? String{
+                    LoginViewController.myProfile.nickname = value
+                }
+                if let value = kakao.properties["profile_image"] as? String{
+                    LoginViewController.myProfile.profile_image = value
+                }
+                if let value = kakao.properties["thumbnail_image"] as? String{
+                    LoginViewController.myProfile.thumbnail_image = value
+                }
+                self.getProfile(id: (LoginViewController.myProfile.id))
+            }
+        })
+    }
     
     func getProfile(id:Int) {
         
@@ -31,10 +53,8 @@ class Communication {
                 //                let kakao_profile_image = json[0]["kakao_profile_image"]
                 //                let kakao_thumbnail_image = json[0]["kakao_thumbnail_image"]
                 let myteam = json[0]["team"]
-                //print("\(json)  /  team =  \(myteam.stringValue)")
                 LoginViewController.myProfile.team = myteam.stringValue
-                self.getMyTeam(teamName:myteam.stringValue)
-                
+                LoginViewController.myTeam = self.getTeam(myteam.stringValue)
             }
         }
     }
@@ -44,14 +64,13 @@ class Communication {
         Communication.matchingRooms.removeAll()
         Alamofire.request(url+"/game", method: .get, parameters: ["city":Communication.selectedCity,"type":Communication.selectedGame]).responseJSON { (responseData) -> Void in
             if((responseData.result.value) != nil) {
-                print(responseData.result.value!)
                 let swiftyJsonVar = JSON(responseData.result.value!)
                 if let resData = swiftyJsonVar.arrayObject {
                     self.jsondata = resData as! [[String:AnyObject]]
                     if self.jsondata.count != 0{
                         for i in 0...(self.jsondata.count-1){
                             let dict = self.jsondata[i]
-                            Communication.matchingRooms.append(MatchingRoom((dict["type"] as? String)!,(dict["city"] as? String)!,(dict["team"] as? String)!,(dict["title"] as? String)!,(dict["contents"] as? String)!,(dict["stadium"] as? String)!,(dict["time_game"] as? String)!,(dict["people_num"] as? Int)!))
+                            Communication.matchingRooms.append(MatchingRoom((dict["type"] as? String)!,(dict["city"] as? String)!,(dict["team"] as? String)!,(dict["emblem"] as? String)!,(dict["title"] as? String)!,(dict["contents"] as? String)!,(dict["stadium"] as? String)!,(dict["time_game"] as? String)!,(dict["people_num"] as? Int)!))
                         }
                     }
                 }
@@ -78,21 +97,43 @@ class Communication {
                     }
                 }
             }
+            
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reload_Table_Match"), object: nil)
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reload_Table_Team"), object: nil)
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reload_Nav_Match"), object: nil)
         }
     }
     
-    func getMyTeam(teamName:String){
+    func getTeam(_ teamName:String)->Team{
+        let team:Team=Team()
         Alamofire.request(url+"/teamN", method: .get, parameters: ["name":teamName]).responseJSON { (responseData) -> Void in
-            
             if((responseData.result.value) != nil) {
                 let json = JSON(responseData.result.value!)
-                LoginViewController.myTeam=Team((json[0]["type"].stringValue),(json[0]["city"].stringValue),(json[0]["name"].stringValue),(json[0]["introduce"].stringValue),(json[0]["captain"].stringValue),(json[0]["emblem"].stringValue),(json[0]["image"].stringValue))
+                
+                team.gameType = json[0]["type"].stringValue
+                team.city = json[0]["city"].stringValue
+                team.teamName = json[0]["name"].stringValue
+                team.introduce = json[0]["introduce"].stringValue
+                team.captain = json[0]["captain"].stringValue
+                team.emblem = json[0]["emblem"].stringValue
+                team.image = json[0]["image"].stringValue
             }
         }
-        
+        return team
+    }
+    func saveMatch(_ match : MatchingRoom){
+        Alamofire.request(url+"/save", method: .get, parameters: ["type": match.game,"city":match.city,"team":match.team,"emblem":match.emblem,"title":match.title,"contents":match.contents,"people_num":match.peopleNum,"stadium":match.stadium,"time_game":match.time]).responseJSON {
+            response in
+            switch response.result {
+            case .success:
+                print(response)
+                
+                break
+            case .failure(let error):
+                
+                print(error)
+            }
+        }
     }
     
 }
