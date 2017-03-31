@@ -26,7 +26,7 @@ class Communication {
         KOSessionTask.meTask(completionHandler: { (profile , error) -> Void in
             if profile != nil{
                 let kakao : KOUser = profile as! KOUser
-                if let value = kakao.id as Int?{
+                if let value = kakao.id as! Int?{
                     LoginViewController.myProfile.id = value
                 }
                 if let value = kakao.properties["nickname"] as? String{

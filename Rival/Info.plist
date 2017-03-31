@@ -33,6 +33,7 @@
 	<string>df356003a230d8eef23f43edad4b9648</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
+		<string>daummaps</string>
 		<string>kakaodf356003a230d8eef23f43edad4b9648</string>
 		<string>kakaokompassauth</string>
 		<string>storykompassauth</string>
@@ -45,6 +46,8 @@
 	<true/>
 	<key>NSAppTransportSecurity</key>
 	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
 		<key>NSExceptionDomains</key>
 		<dict>
 			<key>192.168.219.172:8080</key>

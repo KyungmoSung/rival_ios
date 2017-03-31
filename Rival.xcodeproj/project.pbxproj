@@ -29,6 +29,14 @@
 		A7920DC11E6E7EBF00B37B81 /* RivalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7920DC01E6E7EBF00B37B81 /* RivalTests.swift */; };
 		A7920DCC1E6E7EBF00B37B81 /* RivalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7920DCB1E6E7EBF00B37B81 /* RivalUITests.swift */; };
 		A7A572BE1E88F97100D22860 /* AddMatchingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A572BD1E88F97100D22860 /* AddMatchingViewController.swift */; };
+		A7C6A4DC1E8E1FF300E598B3 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7C6A4DB1E8E1FF300E598B3 /* OpenGLES.framework */; };
+		A7C6A4DE1E8E1FFD00E598B3 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7C6A4DD1E8E1FFD00E598B3 /* SystemConfiguration.framework */; };
+		A7C6A4E01E8E200500E598B3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7C6A4DF1E8E200500E598B3 /* CoreLocation.framework */; };
+		A7C6A4E21E8E200D00E598B3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7C6A4E11E8E200D00E598B3 /* QuartzCore.framework */; };
+		A7C6A4E41E8E201800E598B3 /* libstdc++.6.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A7C6A4E31E8E201800E598B3 /* libstdc++.6.tbd */; };
+		A7C6A4E61E8E202D00E598B3 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A7C6A4E51E8E202D00E598B3 /* libsqlite3.tbd */; };
+		A7C6A4E81E8E203200E598B3 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A7C6A4E71E8E203200E598B3 /* libxml2.tbd */; };
+		A7C6A56D1E8E34A300E598B3 /* DaumMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7C6A56B1E8E326700E598B3 /* DaumMap.framework */; };
 		A7CE49CF1E7BCCC60002AD05 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE49CE1E7BCCC60002AD05 /* CategoryViewController.swift */; };
 		A7CE49D11E7BED4C0002AD05 /* SideMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7CE49D01E7BED4C0002AD05 /* SideMenu.framework */; };
 		CE76179B1E7E624100BFED08 /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE76179A1E7E624100BFED08 /* UserDetailViewController.swift */; };
@@ -64,7 +72,7 @@
 		9FC6FEDDE84BEBB8CA1510E3 /* Pods-RivalTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RivalTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RivalTests/Pods-RivalTests.release.xcconfig"; sourceTree = "<group>"; };
 		A722BC051E7A345C00F8A960 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A722BC0A1E7A35B600F8A960 /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoOpenSDK.framework; sourceTree = "<group>"; };
-		A722BC151E7A3AAC00F8A960 /* KakaoOpenSDK-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KakaoOpenSDK-Bridging-Header.h"; sourceTree = "<group>"; };
+		A722BC151E7A3AAC00F8A960 /* Rival-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Rival-Bridging-Header.h"; path = "../Rival-Bridging-Header.h"; sourceTree = "<group>"; };
 		A722BC1B1E7A53C200F8A960 /* MatchDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchDetailViewController.swift; sourceTree = "<group>"; };
 		A72E802C1E81145C00421B47 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../../Library/Developer/Xcode/DerivedData/Rival-ahzynhushjqcpsgbovvsqhebcqnq/Build/Products/Debug-iphoneos/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		A7445D471E77B4FA00CEDED3 /* MatchingRoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchingRoom.swift; sourceTree = "<group>"; };
@@ -88,6 +96,14 @@
 		A7920DCB1E6E7EBF00B37B81 /* RivalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RivalUITests.swift; sourceTree = "<group>"; };
 		A7920DCD1E6E7EBF00B37B81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7A572BD1E88F97100D22860 /* AddMatchingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMatchingViewController.swift; sourceTree = "<group>"; };
+		A7C6A4DB1E8E1FF300E598B3 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		A7C6A4DD1E8E1FFD00E598B3 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		A7C6A4DF1E8E200500E598B3 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		A7C6A4E11E8E200D00E598B3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		A7C6A4E31E8E201800E598B3 /* libstdc++.6.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.tbd"; path = "usr/lib/libstdc++.6.tbd"; sourceTree = SDKROOT; };
+		A7C6A4E51E8E202D00E598B3 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		A7C6A4E71E8E203200E598B3 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		A7C6A56B1E8E326700E598B3 /* DaumMap.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DaumMap.framework; path = DaumMap.embeddedframework/DaumMap.framework; sourceTree = "<group>"; };
 		A7CE49CE1E7BCCC60002AD05 /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		A7CE49D01E7BED4C0002AD05 /* SideMenu.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SideMenu.framework; path = "../../../Library/Developer/Xcode/DerivedData/Rival-ahzynhushjqcpsgbovvsqhebcqnq/Build/Products/Debug-iphoneos/SideMenu/SideMenu.framework"; sourceTree = "<group>"; };
 		CD60E0FE0CA6EAC8B3DA73EA /* Pods_RivalUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RivalUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,6 +119,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7C6A4E81E8E203200E598B3 /* libxml2.tbd in Frameworks */,
+				A7C6A4E61E8E202D00E598B3 /* libsqlite3.tbd in Frameworks */,
+				A7C6A4E41E8E201800E598B3 /* libstdc++.6.tbd in Frameworks */,
+				A7C6A56D1E8E34A300E598B3 /* DaumMap.framework in Frameworks */,
+				A7C6A4E21E8E200D00E598B3 /* QuartzCore.framework in Frameworks */,
+				A7C6A4E01E8E200500E598B3 /* CoreLocation.framework in Frameworks */,
+				A7C6A4DE1E8E1FFD00E598B3 /* SystemConfiguration.framework in Frameworks */,
+				A7C6A4DC1E8E1FF300E598B3 /* OpenGLES.framework in Frameworks */,
 				A72E802D1E81145C00421B47 /* SwiftyJSON.framework in Frameworks */,
 				A773F4F11E7CF1F6007BC39E /* Alamofire.framework in Frameworks */,
 				A7CE49D11E7BED4C0002AD05 /* SideMenu.framework in Frameworks */,
@@ -146,7 +170,6 @@
 		A7920D9D1E6E7EBF00B37B81 = {
 			isa = PBXGroup;
 			children = (
-				A722BC151E7A3AAC00F8A960 /* KakaoOpenSDK-Bridging-Header.h */,
 				A7920DA81E6E7EBF00B37B81 /* Rival */,
 				A7920DBF1E6E7EBF00B37B81 /* RivalTests */,
 				A7920DCA1E6E7EBF00B37B81 /* RivalUITests */,
@@ -169,7 +192,8 @@
 		A7920DA81E6E7EBF00B37B81 /* Rival */ = {
 			isa = PBXGroup;
 			children = (
-				CE76179C1E7E65FB00BFED08 /* model */,
+				A7C6A5621E8E265900E598B3 /* Bridging-Header */,
+				CE76179C1E7E65FB00BFED08 /* Model */,
 				CE76179F1E7EBC7B00BFED08 /* Communication.swift */,
 				CEAB80C41E7D341100140C90 /* MenuTableViewController.swift */,
 				CE76179A1E7E624100BFED08 /* UserDetailViewController.swift */,
@@ -209,19 +233,35 @@
 			path = RivalUITests;
 			sourceTree = "<group>";
 		};
-		CE76179C1E7E65FB00BFED08 /* model */ = {
+		A7C6A5621E8E265900E598B3 /* Bridging-Header */ = {
+			isa = PBXGroup;
+			children = (
+				A722BC151E7A3AAC00F8A960 /* Rival-Bridging-Header.h */,
+			);
+			name = "Bridging-Header";
+			sourceTree = "<group>";
+		};
+		CE76179C1E7E65FB00BFED08 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				A7445D471E77B4FA00CEDED3 /* MatchingRoom.swift */,
 				A773F4F21E7D025C007BC39E /* Team.swift */,
 				CE76179D1E7E660E00BFED08 /* User.swift */,
 			);
-			name = model;
+			name = Model;
 			sourceTree = "<group>";
 		};
 		D665001D92D925F0E083D5E1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A7C6A56B1E8E326700E598B3 /* DaumMap.framework */,
+				A7C6A4E71E8E203200E598B3 /* libxml2.tbd */,
+				A7C6A4E51E8E202D00E598B3 /* libsqlite3.tbd */,
+				A7C6A4E31E8E201800E598B3 /* libstdc++.6.tbd */,
+				A7C6A4E11E8E200D00E598B3 /* QuartzCore.framework */,
+				A7C6A4DF1E8E200500E598B3 /* CoreLocation.framework */,
+				A7C6A4DD1E8E1FFD00E598B3 /* SystemConfiguration.framework */,
+				A7C6A4DB1E8E1FF300E598B3 /* OpenGLES.framework */,
 				A72E802C1E81145C00421B47 /* SwiftyJSON.framework */,
 				A773F4F01E7CF1F6007BC39E /* Alamofire.framework */,
 				A7CE49D01E7BED4C0002AD05 /* SideMenu.framework */,
@@ -600,7 +640,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
@@ -650,7 +690,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
@@ -690,22 +730,29 @@
 			baseConfigurationReference = FBFD2B19224EDDE5A2E37F0E /* Pods-Rival.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_HEADERS_RUN_UNIFDEF = NO;
 				DEVELOPMENT_TEAM = YV47R3P48P;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/Alamofire",
+					"$(PROJECT_DIR)/DaumMap.embeddedframework",
 				);
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = Rival/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/DaumMap.embeddedframework/DaumMap.framework/Versions/A",
+				);
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = hs.Rival;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Sung/Desktop/Rival/rival_ios/KakaoOpenSDK-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Sung/Desktop/Rival/rival_ios/Rival-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				USER_HEADER_SEARCH_PATHS = "";
 			};
@@ -716,22 +763,29 @@
 			baseConfigurationReference = 1C5DB5FED5F45D2883CB46AF /* Pods-Rival.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_HEADERS_RUN_UNIFDEF = NO;
 				DEVELOPMENT_TEAM = YV47R3P48P;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/Alamofire",
+					"$(PROJECT_DIR)/DaumMap.embeddedframework",
 				);
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = Rival/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/DaumMap.embeddedframework/DaumMap.framework/Versions/A",
+				);
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = hs.Rival;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Sung/Desktop/Rival/rival_ios/KakaoOpenSDK-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Sung/Desktop/Rival/rival_ios/Rival-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				USER_HEADER_SEARCH_PATHS = "";
 			};
