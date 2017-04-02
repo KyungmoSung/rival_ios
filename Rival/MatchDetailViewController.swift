@@ -31,6 +31,7 @@ class MatchDetailViewController: UITableViewController,MTMapViewDelegate {
     var longitude: Double = 127.0484572
     
     override func viewDidLoad() {
+        
         labelTitle.text = sTitle!
         labelPeopleNum.text = "인원 : \(sNum!)명"
         labelTime.text = "\(sTime!)"
@@ -45,7 +46,7 @@ class MatchDetailViewController: UITableViewController,MTMapViewDelegate {
         map.delegate = self
         map.baseMapType = .standard
         mapView.addSubview(map)
-        
+  
         super.viewDidLoad()
     }
     
@@ -61,14 +62,13 @@ class MatchDetailViewController: UITableViewController,MTMapViewDelegate {
         else {
             UIApplication.shared.open(daumMapAppstoreURL! as URL)
         }
-        
     }
     
     @IBAction func openCalendar(_ sender: Any) {
         
         let nscal = NSCalendar.autoupdatingCurrent
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy.MM.dd HH:mm"
+        dateFormatter.dateFormat = "yyyy년 MM월 dd일 HH시 mm분"
         
         let startDate = dateFormatter.date(from: self.sTime)!
         let endDate = nscal.date(byAdding: .hour, value: 1, to: startDate)

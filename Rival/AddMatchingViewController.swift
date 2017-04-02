@@ -96,7 +96,7 @@ class AddMatchingViewController: UITableViewController {
         dateFormatter.dateStyle = .short
         dateFormatter.timeStyle = .short
         
-        dateFormatter.dateFormat = "yyyy.MM.dd HH:mm"
+        dateFormatter.dateFormat = "yyyy년 MM월 dd일 HH시 mm분"
         
         dateTxt.text = dateFormatter.string(from: datePicker.date)
         self.view.endEditing(true)
