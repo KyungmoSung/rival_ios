@@ -12,21 +12,24 @@ import Alamofire
 
 class MatchingViewController: UITableViewController {
     
+    // MARK: - Properties
     let dropDownCity = DropDown()
     let dropDownGame = DropDown()
     let button =  UIButton(type: .custom)
     var jsondata = [[String:AnyObject]]()
     let com = Communication()
+    var filteredRooms = Array<MatchingRoom>()
+    var searchController = UISearchController()
     
+    // MARK: - View Setup
     override func viewDidLoad() {
-        
         super.viewDidLoad()
-        tableView.dataSource = self
-        tableView.delegate = self
         
+        // Get Database from server
         com.getTeamsDB()
         com.getMatchingRoomsDB()
         
+        // Setup the NavigationBar
         self.navigationItem.rightBarButtonItem?.setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.white], for: .normal)
         
         button.frame = CGRect(x: 0, y: 0, width: 100, height: 40)
@@ -35,19 +38,36 @@ class MatchingViewController: UITableViewController {
         button.addTarget(self, action: #selector(dropDownGameFunc(_:)), for: .touchUpInside)
         
         self.navigationItem.titleView = button
+        self.navigationController?.navigationBar.contentMode = .scaleToFill
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: Communication.nav_bg),for: .default)
         
-        let newBackButton = UIBarButtonItem(title: "〈 Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(back(sender:)))
-        self.navigationItem.leftBarButtonItem = newBackButton
-        
-        
+        // Setup the NotificationCenter
         NotificationCenter.default.addObserver(self, selector: #selector(reloadTableMatch), name: NSNotification.Name(rawValue: "reload_Table_Match"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(reloadNavMatch), name: NSNotification.Name(rawValue: "reload_Nav_Match"), object: nil)
         
+        // Setup the SearchController
+        self.searchController = ({
+            let controller = UISearchController(searchResultsController: nil)
+            controller.searchResultsUpdater = self
+            controller.dimsBackgroundDuringPresentation = false
+            definesPresentationContext = true
+            controller.searchBar.scopeButtonTitles=["제목","팀명","경기장"]
+            controller.hidesNavigationBarDuringPresentation = false
+            controller.searchBar.barTintColor = UIColor.white
+            self.tableView.tableHeaderView = controller.searchBar
+            return controller
+        })()
+        self.tableView.reloadData()
     }
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    // MARK: - Reload Data
     func reloadTableMatch(){
         self.tableView.reloadData()
     }
+    
     func reloadNavMatch(){
         button.setTitle("    \(Communication.selectedGame) ⌄", for: .normal)
         self.navigationItem.titleView = button
@@ -55,18 +75,14 @@ class MatchingViewController: UITableViewController {
         self.navigationItem.prompt = Communication.selectedCity
         
     }
-    func back(sender: UIBarButtonItem) {
-        self.navigationController?.navigationBar.setBackgroundImage(nil,for: .default)
-        _ = navigationController?.popViewController(animated: true)
-    }
     
+    
+    // MARK: - DropDown menu
     func dropDownGameFunc(_ sender: UIBarButtonItem) {
-        
         DropDown.appearance().backgroundColor = UIColor.white
         DropDown.appearance().cellHeight = 60
         dropDownGame.anchorView = self.tableView
         dropDownCity.anchorView = self.tableView
-        // The list of items to display. Can be changed dynamically
         dropDownCity.dataSource = ["서울","경기","인천"]
         dropDownCity.bottomOffset = CGPoint(x:0, y:self.navigationController!.navigationBar.frame.size.height+UIApplication.shared.statusBarFrame.height)
         dropDownCity.shadowOffset=CGSize(width: 0.0, height: 10.0)
@@ -79,8 +95,6 @@ class MatchingViewController: UITableViewController {
             
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reload_Nav_Team"), object: nil)
         }
-        
-        
         dropDownGame.dataSource = ["축구","야구","농구","족구","당구","볼링"]
         dropDownGame.bottomOffset = CGPoint(x: 0, y:self.navigationController!.navigationBar.frame.size.height+UIApplication.shared.statusBarFrame.height)
         dropDownGame.shadowOffset=CGSize(width: 0.0, height: 10.0)
@@ -119,68 +133,89 @@ class MatchingViewController: UITableViewController {
         dropDownGame.show()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+    // MARK: - Table View
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        
         return 1
     }
     
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+        if (self.searchController.isActive && searchController.searchBar.text != ""){
+            return self.filteredRooms.count
+        }
         return Communication.matchingRooms.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "gameCell", for: indexPath) as! MatchTableViewCell
-        let title = Communication.matchingRooms[indexPath.row].title
-        let stadium = Communication.matchingRooms[indexPath.row].stadium
-        let matchTime = Communication.matchingRooms[indexPath.row].time
-        let peopleNum = Communication.matchingRooms[indexPath.row].peopleNum
-        let team = Communication.matchingRooms[indexPath.row].team
-        let emblem = Communication.matchingRooms[indexPath.row].emblem
+        let room: MatchingRoom
+        
+        if (self.searchController.isActive && self.searchController.searchBar.text != ""){
+            room = self.filteredRooms[indexPath.row]
+        } else {
+            room = Communication.matchingRooms[indexPath.row]
+        }
         
         tableView.backgroundColor = UIColor.groupTableViewBackground
-        cell.labelTitle.text=title
-        cell.labelStadium.text=stadium
-        cell.labelTime.text=matchTime
-        cell.labelPeopleNum.text="\(peopleNum)명"
-        cell.labelTeamName.text=team
-        cell.emblem.image=UIImage(named: emblem)
+        cell.labelTitle.text=room.title
+        cell.labelStadium.text=room.stadium
+        cell.labelTime.text=room.time
+        cell.labelPeopleNum.text="\(room.peopleNum)명"
+        cell.labelTeamName.text=room.team
+        cell.emblem.image=UIImage(named: room.emblem)
         
         return cell
     }
     
+    // MARK: - Segues
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if let indexPath = tableView.indexPathForSelectedRow{
-            
-            let title = Communication.matchingRooms[(indexPath.row)].title
-            let stadium = Communication.matchingRooms[(indexPath.row)].stadium
-            let matchTime = Communication.matchingRooms[(indexPath.row)].time
-            let peopleNum = Communication.matchingRooms[(indexPath.row)].peopleNum
-            let team = com.getTeam(Communication.matchingRooms[(indexPath.row)].team)
-            let teamName = Communication.matchingRooms[(indexPath.row)].team
-            let teamEmblem = Communication.matchingRooms[(indexPath.row)].emblem
-            
-            let detailViewController = segue.destination as! MatchDetailViewController
-            
-            detailViewController.sTitle = title
-            detailViewController.sStadium = stadium
-            detailViewController.sTime = matchTime
-            detailViewController.sNum = peopleNum
-            detailViewController.sTeam = team
-            detailViewController.sTeamName = teamName
-            detailViewController.sTeamEmblem = teamEmblem
-            
+        if segue.identifier == "detail"{
+            if let indexPath = tableView.indexPathForSelectedRow{
+                
+                let room: MatchingRoom
+                
+                if (self.searchController.isActive && self.searchController.searchBar.text != ""){
+                    room = self.filteredRooms[indexPath.row]
+                } else {
+                    room = Communication.matchingRooms[indexPath.row]
+                }
+                
+                let detailViewController = segue.destination as! MatchDetailViewController
+                
+                detailViewController.sTitle = room.title
+                detailViewController.sStadium = room.stadium
+                detailViewController.sTime = room.time
+                detailViewController.sNum = room.peopleNum
+                detailViewController.sTeam = com.getTeam(room.team)
+                detailViewController.sTeamName = room.team
+                detailViewController.sTeamEmblem = room.emblem
+            }
+        }}
+}
+
+// MARK: - SearchBar updating
+extension MatchingViewController: UISearchResultsUpdating
+{
+    func updateSearchResults(for searchController: UISearchController)
+    {
+        filteredRooms.removeAll(keepingCapacity: false)
+        let scope = searchController.searchBar.selectedScopeButtonIndex
+        filteredRooms = Communication.matchingRooms.filter { room in
+            switch scope{
+            case 0: // Title
+                return room.title.lowercased().contains((searchController.searchBar.text?.lowercased())!)
+            case 1: // Team name
+                return room.team.lowercased().contains((searchController.searchBar.text?.lowercased())!)
+            case 2: // Stadium
+                return room.stadium.lowercased().contains((searchController.searchBar.text?.lowercased())!)
+            default:
+                return true
+            }
         }
-        
+        self.tableView.reloadData()
     }
 }
+
+
 
 

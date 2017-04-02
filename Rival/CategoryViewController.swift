@@ -36,7 +36,9 @@ class CategoryViewController: UIViewController{
         self.navigationItem.titleView = button
         btn_soccer.setTitleColor(.white, for:.normal)
     }
-
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.setBackgroundImage(nil,for: .default)
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

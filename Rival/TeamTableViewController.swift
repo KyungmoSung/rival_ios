@@ -34,11 +34,8 @@ class TeamTableViewController: UITableViewController {
         button.addTarget(self, action: #selector(self.dropDownGameFunc(_:)), for: .touchUpInside)
         
         self.navigationItem.titleView = button
-        
+        self.navigationController?.navigationBar.contentMode = .scaleAspectFill
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: Communication.nav_bg),for: .default)
-        
-        let newBackButton = UIBarButtonItem(title: "〈 Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(back(sender:)))
-        self.navigationItem.leftBarButtonItem = newBackButton
         
         super.viewDidLoad()
         tableView.dataSource = self
@@ -58,10 +55,6 @@ class TeamTableViewController: UITableViewController {
         self.navigationItem.rightBarButtonItem?.title = "  \(Communication.selectedCity) ⌄"
     }
     
-    func back(sender: UIBarButtonItem) {
-        self.navigationController?.navigationBar.setBackgroundImage(nil,for: .default)
-        _ = navigationController?.popViewController(animated: true)
-    }
     
     func dropDownCityFunc(_ sender: UIBarButtonItem) {
         // The view to which the drop down will appear on
@@ -108,6 +101,7 @@ class TeamTableViewController: UITableViewController {
             }else{
                 Communication.nav_bg = "bowling_bg"
             }
+            
             self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: Communication.nav_bg),
                                                                         for: .default)
             self.button.setTitle("  \(item) ⌄", for: .normal)

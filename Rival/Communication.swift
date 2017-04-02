@@ -11,15 +11,15 @@ import Alamofire
 import SwiftyJSON
 
 class Communication {
-    static var matchingRooms = [MatchingRoom]()
-    static var teams = [Team]()
+    static var matchingRooms = Array<MatchingRoom>()
+    static var teams = Array<Team>()
     var jsondata = [[String:AnyObject]]()
     
     static var selectedCity:String = "서울"
     static var selectedGame:String = "축구"
     static var nav_bg="soccer_img.png"
     
-    let url = "http://172.20.10.6:8080"
+    let url = "http://192.168.0.5:8080"
     
     func getSessionProfile(){
         
