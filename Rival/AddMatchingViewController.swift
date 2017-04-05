@@ -27,6 +27,7 @@ class AddMatchingViewController: UITableViewController {
     @IBOutlet weak var gameCell: UITableViewCell!
     @IBOutlet weak var cityCell: UITableViewCell!
     @IBOutlet weak var stadium: UILabel!
+    
     let dropDown = DropDown()
     var dropDownData = [""]
     var numberOfPeople = 1

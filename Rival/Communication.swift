@@ -6,6 +6,7 @@
 //  Copyright © 2017년 Sung Kyungmo. All rights reserved.
 //
 
+
 import Foundation
 import Alamofire
 import SwiftyJSON
@@ -13,6 +14,7 @@ import SwiftyJSON
 class Communication {
     static var matchingRooms = Array<MatchingRoom>()
     static var teams = Array<Team>()
+    static var stadium = Array<Stadium>()
     var jsondata = [[String:AnyObject]]()
     
     static var selectedCity:String = "서울"
@@ -136,4 +138,53 @@ class Communication {
         }
     }
     
+    func getStadium(type:String){
+        Communication.stadium.removeAll()
+        Alamofire.request(url+"/stadium", method: .get, parameters: ["type":type]).responseJSON { (responseData) -> Void in
+            
+            if((responseData.result.value) != nil) {
+                let swiftyJsonVar = JSON(responseData.result.value!)
+                if let resData = swiftyJsonVar.arrayObject {
+                    self.jsondata = resData as! [[String:AnyObject]]
+                    if self.jsondata.count != 0{
+                        for i in 0...(self.jsondata.count-1){
+                            let dict = self.jsondata[i]
+                            Communication.stadium.append(Stadium(
+                                self.nullToNil(dict["id"])!,
+                                self.nullToNil(dict["stadium_name"])!,
+                                self.nullToNil(dict["location_name"])!,
+                                self.nullToNil(dict["type"])!,
+                                self.nullToNil(dict["holiday"])!,
+                                self.nullToNil(dict["weekday_time_start"])!,
+                                self.nullToNil(dict["weekday_time_end"])!,
+                                self.nullToNil(dict["holiday_time_start"])!,
+                                self.nullToNil(dict["holiday_time_end"])!,
+                                self.nullToNil(dict["b_fee"])!,
+                                self.nullToNil(dict["standard_time"])!,
+                                self.nullToNil(dict["fare"])!,
+                                self.nullToNil(dict["excess_fare"])!,
+                                self.nullToNil(dict["information"])!,
+                                self.nullToNil(dict["book_way"])!,
+                                self.nullToNil(dict["road_address"])!,
+                                self.nullToNil(dict["management_agency"])!,
+                                self.nullToNil(dict["department"])!,
+                                self.nullToNil(dict["phone_num"])!,
+                                self.nullToNil(dict["homepage"])!,
+                                Double(self.nullToNil(dict["latitude"])!)!,
+                                Double(self.nullToNil(dict["longitude"])!)!))
+                            
+                        }
+                    }
+                }
+            }
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reload_Table_Stadium"), object: nil)
+        }
+    }
+    func nullToNil(_ value : AnyObject?) -> String? {
+        if value is NSNull {
+            return ""
+        } else {
+            return value as? String
+        }
+    }
 }
