@@ -12,13 +12,9 @@ class User {
     
     var id: Int
     var nickname: String
-
     var profile_image: String
-
     var thumbnail_image: String
-
     var team: String
-    
     
     init(_ id: Int, _ nickname: String,_ profile_image: String,_ thumbnail_image: String,_ team: String) {
         self.id = id

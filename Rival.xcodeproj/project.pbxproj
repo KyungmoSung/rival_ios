@@ -15,6 +15,10 @@
 		A722BC1C1E7A53C200F8A960 /* MatchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A722BC1B1E7A53C200F8A960 /* MatchDetailViewController.swift */; };
 		A72E802D1E81145C00421B47 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A72E802C1E81145C00421B47 /* SwiftyJSON.framework */; };
 		A7445D481E77B4FA00CEDED3 /* MatchingRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7445D471E77B4FA00CEDED3 /* MatchingRoom.swift */; };
+		A756BB351E920D900087885A /* StadiumTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756BB341E920D900087885A /* StadiumTableViewController.swift */; };
+		A756BB371E9210990087885A /* Stadium.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756BB361E9210990087885A /* Stadium.swift */; };
+		A756BB391E922D9C0087885A /* StadiumDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756BB381E922D9C0087885A /* StadiumDetailViewController.swift */; };
+		A756BB3C1E929BCF0087885A /* DaumMapAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756BB3B1E929BCF0087885A /* DaumMapAPI.swift */; };
 		A77295DE1E7D308600138F44 /* TeamTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77295DD1E7D308600138F44 /* TeamTableViewController.swift */; };
 		A77295E01E7D397700138F44 /* TeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77295DF1E7D397700138F44 /* TeamTableViewCell.swift */; };
 		A773F4F11E7CF1F6007BC39E /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A773F4F01E7CF1F6007BC39E /* Alamofire.framework */; };
@@ -103,6 +107,10 @@
 		A722BC1B1E7A53C200F8A960 /* MatchDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchDetailViewController.swift; sourceTree = "<group>"; };
 		A72E802C1E81145C00421B47 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../../Library/Developer/Xcode/DerivedData/Rival-ahzynhushjqcpsgbovvsqhebcqnq/Build/Products/Debug-iphoneos/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		A7445D471E77B4FA00CEDED3 /* MatchingRoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchingRoom.swift; sourceTree = "<group>"; };
+		A756BB341E920D900087885A /* StadiumTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StadiumTableViewController.swift; sourceTree = "<group>"; };
+		A756BB361E9210990087885A /* Stadium.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stadium.swift; sourceTree = "<group>"; };
+		A756BB381E922D9C0087885A /* StadiumDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StadiumDetailViewController.swift; sourceTree = "<group>"; };
+		A756BB3B1E929BCF0087885A /* DaumMapAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DaumMapAPI.swift; sourceTree = "<group>"; };
 		A77295DD1E7D308600138F44 /* TeamTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamTableViewController.swift; sourceTree = "<group>"; };
 		A77295DF1E7D397700138F44 /* TeamTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamTableViewCell.swift; sourceTree = "<group>"; };
 		A773F4F01E7CF1F6007BC39E /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
@@ -221,6 +229,71 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A756BB2E1E920CC20087885A /* Match */ = {
+			isa = PBXGroup;
+			children = (
+				A7CE49CE1E7BCCC60002AD05 /* CategoryViewController.swift */,
+				A7920DAB1E6E7EBF00B37B81 /* MatchingViewController.swift */,
+				A773F4F81E7D1EBD007BC39E /* MatchTableViewCell.swift */,
+				A722BC1B1E7A53C200F8A960 /* MatchDetailViewController.swift */,
+				A7A572BD1E88F97100D22860 /* AddMatchingViewController.swift */,
+			);
+			name = Match;
+			sourceTree = "<group>";
+		};
+		A756BB2F1E920CD70087885A /* User */ = {
+			isa = PBXGroup;
+			children = (
+				A722BC051E7A345C00F8A960 /* LoginViewController.swift */,
+				CE76179A1E7E624100BFED08 /* UserDetailViewController.swift */,
+				CEAB80C41E7D341100140C90 /* MenuTableViewController.swift */,
+			);
+			name = User;
+			sourceTree = "<group>";
+		};
+		A756BB301E920CEF0087885A /* Communication */ = {
+			isa = PBXGroup;
+			children = (
+				CE76179F1E7EBC7B00BFED08 /* Communication.swift */,
+			);
+			name = Communication;
+			sourceTree = "<group>";
+		};
+		A756BB311E920D020087885A /* Team */ = {
+			isa = PBXGroup;
+			children = (
+				A77295DD1E7D308600138F44 /* TeamTableViewController.swift */,
+				A77295DF1E7D397700138F44 /* TeamTableViewCell.swift */,
+				A773F4F61E7D1B14007BC39E /* TeamDetailViewController.swift */,
+			);
+			name = Team;
+			sourceTree = "<group>";
+		};
+		A756BB321E920D210087885A /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				A7920DA91E6E7EBF00B37B81 /* AppDelegate.swift */,
+			);
+			name = Delegate;
+			sourceTree = "<group>";
+		};
+		A756BB331E920D3A0087885A /* Stadium */ = {
+			isa = PBXGroup;
+			children = (
+				A756BB341E920D900087885A /* StadiumTableViewController.swift */,
+				A756BB381E922D9C0087885A /* StadiumDetailViewController.swift */,
+			);
+			name = Stadium;
+			sourceTree = "<group>";
+		};
+		A756BB3A1E929B9D0087885A /* DaumMap */ = {
+			isa = PBXGroup;
+			children = (
+				A756BB3B1E929BCF0087885A /* DaumMapAPI.swift */,
+			);
+			name = DaumMap;
+			sourceTree = "<group>";
+		};
 		A7920D9D1E6E7EBF00B37B81 = {
 			isa = PBXGroup;
 			children = (
@@ -247,20 +320,14 @@
 			isa = PBXGroup;
 			children = (
 				A7C6A5621E8E265900E598B3 /* Bridging-Header */,
+				A756BB321E920D210087885A /* Delegate */,
 				CE76179C1E7E65FB00BFED08 /* Model */,
-				CE76179F1E7EBC7B00BFED08 /* Communication.swift */,
-				CEAB80C41E7D341100140C90 /* MenuTableViewController.swift */,
-				CE76179A1E7E624100BFED08 /* UserDetailViewController.swift */,
-				A7920DA91E6E7EBF00B37B81 /* AppDelegate.swift */,
-				A722BC051E7A345C00F8A960 /* LoginViewController.swift */,
-				A7CE49CE1E7BCCC60002AD05 /* CategoryViewController.swift */,
-				A7920DAB1E6E7EBF00B37B81 /* MatchingViewController.swift */,
-				A773F4F81E7D1EBD007BC39E /* MatchTableViewCell.swift */,
-				A722BC1B1E7A53C200F8A960 /* MatchDetailViewController.swift */,
-				A7A572BD1E88F97100D22860 /* AddMatchingViewController.swift */,
-				A77295DD1E7D308600138F44 /* TeamTableViewController.swift */,
-				A77295DF1E7D397700138F44 /* TeamTableViewCell.swift */,
-				A773F4F61E7D1B14007BC39E /* TeamDetailViewController.swift */,
+				A756BB301E920CEF0087885A /* Communication */,
+				A756BB2F1E920CD70087885A /* User */,
+				A756BB2E1E920CC20087885A /* Match */,
+				A756BB311E920D020087885A /* Team */,
+				A756BB331E920D3A0087885A /* Stadium */,
+				A756BB3A1E929B9D0087885A /* DaumMap */,
 				A7920DAF1E6E7EBF00B37B81 /* Main.storyboard */,
 				A7920DB21E6E7EBF00B37B81 /* Assets.xcassets */,
 				A7920DB41E6E7EBF00B37B81 /* LaunchScreen.storyboard */,
@@ -336,6 +403,7 @@
 				A7445D471E77B4FA00CEDED3 /* MatchingRoom.swift */,
 				A773F4F21E7D025C007BC39E /* Team.swift */,
 				CE76179D1E7E660E00BFED08 /* User.swift */,
+				A756BB361E9210990087885A /* Stadium.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -687,13 +755,17 @@
 				A7445D481E77B4FA00CEDED3 /* MatchingRoom.swift in Sources */,
 				CE76179E1E7E660E00BFED08 /* User.swift in Sources */,
 				A7CE49CF1E7BCCC60002AD05 /* CategoryViewController.swift in Sources */,
+				A756BB391E922D9C0087885A /* StadiumDetailViewController.swift in Sources */,
 				A7920DAA1E6E7EBF00B37B81 /* AppDelegate.swift in Sources */,
 				A77295DE1E7D308600138F44 /* TeamTableViewController.swift in Sources */,
 				CE7617A01E7EBC7B00BFED08 /* Communication.swift in Sources */,
 				A773F4F91E7D1EBD007BC39E /* MatchTableViewCell.swift in Sources */,
 				A7920DAC1E6E7EBF00B37B81 /* MatchingViewController.swift in Sources */,
+				A756BB371E9210990087885A /* Stadium.swift in Sources */,
 				A7A572BE1E88F97100D22860 /* AddMatchingViewController.swift in Sources */,
+				A756BB351E920D900087885A /* StadiumTableViewController.swift in Sources */,
 				A722BC1C1E7A53C200F8A960 /* MatchDetailViewController.swift in Sources */,
+				A756BB3C1E929BCF0087885A /* DaumMapAPI.swift in Sources */,
 				A77295E01E7D397700138F44 /* TeamTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

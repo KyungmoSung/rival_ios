@@ -12,7 +12,6 @@ import DropDown
 
 class TeamTableViewController: UITableViewController {
     
-    var jsondata = [[String:AnyObject]]()
     let com = Communication()
     let dropDownCity = DropDown()
     let dropDownGame = DropDown()
