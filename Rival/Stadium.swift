@@ -10,6 +10,34 @@ import Foundation
 
 class Stadium {
     
+    /**
+     *
+     *     stadium_name        개방시설명
+     *     location_name       개방장소명
+     *     type                개방시설유형구분
+     *     holiday             휴관일
+     *     weekday_time_start  평일운영시작시각
+     *     weekday_time_end    평일운영종료시각
+     *     b_fee               유료사용여부
+     *     standard_time       사용기준시간
+     *     fare                사용료
+     *     name                초과사용단위시간
+     *     excess_fare         초과사용료
+     *     capacity            수용가능인원수
+     *     area                면적
+     *     information         부대시설정보
+     *     book_way            신청방법구분
+     *     picture             시설사진정보
+     *     road_address        소재지도로명주소
+     *     management_agency   관리기관명
+     *     department          담당부서명
+     *     phone_num           사용안내전화번호
+     *     homepage            홈페이지주소
+     *     latitude            위도
+     *     longitude           경도
+     *     data_time           데이터기준일자
+     */
+    
     var id:String
     var stadium_name:String
     var location_name:String

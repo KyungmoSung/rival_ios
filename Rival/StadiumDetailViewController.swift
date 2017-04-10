@@ -27,42 +27,57 @@ class StadiumDetailViewController: UITableViewController,MTMapViewDelegate {
     @IBOutlet weak var homepage: UILabel!
     @IBOutlet weak var information: UILabel!
     
-    var stadium: Stadium!
+    static var stadium: Stadium!
     let DaumMap = DaumMapAPI()
-    var fee:String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if(stadium.b_fee=="N"){fee = "무료"}
-        else if (stadium.b_fee=="N"){fee = "유료"}
-        else{fee = "정보없음"}
-        type.text = stadium.type
-        stadium_name.text = stadium.stadium_name
-        location_name.text = stadium.location_name
-        road_address.text = stadium.road_address
-        weekday_time.text = "평일 \(stadium.weekday_time_start) ~ \( stadium.weekday_time_end)"
-        holiday_time.text = "주말 \(stadium.holiday_time_start) ~ \(stadium.holiday_time_end)"
-        b_fee.text = fee
-        management_agency.text = "\(stadium.management_agency) \(stadium.department)"
-        setText(holiday , stadium.holiday)
-        setText(fare,stadium.fare)
-        setText(excess_fare , stadium.excess_fare)
-        setText(book_way,stadium.book_way)
-        setText(phone_num , stadium.phone_num)
-        setText(homepage , stadium.homepage)
-        setText(information , stadium.information)
+        //Set text to Label
+        type.text = StadiumDetailViewController.stadium.type
+        stadium_name.text = StadiumDetailViewController.stadium.stadium_name
+        location_name.text = StadiumDetailViewController.stadium.location_name
+        road_address.text = StadiumDetailViewController.stadium.road_address
+        weekday_time.text = setText("평일 : ","\(StadiumDetailViewController.stadium.weekday_time_start) ~ \( StadiumDetailViewController.stadium.weekday_time_end)")
+        holiday_time.text = setText("주말 : ","\(StadiumDetailViewController.stadium.holiday_time_start) ~ \(StadiumDetailViewController.stadium.holiday_time_end)")
+        b_fee.text = checkFee(StadiumDetailViewController.stadium.b_fee)
+        management_agency.text = "\(StadiumDetailViewController.stadium.management_agency) \(StadiumDetailViewController.stadium.department)"
+        holiday.text = setText("", StadiumDetailViewController.stadium.holiday)
+        fare.text = setText("사용료 : ",StadiumDetailViewController.stadium.fare)
+        excess_fare.text = setText("초과사용료 : ", StadiumDetailViewController.stadium.excess_fare)
+        book_way.text = setText("",StadiumDetailViewController.stadium.book_way)
+        phone_num.text = setText("", StadiumDetailViewController.stadium.phone_num)
+        homepage.text = setText("", StadiumDetailViewController.stadium.homepage)
+        information.text = setText("", StadiumDetailViewController.stadium.information)
         
-        let map = DaumMap.setDaumMap(mapView: mapView,name:stadium.stadium_name, latitude: stadium.latitude, longitude: stadium.longitude)
+        //Set DaumMap
+        let map = DaumMap.setDaumMap(mapView: mapView,name:StadiumDetailViewController.stadium.stadium_name, latitude: StadiumDetailViewController.stadium.latitude, longitude: StadiumDetailViewController.stadium.longitude)
         map.delegate = self
         mapView.addSubview(map)
     }
-    func setText(_ label:UILabel,_ text:String){
-        if(text==""){
-            label.text = "정보없음"
+    
+    //Check Fee YES or NO
+    func checkFee(_ text:String) -> String{
+        if(text=="N"){return "무료"}
+        else if (text=="Y"){return "유료"}
+        else{return "정보없음"}
+    }
+    
+    //Check null data
+    func setText(_ titleText:String,_ text:String) -> String{
+        if(text==StadiumDetailViewController.stadium.fare||text==StadiumDetailViewController.stadium.excess_fare){
+            if(text==""){
+                return (titleText + "정보없음")
+            }
+            else{
+                return (titleText + text + " 원")
+            }
+        }
+        else if(text==""){
+            return "정보없음"
         }
         else{
-            label.text = text
+            return (titleText + text)
         }
     }
     
