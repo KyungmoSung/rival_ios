@@ -32,6 +32,8 @@
 		A7920DB61E6E7EBF00B37B81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7920DB41E6E7EBF00B37B81 /* LaunchScreen.storyboard */; };
 		A7920DC11E6E7EBF00B37B81 /* RivalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7920DC01E6E7EBF00B37B81 /* RivalTests.swift */; };
 		A7920DCC1E6E7EBF00B37B81 /* RivalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7920DCB1E6E7EBF00B37B81 /* RivalUITests.swift */; };
+		A7A4E8B81E94E42D00CDDBA6 /* StadiumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A4E8B71E94E42D00CDDBA6 /* StadiumTableViewCell.swift */; };
+		A7A4E8BB1E94ED0200CDDBA6 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A4E8BA1E94ED0200CDDBA6 /* ActivityIndicator.swift */; };
 		A7A572BE1E88F97100D22860 /* AddMatchingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A572BD1E88F97100D22860 /* AddMatchingViewController.swift */; };
 		A7C6A4DC1E8E1FF300E598B3 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7C6A4DB1E8E1FF300E598B3 /* OpenGLES.framework */; };
 		A7C6A4DE1E8E1FFD00E598B3 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7C6A4DD1E8E1FFD00E598B3 /* SystemConfiguration.framework */; };
@@ -130,6 +132,8 @@
 		A7920DC71E6E7EBF00B37B81 /* RivalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RivalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7920DCB1E6E7EBF00B37B81 /* RivalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RivalUITests.swift; sourceTree = "<group>"; };
 		A7920DCD1E6E7EBF00B37B81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A7A4E8B71E94E42D00CDDBA6 /* StadiumTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StadiumTableViewCell.swift; sourceTree = "<group>"; };
+		A7A4E8BA1E94ED0200CDDBA6 /* ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		A7A572BD1E88F97100D22860 /* AddMatchingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMatchingViewController.swift; sourceTree = "<group>"; };
 		A7C6A4DB1E8E1FF300E598B3 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		A7C6A4DD1E8E1FFD00E598B3 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -282,6 +286,7 @@
 			children = (
 				A756BB341E920D900087885A /* StadiumTableViewController.swift */,
 				A756BB381E922D9C0087885A /* StadiumDetailViewController.swift */,
+				A7A4E8B71E94E42D00CDDBA6 /* StadiumTableViewCell.swift */,
 			);
 			name = Stadium;
 			sourceTree = "<group>";
@@ -328,6 +333,7 @@
 				A756BB311E920D020087885A /* Team */,
 				A756BB331E920D3A0087885A /* Stadium */,
 				A756BB3A1E929B9D0087885A /* DaumMap */,
+				A7A4E8B91E94ECD100CDDBA6 /* ActivityIndicatior */,
 				A7920DAF1E6E7EBF00B37B81 /* Main.storyboard */,
 				A7920DB21E6E7EBF00B37B81 /* Assets.xcassets */,
 				A7920DB41E6E7EBF00B37B81 /* LaunchScreen.storyboard */,
@@ -352,6 +358,14 @@
 				A7920DCD1E6E7EBF00B37B81 /* Info.plist */,
 			);
 			path = RivalUITests;
+			sourceTree = "<group>";
+		};
+		A7A4E8B91E94ECD100CDDBA6 /* ActivityIndicatior */ = {
+			isa = PBXGroup;
+			children = (
+				A7A4E8BA1E94ED0200CDDBA6 /* ActivityIndicator.swift */,
+			);
+			name = ActivityIndicatior;
 			sourceTree = "<group>";
 		};
 		A7C6A5621E8E265900E598B3 /* Bridging-Header */ = {
@@ -759,9 +773,11 @@
 				A7920DAA1E6E7EBF00B37B81 /* AppDelegate.swift in Sources */,
 				A77295DE1E7D308600138F44 /* TeamTableViewController.swift in Sources */,
 				CE7617A01E7EBC7B00BFED08 /* Communication.swift in Sources */,
+				A7A4E8B81E94E42D00CDDBA6 /* StadiumTableViewCell.swift in Sources */,
 				A773F4F91E7D1EBD007BC39E /* MatchTableViewCell.swift in Sources */,
 				A7920DAC1E6E7EBF00B37B81 /* MatchingViewController.swift in Sources */,
 				A756BB371E9210990087885A /* Stadium.swift in Sources */,
+				A7A4E8BB1E94ED0200CDDBA6 /* ActivityIndicator.swift in Sources */,
 				A7A572BE1E88F97100D22860 /* AddMatchingViewController.swift in Sources */,
 				A756BB351E920D900087885A /* StadiumTableViewController.swift in Sources */,
 				A722BC1C1E7A53C200F8A960 /* MatchDetailViewController.swift in Sources */,
