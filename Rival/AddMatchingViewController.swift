@@ -31,6 +31,7 @@ class AddMatchingViewController: UITableViewController {
     let dropDown = DropDown()
     var dropDownData = [""]
     var numberOfPeople = 1
+    var selectedStadium = ""
     
     
     let datePicker = UIDatePicker()
@@ -40,6 +41,9 @@ class AddMatchingViewController: UITableViewController {
         teamName.text = LoginViewController.myTeam.teamName
         teamEmblem.image=UIImage(named: (LoginViewController.myTeam.emblem))
         CreateDatePicker()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        stadium.text = selectedStadium
     }
     
     func dropDownFunc(_ label:UILabel,_ cell:UITableViewCell) {

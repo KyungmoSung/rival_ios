@@ -21,7 +21,7 @@ class Communication {
     static var selectedGame:String = "축구"
     static var nav_bg="soccer_img.png"
     
-    let url = "http://192.168.0.5:8080"
+    let url = "http://172.20.10.6:8080"
     
     func getSessionProfile(){
         
