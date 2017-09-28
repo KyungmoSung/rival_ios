@@ -43,7 +43,7 @@ class MatchDetailViewController: UITableViewController,MTMapViewDelegate {
         let map = DaumMap.setDaumMap(mapView: mapView,name:self.sStadium, latitude: self.latitude, longitude: self.longitude)
         map.delegate = self
         mapView.addSubview(map)
-  
+        
         super.viewDidLoad()
     }
     
